@@ -1,0 +1,7 @@
+Tên trường, Source system,Source schema, Source table, Source field name
+ID_Nhan_Su,HRMS,dbo,NS_LLNS,NS_ID
+Ten_Nhan_Su,HRMS,dbo,NS_LLNS,TENKHAISINH
+Ngay_Sinh,HRMS,dbo,NS_LLNS,NGAYSINH
+So_Chung_Minh,HRMS,dbo,NS_LLNS,SOCHUNGMINH
+MST_Ca_Nhan,HRMS,dbo,NS_LLNS,MASOTHUE_CNHAN
+ID_Don_Vi,HRMS,dbo,NS_LLNS,DONVI_ID
