@@ -1,6 +1,7 @@
-package com.evn.lake.utils;
+package com.evn.lake.raw2gold;
 
 import com.evn.lake.entity.JobConfig;
+import com.evn.lake.utils.SparkUtils;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
@@ -10,7 +11,7 @@ import java.util.stream.Collectors;
 
 import static com.evn.lake.utils.ConfigUtils.*;
 
-public class StandardETL {
+public class Standard2Gold {
 
     public static String raw2Gold(String tableNameInRaw, String tableNameInGold,  List<JobConfig.ColumnMapping> mapping){
 

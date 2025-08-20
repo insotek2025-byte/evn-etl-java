@@ -1,17 +1,12 @@
-package com.evn.lake.tcns.raw2gold;
+package com.evn.lake.raw2gold;
 
 import com.evn.lake.entity.JobConfig;
 import com.evn.lake.utils.SparkUtils;
-import com.evn.lake.utils.StandardETL;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.Objects;
 
 import static com.evn.lake.utils.ConfigUtils.*;
@@ -25,7 +20,7 @@ public class StandardTableTest {
 
     public static void testRaw2GoldStd(JobConfig targetJob){
 
-        String tableNameInGold = StandardETL.raw2Gold(targetJob.src_table, targetJob.tar_table , targetJob.mapping);
+        String tableNameInGold = Standard2Gold.raw2Gold(targetJob.src_table, targetJob.tar_table , targetJob.mapping);
         SparkSession spark = SparkUtils.getSession();
         Dataset<Row> check = spark.sql("SELECT * FROM " + catalog + "."  +schemaGold+"." + tableNameInGold );
         check.show(false);
@@ -52,8 +47,12 @@ public class StandardTableTest {
 
     public static void main(String[] args) throws IOException {
 
-        test("raw_NS_LLNS");
-        test("r2g_tcns_TCNS_thong_tin_nhan_su");
+//        test("raw_NS_LLNS");
+//        test("r2g_tcns_TCNS_thong_tin_nhan_su");
+        // TODO: sinh bảng trước theo kiểu dữ liệu tại gold (mart thì không cần vì nó là oracle)
+        // TODO: thêm tiền tố TCNS
+
+        test("raw_TCNS_cay_don_vi");
 
     }
 }
