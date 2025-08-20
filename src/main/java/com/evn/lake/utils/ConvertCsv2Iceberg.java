@@ -20,11 +20,9 @@ public class ConvertCsv2Iceberg {
         public Integer length;
         public boolean nullable;
 
-        public ColumnMeta(String name, String dataType, Integer length, boolean nullable) {
+        public ColumnMeta(String name, String dataType) {
             this.name = name;
             this.dataType = dataType;
-            this.length = length;
-            this.nullable = nullable;
         }
     }
 
@@ -54,10 +52,9 @@ public class ConvertCsv2Iceberg {
                 String[] cols = line.split("\\|", -1);
                 String colName = cols[0].trim();
                 String dataType = cols[1].trim();
-                Integer length = cols[2].isEmpty() ? null : Integer.parseInt(cols[2].trim());
-                boolean nullable = !cols[3].equalsIgnoreCase("NO");
 
-                metas.add(new ColumnMeta(colName, dataType, length, nullable));
+
+                metas.add(new ColumnMeta(colName, dataType));
 
                 DataType sparkType;
                 switch (dataType.toLowerCase()) {
@@ -92,7 +89,7 @@ public class ConvertCsv2Iceberg {
                         sparkType = DataTypes.StringType;
                 }
 
-                fields.add(DataTypes.createStructField(colName, sparkType, nullable));
+                fields.add(DataTypes.createStructField(colName, sparkType, true));
             }
         }
         StructType schema = DataTypes.createStructType(fields);
@@ -119,7 +116,7 @@ public class ConvertCsv2Iceberg {
         return tmp;
     }
 
-    public static void csv2Iceberg(String inputPath,  String schemaPath, String tableName) throws IOException {
+    public static void csv2Iceberg(String inputPath,  String schemaPath, String tableNameInRaw) throws IOException {
         SparkSession spark = SparkUtils.getSession();
 
         SchemaResult schemaResult = loadSchemaFromCsv(schemaPath);
@@ -139,9 +136,9 @@ public class ConvertCsv2Iceberg {
         df.printSchema();
         df.show(3, true);
 
-        df.writeTo("local.raw_zone."+tableName).createOrReplace();
+        df.writeTo("local.raw_zone."+tableNameInRaw).createOrReplace();
 
-        Dataset<Row> check = spark.sql("SELECT * FROM local.raw_zone."+tableName);
+        Dataset<Row> check = spark.sql("SELECT * FROM local.raw_zone."+tableNameInRaw);
         check.show(false);
 
         spark.stop();

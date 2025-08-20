@@ -1,0 +1,41 @@
+[
+  {
+    "job_id" : "raw_NS_LLNS",
+    "tar_table" : "NS_LLNS",
+    "data" : "data/05.HRMS_NPC/HRMS_NPC/dbo.NS_LLNS.data.csv",
+    "schema":  "data/05.HRMS_NPC/HRMS_NPC/dbo.NS_LLNS.schema.csv"
+  },
+  {
+    "job_id" : "r2g_tcns_TCNS_thong_tin_nhan_su",
+    "src_table": "NS_LLNS",
+    "tar_table" : "TCNS_thong_tin_nhan_su",
+    "mapping":
+    [
+      {
+        "src_column": "NS_ID",
+        "tar_column": "ID_Nhan_Su"
+      },
+      {
+        "src_column": "TENKHAISINH",
+        "tar_column": "Ten_Nhan_Su"
+      },
+      {
+        "src_column": "NGAYSINH",
+        "tar_column": "Ngay_Sinh"
+      },
+      {
+        "src_column": "SOCHUNGMINH",
+        "tar_column": "So_Chung_Minh"
+      },
+      {
+        "src_column": "MASOTHUE_CNHAN",
+        "tar_column": "MST_Ca_Nhan"
+      },
+      {
+        "src_column": "DONVI_ID",
+        "tar_column": "ID_Don_Vi"
+      }
+    ]
+
+  }
+]
