@@ -1,5 +1,7 @@
 package com.evn.lake.utils;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
@@ -8,17 +10,19 @@ import org.apache.spark.sql.functions;
 import org.apache.spark.sql.Column;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class ConvertCsv2Iceberg {
+import static com.evn.lake.utils.ConfigUtils.catalog;
+import static com.evn.lake.utils.ConfigUtils.schemaRaw;
+
+public class RawIceberg {
 
     public static class ColumnMeta {
         public String name;
         public String dataType;
-        public Integer length;
-        public boolean nullable;
 
         public ColumnMeta(String name, String dataType) {
             this.name = name;
@@ -116,10 +120,61 @@ public class ConvertCsv2Iceberg {
         return tmp;
     }
 
-    public static void csv2Iceberg(String inputPath,  String schemaPath, String tableNameInRaw) throws IOException {
+    public static String genDdlCreateTableIceberg(JsonNode job){
+        String jobId = job.get("job_id").asText();
+        String catalog = job.get("catalog").asText();
+        String schema = job.get("schema").asText();
+        String table = job.get("table").asText();
+
+        // Build phần column definitions
+        StringBuilder cols = new StringBuilder();
+        Iterator<JsonNode> it = job.get("columns").elements();
+        while (it.hasNext()) {
+            JsonNode col = it.next();
+            String colName = col.get("name").asText();
+            String colType = col.get("type").asText();
+            cols.append(colName).append(" ").append(colType);
+            if (it.hasNext()) {
+                cols.append(", ");
+            }
+        }
+
+        return String.format(
+                "CREATE TABLE IF NOT EXISTS %s.%s.%s (%s) USING iceberg",
+                catalog, schema, table, cols.toString()
+        );
+    }
+
+    public static void genDdlCreateTableIceberg(String pathConfig) {
+        // 2. Đọc file JSON config
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode root = null;
+        try {
+            root = mapper.readTree(new File(pathConfig));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        SparkSession spark = SparkUtils.getSession();
+        for (JsonNode job : root) {
+
+            String ddl = genDdlCreateTableIceberg(job);
+            System.out.println("Executing ddl: " + ddl);
+            spark.sql(ddl);
+
+        }
+    }
+
+
+
+    public static void importCsv2Iceberg(String dataPath, String schemaPath, String tableNameInRaw) {
         SparkSession spark = SparkUtils.getSession();
 
-        SchemaResult schemaResult = loadSchemaFromCsv(schemaPath);
+        SchemaResult schemaResult = null;
+        try {
+            schemaResult = loadSchemaFromCsv(schemaPath);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         Dataset<Row> dfRaw = spark.read()
                 .option("header", "true")
@@ -129,17 +184,13 @@ public class ConvertCsv2Iceberg {
                 .option("escape", "\"")           // escape cho dấu "
                 .option("multiLine", "true")      // cho phép dữ liệu xuống dòng
                 .schema(schemaResult.schema)
-                .csv(inputPath);
+                .csv(dataPath);
 
         Dataset<Row> df = convertDates(dfRaw, schemaResult.metas);
-
-        df.printSchema();
-        df.show(3, true);
-
-        df.writeTo("local.raw_zone."+tableNameInRaw).createOrReplace();
+        df.writeTo(catalog + "." + schemaRaw + "."+tableNameInRaw).createOrReplace();
 
         Dataset<Row> check = spark.sql("SELECT * FROM local.raw_zone."+tableNameInRaw);
-        check.show(false);
+        df.show(3, true);
 
         spark.stop();
     }
@@ -153,7 +204,6 @@ public class ConvertCsv2Iceberg {
     }
 
 
-
     // === Demo main ===
     public static void main(String[] args) throws IOException {
 
@@ -161,7 +211,7 @@ public class ConvertCsv2Iceberg {
         String input = "data/05.HRMS_NPC/HRMS_NPC/dbo.NS_LLNS.data.csv";
         String schema = "data/05.HRMS_NPC/HRMS_NPC/dbo.NS_LLNS.schema.csv";
 
-        csv2Iceberg(input,  schema, "NS_LLNS");
+        importCsv2Iceberg(input,  schema, "NS_LLNS");
 
         testRead("NS_LLNS");
 

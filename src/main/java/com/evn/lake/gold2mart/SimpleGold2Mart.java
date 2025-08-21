@@ -7,11 +7,10 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.evn.lake.utils.ConfigUtils.*;
 
-public class Standard2Mart {
+public class SimpleGold2Mart {
 
     public static String raw2Gold(String tableNameInGold, String tableNameInOracle,  List<JobConfig.ColumnMapping> mapping){
 
