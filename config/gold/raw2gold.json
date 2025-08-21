@@ -1,5 +1,73 @@
 [
   {
+    "job_id": "r2g_tcns_TCNS_cay_don_vi",
+    "src_table": "S_ORGANIZATION",
+    "tar_table": "TCNS_cay_don_vi",
+    "src_system": "local",
+    "src_schema": "raw_zone",
+    "tar_system": "local",
+    "tar_schema": "gold_zone",
+    "mapping": [
+      {
+        "src_column": "ORG_ID",
+        "tar_column": "ID_don_vi"
+      },
+      {
+        "src_column": "ORG_CODE",
+        "tar_column": "Ma_don_vi"
+      },
+      {
+        "src_column": "ORG_NAME",
+        "tar_column": "Ten_don_vi"
+      },
+      {
+        "src_column": "ORG_LEVEL",
+        "tar_column": "Cap_don_vi"
+      },
+      {
+        "src_column": "ORG_PARENT_ID",
+        "tar_column": "ID_don_vi_cha"
+      }
+    ]
+  },
+  {
+    "job_id" : "r2g_tcns_TCNS_thong_tin_nhan_su",
+    "src_table": "NS_LLNS",
+    "tar_table" : "TCNS_thong_tin_nhan_su",
+    "src_system": "local",
+    "src_schema": "raw_zone",
+    "tar_system": "local",
+    "tar_schema": "gold_zone",
+    "mapping":
+    [
+      {
+        "src_column": "NS_ID",
+        "tar_column": "ID_Nhan_Su"
+      },
+      {
+        "src_column": "TENKHAISINH",
+        "tar_column": "Ten_Nhan_Su"
+      },
+      {
+        "src_column": "NGAYSINH",
+        "tar_column": "Ngay_Sinh"
+      },
+      {
+        "src_column": "SOCHUNGMINH",
+        "tar_column": "So_Chung_Minh"
+      },
+      {
+        "src_column": "MASOTHUE_CNHAN",
+        "tar_column": "MST_Ca_Nhan"
+      },
+      {
+        "src_column": "DONVI_ID",
+        "tar_column": "ID_Don_Vi"
+      }
+    ]
+
+  },
+  {
     "job_id": "r2g_tcns_TCNS_danh_muc_vi_tri",
     "src_system": "local",
     "src_schema": "raw_zone",
@@ -17,6 +85,9 @@
         "tar_column": "Ten_vi_tri"
       }
     ]
+  },
+  {
+    "job_id": "r2g_tcns_TCNS_Vi_tri_nhan_su"
   },
   {
     "job_id": "r2g_tcns_TCNS_danh_muc_phong_ban",
@@ -48,7 +119,7 @@
     "src_table": "BC_EVN02b_gui",
     "tar_system": "local",
     "tar_schema": "gold_zone",
-    "tar_table": "TCNS_bc_chi_tieu_evn02",
+    "tar_table": "TCNS_BC_Chi_Tieu_EVN02",
     "mapping": [
       {
         "src_column": "Donvi_Id",
@@ -244,7 +315,7 @@
     "src_table": "NS_HDLDONG",
     "tar_system": "local",
     "tar_schema": "gold_zone",
-    "tar_table": "TCNS_ky_hop_dong",
+    "tar_table": "TCNS_Ky_hop_dong",
     "mapping": [
       {
         "src_column": "HDLDONG_ID",
@@ -280,34 +351,30 @@
     "job_id": "r2g_tcns_TCNS_ky_kham_suc_khoe",
     "src_system": "local",
     "src_schema": "raw_zone",
-    "src_table": "NS_KSK",
+    "src_table": "SK_HOSOKHAM",
     "tar_system": "local",
     "tar_schema": "gold_zone",
     "tar_table": "TCNS_ky_kham_suc_khoe",
     "mapping": [
       {
-        "src_column": "KSK_ID",
-        "tar_column": "ID_ksk"
+        "src_column": "Donvi_ID",
+        "tar_column": "ID_don_vi"
       },
       {
         "src_column": "NS_ID",
         "tar_column": "ID_nhan_su"
       },
       {
-        "src_column": "DONVI_ID",
-        "tar_column": "ID_don_vi"
-      },
-      {
         "src_column": "NGAY_KHAM",
-        "tar_column": "Ngay_kham"
+        "tar_column": "ngay_kham_suc_khoe"
       },
       {
-        "src_column": "KETLUAN",
-        "tar_column": "Ket_luan"
+        "src_column": "NAM_KHAM",
+        "tar_column": "Nam_kham"
       },
       {
-        "src_column": "BENH_TAT",
-        "tar_column": "Benh_tat"
+        "src_column": "KETLUAN_PHANLOAI",
+        "tar_column": "Ket_qua_kham"
       }
     ]
   }

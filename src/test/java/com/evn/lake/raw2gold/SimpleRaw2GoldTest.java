@@ -36,7 +36,7 @@ public class SimpleRaw2GoldTest {
 
         // bước 3 etl to gold
         List<JobConfig> raw2GoldJobsConfig =  mapper.readValue(new File("config/gold/raw2gold.json"), new TypeReference<List<JobConfig>>(){});
-        testRaw2GoldStd("r2g_tcns_TCNS_danh_muc_vi_tri", raw2GoldJobsConfig);
+        testRaw2GoldStd("r2g_tcns_TCNS_cay_don_vi", raw2GoldJobsConfig);
 
 
     }
