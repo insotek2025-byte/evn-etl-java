@@ -6,7 +6,7 @@
     "src_table": "Vie_CHUCDANH",
     "tar_system": "local",
     "tar_schema": "gold_zone",
-    "tar_table": "danh_muc_vi_tri",
+    "tar_table": "TCNS_danh_muc_vi_tri",
     "mapping": [
       {
         "src_column": "VTRI_ID",
@@ -25,7 +25,7 @@
     "src_table": "S_DEPARTMENT",
     "tar_system": "local",
     "tar_schema": "gold_zone",
-    "tar_table": "danh_muc_phong_ban",
+    "tar_table": "TCNS_danh_muc_phong_ban",
     "mapping": [
       {
         "src_column": "DEPARTMENT_ID",
@@ -48,7 +48,7 @@
     "src_table": "BC_EVN02b_gui",
     "tar_system": "local",
     "tar_schema": "gold_zone",
-    "tar_table": "bc_chi_tieu_evn02",
+    "tar_table": "TCNS_bc_chi_tieu_evn02",
     "mapping": [
       {
         "src_column": "Donvi_Id",
@@ -103,7 +103,7 @@
     "src_table": "NS_HDLDONG",
     "tar_system": "local",
     "tar_schema": "gold_zone",
-    "tar_table": "hop_dong",
+    "tar_table": "TCNS_hop_dong",
     "mapping": [
       {
         "src_column": "HDLDONG_ID",
@@ -142,7 +142,7 @@
     "src_table": "BC_EVN01b_gui",
     "tar_system": "local",
     "tar_schema": "gold_zone",
-    "tar_table": "bao_cao_chi_tieu_evn01",
+    "tar_table": "TCNS_bao_cao_chi_tieu_evn01",
     "mapping": [
       {
         "src_column": "Donvi_Id",
@@ -205,7 +205,7 @@
     "src_table": "NS_TDUNG",
     "tar_system": "local",
     "tar_schema": "gold_zone",
-    "tar_table": "co_cau_tuyen_dung",
+    "tar_table": "TCNS_co_cau_tuyen_dung",
     "mapping": [
       {
         "src_column": "TDUNG_ID",
@@ -244,7 +244,7 @@
     "src_table": "NS_HDLDONG",
     "tar_system": "local",
     "tar_schema": "gold_zone",
-    "tar_table": "ky_hop_dong",
+    "tar_table": "TCNS_ky_hop_dong",
     "mapping": [
       {
         "src_column": "HDLDONG_ID",
@@ -283,7 +283,7 @@
     "src_table": "NS_KSK",
     "tar_system": "local",
     "tar_schema": "gold_zone",
-    "tar_table": "ky_kham_suc_khoe",
+    "tar_table": "TCNS_ky_kham_suc_khoe",
     "mapping": [
       {
         "src_column": "KSK_ID",

@@ -2,18 +2,19 @@ package com.evn.lake.utils;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.types.*;
-import org.apache.spark.sql.functions;
-import org.apache.spark.sql.Column;
+import org.apache.spark.sql.*;
+import org.apache.spark.sql.types.DataType;
+import org.apache.spark.sql.types.DataTypes;
+import org.apache.spark.sql.types.StructField;
+import org.apache.spark.sql.types.StructType;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import static com.evn.lake.utils.ConfigUtils.catalog;
 import static com.evn.lake.utils.ConfigUtils.schemaRaw;
@@ -120,7 +121,7 @@ public class RawIceberg {
         return tmp;
     }
 
-    public static String genDdlCreateTableIceberg(JsonNode job){
+    public static String genDdlCreateTableIceberg(JsonNode job) {
         String jobId = job.get("job_id").asText();
         String catalog = job.get("catalog").asText();
         String schema = job.get("schema").asText();
@@ -165,7 +166,6 @@ public class RawIceberg {
     }
 
 
-
     public static void importCsv2Iceberg(String dataPath, String schemaPath, String tableNameInRaw) {
         SparkSession spark = SparkUtils.getSession();
 
@@ -175,6 +175,7 @@ public class RawIceberg {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        System.out.println("Gen Data Table" + tableNameInRaw);
 
         Dataset<Row> dfRaw = spark.read()
                 .option("header", "true")
@@ -187,17 +188,17 @@ public class RawIceberg {
                 .csv(dataPath);
 
         Dataset<Row> df = convertDates(dfRaw, schemaResult.metas);
-        df.writeTo(catalog + "." + schemaRaw + "."+tableNameInRaw).createOrReplace();
+        df.writeTo(catalog + "." + schemaRaw + "." + tableNameInRaw).createOrReplace();
 
-        Dataset<Row> check = spark.sql("SELECT * FROM local.raw_zone."+tableNameInRaw);
+        Dataset<Row> check = spark.sql("SELECT * FROM local.raw_zone." + tableNameInRaw);
         df.show(3, true);
 
         spark.stop();
     }
 
-    public static void testRead(String tableName){
+    public static void testRead(String tableName) {
         SparkSession spark = SparkUtils.getSession();
-        Dataset<Row> check = spark.sql("SELECT * FROM local.raw_zone."+tableName);
+        Dataset<Row> check = spark.sql("SELECT * FROM local.raw_zone." + tableName);
         check.show(false);
 
         spark.stop();
@@ -211,7 +212,7 @@ public class RawIceberg {
         String input = "data/05.HRMS_NPC/HRMS_NPC/dbo.NS_LLNS.data.csv";
         String schema = "data/05.HRMS_NPC/HRMS_NPC/dbo.NS_LLNS.schema.csv";
 
-        importCsv2Iceberg(input,  schema, "NS_LLNS");
+        importCsv2Iceberg(input, schema, "NS_LLNS");
 
         testRead("NS_LLNS");
 

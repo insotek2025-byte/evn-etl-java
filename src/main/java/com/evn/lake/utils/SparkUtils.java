@@ -6,10 +6,10 @@ import org.apache.log4j.Logger;
 import org.apache.spark.sql.SparkSession;
 
 
-public class SparkUtils  {
+public class SparkUtils {
 
 
-    public static SparkSession getSession(){
+    public static SparkSession getSession() {
         return getSession("test", false, "dev");
     }
 
@@ -22,10 +22,10 @@ public class SparkUtils  {
             Logger.getLogger("akka").setLevel(Level.OFF);
         }
 
-        String catalog =  "local";
+        String catalog = "local";
         String warehousePath = new java.io.File("iceberg/warehouse").getAbsolutePath();
 
-        if(env == "dev"){
+        if (env == "dev") {
             System.out.println("init dev spark");
             session = SparkSession.builder()
                     .appName("CSV to Iceberg")
@@ -41,7 +41,7 @@ public class SparkUtils  {
                     // Default catalog
                     .config("spark.sql.defaultCatalog", "local")
                     .getOrCreate();
-        }else {
+        } else {
 
             session = SparkSession
                     .builder()

@@ -10,30 +10,34 @@ import org.apache.spark.sql.SparkSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
-import static com.evn.lake.raw2gold.SimpleRaw2Gold.genDataRaw;
-import static com.evn.lake.utils.ConfigUtils.*;
-import static com.evn.lake.utils.RawIceberg.genDdlCreateTableIceberg;
-import static com.evn.lake.utils.RawIceberg.importCsv2Iceberg;
+import static com.evn.lake.utils.ConfigUtils.mapper;
 
 public class SimpleRaw2GoldTest {
 
 
+    public static void testRaw2GoldStd(String jobId, List<JobConfig> raw2GoldJobsConfig){
+        JobConfig targetJob = SimpleRaw2Gold.etlRaw2Gold(jobId, raw2GoldJobsConfig);
 
-    public static void testRaw2GoldStd(JobConfig targetJob){
-        String tableNameInGold = SimpleRaw2Gold.raw2Gold(targetJob.src_table, targetJob.tar_table , targetJob.mapping);
+
         SparkSession spark = SparkUtils.getSession();
-        Dataset<Row> check = spark.sql("SELECT * FROM " + catalog + "."  +schemaGold+"." + tableNameInGold );
+        Dataset<Row> check = spark.sql("SELECT * FROM " + targetJob.tar_system + "."  +targetJob.tar_schema+"."+ targetJob.tar_table + " limit 10" );
         check.show(false);
     }
 
 
     public static void main(String[] args) throws IOException {
+        // bước 1 tạo bảng gold . idempotence
         //        genDdlCreateTableIceberg("config/gold/gold_ddl.json");
-        List<JobConfig> rawTableConfig =  mapper.readValue(new File("config/raw/gen_data_raw.json"), new TypeReference<List<JobConfig>>(){});
-        rawTableConfig.forEach(SimpleRaw2Gold::genDataRaw);
+
+        // bước 2 tạo bảng raw. idempoten
+//        List<JobConfig> rawTableConfig =  mapper.readValue(new File("config/raw/gen_data_raw.json"), new TypeReference<List<JobConfig>>(){});
+//        rawTableConfig.forEach(SimpleRaw2Gold::genDataRaw);
+
+        // bước 3 etl to gold
+        List<JobConfig> raw2GoldJobsConfig =  mapper.readValue(new File("config/gold/raw2gold.json"), new TypeReference<List<JobConfig>>(){});
+        testRaw2GoldStd("r2g_tcns_TCNS_danh_muc_vi_tri", raw2GoldJobsConfig);
+
 
     }
 

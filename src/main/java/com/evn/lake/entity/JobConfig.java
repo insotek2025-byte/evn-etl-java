@@ -1,12 +1,17 @@
 package com.evn.lake.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class JobConfig {
     public String job_id;
+    public String src_system;
+    public String src_schema;
     public String src_table;
+    public String tar_system;
+    public String tar_schema;
     public String tar_table;
     public List<ColumnMapping> mapping;
 
