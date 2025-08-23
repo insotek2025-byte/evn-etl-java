@@ -1,0 +1,86 @@
+[
+  {
+    "job_id": "D_TCNS_Don_vi",
+    "schema": "evnnpc_tochucnhansu2",
+    "table": "D_TCNS_Don_vi",
+    "columns": [
+      { "name": "ID_don_vi", "type": "NUMBER" },
+      { "name": "Ma_don_vi", "type": "NUMBER" },
+      { "name": "Ten_don_vi", "type": "NVARCHAR2(255)" },
+      { "name": "Cap_don_vi", "type": "NUMBER" },
+      { "name": "ID_don_vi_cha", "type": "NUMBER" }
+    ]
+  },
+  {
+    "job_id": "D_TCNS_Nhan_su",
+    "schema": "evnnpc_tochucnhansu2",
+    "table": "D_TCNS_Don_vi",
+    "columns": [
+      { "name": "ID_Nhan_Su", "type": "NUMBER" },
+      { "name": "Ten_Nhan_Su", "type": "NVARCHAR2(255)" },
+      { "name": "Ngay_Sinh", "type": "DATE" },
+      { "name": "So_Chung_Minh", "type": "NVARCHAR2(50)" },
+      { "name": "MST_Ca_Nhan", "type": "NVARCHAR2(50)" },
+      { "name": "ID_Don_Vi", "type": "NUMBER" },
+      { "name": "Qua_trinh_lam_viec", "type": "NVARCHAR2(2000)" }
+    ]
+  },
+  {
+    "job_id": "D_TCNS_hop_dong",
+    "schema": "evnnpc_tochucnhansu2",
+    "table": "D_TCNS_hop_dong",
+    "columns": [
+      { "name": "ID_hop_dong", "type": "NUMBER" },
+      { "name": "ID_nhan_su", "type": "NUMBER" },
+      { "name": "So_hop_dong", "type": "NVARCHAR2(100)" },
+      { "name": "ID_don_vi", "type": "NUMBER" },
+      { "name": "Ngay_hop_dong", "type": "DATE" },
+      { "name": "Ngay_ket_thuc", "type": "DATE" },
+      { "name": "Tinh_trang_hop_dong", "type": "NVARCHAR2(100)" }
+    ]
+  },
+  {
+    "job_id": "D_TCNS_danh_muc_vi_tri",
+    "schema": "evnnpc_tochucnhansu2",
+    "table": "D_TCNS_danh_muc_vi_tri",
+    "columns": [
+      { "name": "ID_vi_tri", "type": "NUMBER" },
+      { "name": "Ten_vi_tri", "type": "NUMBER" }
+    ]
+  },
+  {
+    "job_id": "D_TCNS_phong_ban",
+    "schema": "evnnpc_tochucnhansu2",
+    "table": "D_TCNS_phong_ban",
+    "columns": [
+      { "name": "ID", "type": "NUMBER" },
+      { "name": "ID_phong_ban", "type": "NUMBER" },
+      { "name": "Ten_phong_ban", "type": "NUMBER" },
+      { "name": "TTRANG_HDONG", "type": "NVARCHAR2(255)" }
+    ]
+  },
+  {
+    "job_id": "D_TCNS_Danh_Muc_Cong_Viec",
+    "schema": "evnnpc_tochucnhansu2",
+    "table": "D_TCNS_Danh_Muc_Cong_Viec",
+    "columns": [
+      { "name": "ID", "type": "NUMBER" },
+      { "name": "ID_Cong_Viec", "type": "NUMBER" },
+      { "name": "Ten_Cong_Viec", "type": "NVARCHAR2(255)" },
+      { "name": "Phan_Loai", "type": "NVARCHAR2(255)" },
+      { "name": "Don_Vi_Tinh", "type": "NVARCHAR2(255)" },
+      { "name": "Trang_Thai", "type": "NUMBER" }
+    ]
+  },
+  {
+    "job_id": "D_TCNS_Danh_Muc_Vung_Mien",
+    "schema": "evnnpc_tochucnhansu2",
+    "table": "D_TCNS_Danh_Muc_Vung_Mien",
+    "columns": [
+      { "name": "ID", "type": "NUMBER" },
+      { "name": "ID_vung_mien", "type": "NUMBER" },
+      { "name": "Ten_vung_mien", "type": "NVARCHAR2(255)" },
+      { "name": "Trang_Thai", "type": "NUMBER" }
+    ]
+  }
+]

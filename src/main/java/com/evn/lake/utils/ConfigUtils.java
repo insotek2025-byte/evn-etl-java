@@ -12,10 +12,17 @@ public class ConfigUtils {
 
     public static ObjectMapper mapper = new ObjectMapper();
 
+
+
     public static class EtlTCNS {
         public static String rawPath =  "config/tcns/gen_data_raw.json";
         public static String goldPath =  "config/tcns/gold_ddl.json";
         public static String etlPath =  "config/tcns/raw2gold.json";
+        public static String martPath =  "config/tcns/dim_ddl.json";
+
+        public static String url = "jdbc:oracle:thin:@//118.70.49.45:1521/orcl";
+        public static String user = "evnnpc_tochucnhansu2";
+        public static String password = "root123";
 
         public static class RawTable{
             public static String S_ORGANIZATION = "S_ORGANIZATION";
