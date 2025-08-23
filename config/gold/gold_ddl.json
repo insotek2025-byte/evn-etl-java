@@ -103,7 +103,7 @@
       },
       {
         "name": "Ten_vi_tri",
-        "type": "bigint"
+        "type": "string"
       }
     ]
   },
@@ -375,7 +375,7 @@
       },
       {
         "name": "Nam_kham",
-        "type": "date"
+        "type": "bigint"
       },
       {
         "name": "Ket_qua_kham",

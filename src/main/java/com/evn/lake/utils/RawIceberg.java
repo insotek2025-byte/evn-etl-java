@@ -29,6 +29,11 @@ public class RawIceberg {
             this.name = name;
             this.dataType = dataType;
         }
+
+        @Override
+        public String toString() {
+            return String.format("{name='%s', dataType='%s'}", name, dataType);
+        }
     }
 
     public static class SchemaResult {
@@ -38,6 +43,11 @@ public class RawIceberg {
         public SchemaResult(StructType schema, List<ColumnMeta> metas) {
             this.schema = schema;
             this.metas = metas;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("SchemaResult{\nschema=%s,\nmetas=%s\n}", schema.prettyJson(), metas);
         }
     }
 
@@ -65,6 +75,9 @@ public class RawIceberg {
                 switch (dataType.toLowerCase()) {
                     case "int":
                     case "integer":
+                    case "smallint":
+                    case "tinyint":
+                    case "bit":
                         sparkType = DataTypes.IntegerType;
                         break;
                     case "bigint":
@@ -87,6 +100,8 @@ public class RawIceberg {
                         break;
                     case "date":
                     case "timestamp":
+                    case "smalldatetime":
+                    case "datetime":
                         // đọc tạm là String, sẽ convert sau
                         sparkType = DataTypes.StringType;
                         break;
@@ -114,11 +129,31 @@ public class RawIceberg {
                     tmp = tmp.withColumn(meta.name,
                             functions.to_timestamp(new Column(meta.name), "dd-MMM-yy HH:mm:ss"));
                     break;
+                case "smalldatetime":
+                    tmp = tmp.withColumn(meta.name,
+                            functions.to_timestamp(new Column(meta.name), "yyyy-MM-dd HH:mm"));
+                    break;
+                case "datetime":
+                    tmp = tmp.withColumn(meta.name,
+                            functions.to_timestamp(new Column(meta.name), "M/d/yyyy h:mm:ss a"));  // datetime have am/pm 12/28/2013 12:00:00 AM
+                    break;
                 default:
                     // không làm gì
             }
         }
         return tmp;
+    }
+
+    public static String genDropTableIceberg(JsonNode job) {
+
+        String catalog = job.get("catalog").asText();
+        String schema = job.get("schema").asText();
+        String table = job.get("table").asText();
+
+        return String.format(
+                "DROP TABLE IF EXISTS %s.%s.%s ",
+                catalog, schema, table
+        );
     }
 
     public static String genDdlCreateTableIceberg(JsonNode job) {
@@ -146,7 +181,7 @@ public class RawIceberg {
         );
     }
 
-    public static void genDdlCreateTableIceberg(String pathConfig) {
+    public static void createTableIceberg(String pathConfig) {
         // 2. Đọc file JSON config
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root = null;
@@ -157,11 +192,36 @@ public class RawIceberg {
         }
         SparkSession spark = SparkUtils.getSession();
         for (JsonNode job : root) {
-
             String ddl = genDdlCreateTableIceberg(job);
             System.out.println("Executing ddl: " + ddl);
             spark.sql(ddl);
 
+        }
+    }
+
+    public static void recreateTableIceberg(String pathConfig, String table) {
+
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode root = null;
+        try {
+            root = mapper.readTree(new File(pathConfig));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        SparkSession spark = SparkUtils.getSession();
+        for (JsonNode job : root) {
+            String ddl = genDdlCreateTableIceberg(job);
+
+            if(table != null && job.get("job_id").asText().contains(table)){
+
+                String del = genDropTableIceberg(job);
+                System.out.println("Drop table: " + del);
+                spark.sql(del);
+
+                System.out.println("Executing ddl: " + ddl);
+                spark.sql(ddl);
+                return;
+            }
         }
     }
 
@@ -172,6 +232,7 @@ public class RawIceberg {
         SchemaResult schemaResult = null;
         try {
             schemaResult = loadSchemaFromCsv(schemaPath);
+            System.out.println(schemaResult);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -187,11 +248,15 @@ public class RawIceberg {
                 .schema(schemaResult.schema)
                 .csv(dataPath);
 
+        System.out.println("data raw");
+        dfRaw.show(3, true);
+
         Dataset<Row> df = convertDates(dfRaw, schemaResult.metas);
+        System.out.println("write data to " + catalog + "." + schemaRaw + "." + tableNameInRaw);
         df.writeTo(catalog + "." + schemaRaw + "." + tableNameInRaw).createOrReplace();
 
-        Dataset<Row> check = spark.sql("SELECT * FROM local.raw_zone." + tableNameInRaw);
-        df.show(3, true);
+        Dataset<Row> check = spark.sql("SELECT * FROM " + catalog + "." + schemaRaw + "." + tableNameInRaw);
+        check.show(3, true);
 
         spark.stop();
     }

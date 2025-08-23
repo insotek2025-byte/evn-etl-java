@@ -23,6 +23,9 @@ public class JobConfig {
     public static class ColumnMapping {
         public String src_column;
         public String tar_column;
+        public String cast_from ;
+        public String cast_to ;
+        public String default_value;
 
     }
 }

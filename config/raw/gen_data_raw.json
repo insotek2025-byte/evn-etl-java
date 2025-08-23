@@ -60,6 +60,12 @@
     "schema": "data/05.HRMS_NPC/CMIS_HRMS/dbo.NS_HDLDONG.schema.csv"
   },
   {
+    "job_id": "raw_BC_HDTV_ThoiDoiThucHienTuyenDung",
+    "tar_table": "BC_HDTV_ThoiDoiThucHienTuyenDung",
+    "data": "data/33._Portal_internal/Portal_Internal/dbEVNIntranet/dbo.BC_HDTV_ThoiDoiThucHienTuyenDung.data.csv",
+    "schema": "data/33._Portal_internal/Portal_Internal/dbEVNIntranet/dbo.BC_HDTV_ThoiDoiThucHienTuyenDung.schema.csv"
+  },
+  {
     "job_id": "raw_NS_QTLAMVIEC",
     "tar_table": "NS_QTLAMVIEC",
     "data": "data/05.HRMS_NPC/HRMS_NPC/dbo.NS_QTLAMVIEC.data.csv",
