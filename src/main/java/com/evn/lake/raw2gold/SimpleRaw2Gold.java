@@ -1,6 +1,7 @@
 package com.evn.lake.raw2gold;
 
 import com.evn.lake.entity.JobConfig;
+import com.evn.lake.utils.ConfigUtils;
 import com.evn.lake.utils.SparkUtils;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.apache.spark.sql.Dataset;
@@ -9,16 +10,25 @@ import org.apache.spark.sql.SparkSession;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.evn.lake.utils.ConfigUtils.mapper;
-import static com.evn.lake.utils.RawIceberg.importCsv2Iceberg;
 
 public class SimpleRaw2Gold {
 
+    List<JobConfig> raw2GoldJobsConfig;
+    public SimpleRaw2Gold(String etlPath){
+        try {
+            raw2GoldJobsConfig =  mapper.readValue(new File(etlPath), new TypeReference<List<JobConfig>>(){});
 
-    public static String raw2Gold(JobConfig targetJob) {
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public String raw2Gold(JobConfig targetJob) {
 
         System.out.println("Start process ETL from src table " + targetJob.src_table + " to table " + targetJob.tar_table);
         List<String> selectExprs = targetJob.mapping.stream()
@@ -46,13 +56,17 @@ public class SimpleRaw2Gold {
         targetDf.write()
                 .format("iceberg")
                 .mode("overwrite").save(targetJob.tar_system + "." + targetJob.tar_schema + "." + targetJob.tar_table);
+
+        System.out.println("Read data after write to " + targetJob.tar_system + "."  +targetJob.tar_schema+"."+ targetJob.tar_table);
+        Dataset<Row> check = spark.sql("SELECT * FROM " + targetJob.tar_system + "."  +targetJob.tar_schema+"."+ targetJob.tar_table + " limit 10" );
+        check.show(3);
         spark.stop();
         return targetJob.src_schema;
 
     }
 
-    public static JobConfig etlRaw2Gold(String jobId, List<JobConfig> jobConfigs) {
-        JobConfig targetJob = jobConfigs.stream()
+    public JobConfig etlRaw2Gold(String jobId) {
+        JobConfig targetJob = raw2GoldJobsConfig.stream()
                 .filter(j -> jobId.equals(j.job_id))
                 .findFirst()
                 .orElse(null);
@@ -62,35 +76,24 @@ public class SimpleRaw2Gold {
         return targetJob;
     }
 
-    public static void genDataRawByName(String jobId, List<JobConfig> jobConfigs) throws IOException {
-        JobConfig targetJob = jobConfigs.stream()
-                .filter(j -> jobId.equals(j.job_id))
-                .findFirst()
-                .orElse(null);
+    public void etlAllRaw2GoldByFileConfig() {
+        raw2GoldJobsConfig.forEach(this::raw2Gold);
+    }
 
-        assert targetJob != null;
-        genDataRaw(targetJob);
-
+    public void etlAllRaw2GoldByLimitConfig(){
+        Field[] fields = ConfigUtils.EtlTCNS.GoldTable.class.getDeclaredFields();
+        for (Field field : fields) {
+            if (field.getType().equals(String.class)) {
+                try {
+                    String jobId  = (String) field.get(null); // vì static nên get(null)
+                    etlRaw2Gold(jobId);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
 
-    public static void genDataRaw(JobConfig targetJob) {
-
-        importCsv2Iceberg(targetJob.data, targetJob.schema, targetJob.tar_table);
-    }
-
-    public static void main(String[] args) throws IOException {
-//         bước 1 tạo bảng gold . idempotence
-//        genDdlCreateTableIceberg("config/gold/gold_ddl.json");
-
-//         bước 2 tạo bảng raw. idempoten
-//        List<JobConfig> rawTableConfig = mapper.readValue(new File("config/raw/gen_data_raw.json"), new TypeReference<List<JobConfig>>() {
-//        });
-//        rawTableConfig.forEach(SimpleRaw2Gold::genDataRaw);
-
-        // bước 3 etl to gold
-        List<JobConfig> raw2GoldJobsConfig = mapper.readValue(new File("config/gold/raw2gold.json"), new TypeReference<List<JobConfig>>() {
-        });
-    }
 
 }

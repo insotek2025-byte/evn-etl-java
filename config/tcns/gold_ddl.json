@@ -1,6 +1,6 @@
 [
   {
-    "job_id": "create_tcns_cay_don_vi",
+    "job_id": "TCNS_cay_don_vi",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_cay_don_vi",
@@ -28,7 +28,7 @@
     ]
   },
   {
-    "job_id": "create_TCNS_thong_tin_nhan_su",
+    "job_id": "TCNS_thong_tin_nhan_su",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_thong_tin_nhan_su",
@@ -60,7 +60,7 @@
     ]
   },
   {
-    "job_id": "create_TCNS_Vi_tri_nhan_su",
+    "job_id": "TCNS_Vi_tri_nhan_su",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_Vi_tri_nhan_su",
@@ -92,7 +92,7 @@
     ]
   },
   {
-    "job_id": "create_TCNS_danh_muc_vi_tri",
+    "job_id": "TCNS_danh_muc_vi_tri",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_danh_muc_vi_tri",
@@ -108,7 +108,7 @@
     ]
   },
   {
-    "job_id": "create_TCNS_danh_muc_phong_ban",
+    "job_id": "TCNS_danh_muc_phong_ban",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_danh_muc_phong_ban",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "job_id": "create_TCNS_BC_Chi_Tieu_EVN02",
+    "job_id": "TCNS_BC_Chi_Tieu_EVN02",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_BC_Chi_Tieu_EVN02",
@@ -180,7 +180,7 @@
     ]
   },
   {
-    "job_id": "create_TCNS_hop_dong",
+    "job_id": "TCNS_hop_dong",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_hop_dong",
@@ -216,7 +216,7 @@
     ]
   },
   {
-    "job_id": "create_TCNS_bao_cao_chi_tieu_evn01",
+    "job_id": "TCNS_bao_cao_chi_tieu_evn01",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_bao_cao_chi_tieu_evn01",
@@ -260,7 +260,7 @@
     ]
   },
   {
-    "job_id": "create_TCNS_Co_cau_tuyen_dung",
+    "job_id": "TCNS_Co_cau_tuyen_dung",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_Co_cau_tuyen_dung",
@@ -324,7 +324,7 @@
     ]
   },
   {
-    "job_id": "create_TCNS_Ky_hop_dong",
+    "job_id": "TCNS_Ky_hop_dong",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_Ky_hop_dong",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "job_id": "create_TCNS_ky_kham_suc_khoe",
+    "job_id": "TCNS_ky_kham_suc_khoe",
     "catalog": "local",
     "schema": "gold_zone",
     "table": "TCNS_ky_kham_suc_khoe",

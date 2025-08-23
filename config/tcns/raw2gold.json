@@ -1,6 +1,6 @@
 [
   {
-    "job_id": "r2g_tcns_TCNS_cay_don_vi",
+    "job_id": "TCNS_cay_don_vi",
     "src_table": "S_ORGANIZATION",
     "tar_table": "TCNS_cay_don_vi",
     "src_system": "local",
@@ -31,7 +31,7 @@
     ]
   },
   {
-    "job_id": "r2g_tcns_TCNS_thong_tin_nhan_su",
+    "job_id": "TCNS_thong_tin_nhan_su",
     "src_table": "NS_LLNS",
     "tar_table": "TCNS_thong_tin_nhan_su",
     "src_system": "local",
@@ -66,7 +66,7 @@
     ]
   },
   {
-    "job_id": "r2g_tcns_TCNS_danh_muc_vi_tri",
+    "job_id": "TCNS_danh_muc_vi_tri",
     "src_system": "local",
     "src_schema": "raw_zone",
     "src_table": "Vie_CHUCDANH",
@@ -85,10 +85,7 @@
     ]
   },
   {
-    "job_id": "r2g_tcns_TCNS_Vi_tri_nhan_su"
-  },
-  {
-    "job_id": "r2g_tcns_TCNS_danh_muc_phong_ban",
+    "job_id": "TCNS_danh_muc_phong_ban",
     "src_system": "local",
     "src_schema": "raw_zone",
     "src_table": "S_DEPARTMENT",
@@ -111,7 +108,7 @@
     ]
   },
   {
-    "job_id": "r2g_tcns_TCNS_BC_Chi_Tieu_EVN02",
+    "job_id": "TCNS_BC_Chi_Tieu_EVN02",
     "src_system": "local",
     "src_schema": "raw_zone",
     "src_table": "BC_EVN02b_gui",
@@ -166,7 +163,7 @@
     ]
   },
   {
-    "job_id": "r2g_tcns_TCNS_hop_dong",
+    "job_id": "TCNS_hop_dong",
     "src_system": "local",
     "src_schema": "raw_zone",
     "src_table": "NS_HDLDONG",
@@ -205,7 +202,7 @@
     ]
   },
   {
-    "job_id": "r2g_tcns_TCNS_bao_cao_chi_tieu_evn01",
+    "job_id": "TCNS_bao_cao_chi_tieu_evn01",
     "src_system": "local",
     "src_schema": "raw_zone",
     "src_table": "BC_EVN01_gui",
@@ -252,7 +249,7 @@
     ]
   },
   {
-    "job_id": "r2g_tcns_TCNS_co_cau_tuyen_dung",
+    "job_id": "TCNS_Co_cau_tuyen_dung",
     "src_system": "local",
     "src_schema": "raw_zone",
     "src_table": "BC_HDTV_ThoiDoiThucHienTuyenDung",
@@ -333,7 +330,7 @@
     ]
   },
   {
-    "job_id": "r2g_tcns_TCNS_ky_hop_dong",
+    "job_id": "TCNS_ky_hop_dong",
     "src_system": "local",
     "src_schema": "raw_zone",
     "src_table": "NS_HDLDONG",
@@ -372,7 +369,7 @@
     ]
   },
   {
-    "job_id": "r2g_tcns_TCNS_ky_kham_suc_khoe",
+    "job_id": "TCNS_ky_kham_suc_khoe",
     "src_system": "local",
     "src_schema": "raw_zone",
     "src_table": "SK_HOSOKHAM",

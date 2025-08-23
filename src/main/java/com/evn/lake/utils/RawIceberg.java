@@ -1,5 +1,9 @@
 package com.evn.lake.utils;
 
+import com.evn.lake.entity.ColumnMeta;
+import com.evn.lake.entity.JobConfig;
+import com.evn.lake.entity.SchemaResult;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.spark.sql.*;
@@ -16,42 +20,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static com.evn.lake.utils.ConfigUtils.catalog;
-import static com.evn.lake.utils.ConfigUtils.schemaRaw;
+import static com.evn.lake.utils.ConfigUtils.*;
 
 public class RawIceberg {
 
-    public static class ColumnMeta {
-        public String name;
-        public String dataType;
-
-        public ColumnMeta(String name, String dataType) {
-            this.name = name;
-            this.dataType = dataType;
-        }
-
-        @Override
-        public String toString() {
-            return String.format("{name='%s', dataType='%s'}", name, dataType);
-        }
-    }
-
-    public static class SchemaResult {
-        public StructType schema;
-        public List<ColumnMeta> metas;
-
-        public SchemaResult(StructType schema, List<ColumnMeta> metas) {
-            this.schema = schema;
-            this.metas = metas;
-        }
-
-        @Override
-        public String toString() {
-            return String.format("SchemaResult{\nschema=%s,\nmetas=%s\n}", schema.prettyJson(), metas);
-        }
-    }
-
-    // === Load schema từ file CSV ===
     public static SchemaResult loadSchemaFromCsv(String path) throws IOException {
         List<ColumnMeta> metas = new ArrayList<>();
         List<StructField> fields = new ArrayList<>();
@@ -269,6 +241,32 @@ public class RawIceberg {
         spark.stop();
     }
 
+    public static List<JobConfig> getRawTableConfig(String rawPath) throws IOException {
+        List<JobConfig> rawTableConfig;
+        rawTableConfig =  mapper.readValue(new File(rawPath), new TypeReference<List<JobConfig>>(){});
+        return rawTableConfig;
+    }
+
+    public static void genDataRawByName(String jobId, String rawPath) throws IOException {
+        List<JobConfig> rawTableConfig = getRawTableConfig(rawPath);
+        JobConfig targetJob = rawTableConfig.stream()
+                .filter(j -> jobId.equals(j.job_id))
+                .findFirst()
+                .orElse(null);
+
+        assert targetJob != null;
+        genDataRaw(targetJob);
+
+    }
+
+    public static void genAllDataRaw(String rawPath) throws IOException {
+        List<JobConfig> rawTableConfig = getRawTableConfig(rawPath);
+        rawTableConfig.forEach(RawIceberg::genDataRaw);
+    }
+
+    public static void genDataRaw(JobConfig targetJob) {
+        importCsv2Iceberg(targetJob.data, targetJob.schema, targetJob.tar_table);
+    }
 
     // === Demo main ===
     public static void main(String[] args) throws IOException {
