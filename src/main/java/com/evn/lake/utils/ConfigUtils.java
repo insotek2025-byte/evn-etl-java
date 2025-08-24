@@ -49,7 +49,7 @@ public class ConfigUtils {
             public static String TCNS_hop_dong = "TCNS_hop_dong";  // NS_HDLDONG
             public static String TCNS_bao_cao_chi_tieu_evn01 = "TCNS_bao_cao_chi_tieu_evn01";  // BC_EVN01_gui
             public static String TCNS_Co_cau_tuyen_dung = "TCNS_Co_cau_tuyen_dung";  // BC_HDTV_ThoiDoiThucHienTuyenDung
-//            public static String TCNS_Ky_hop_dong = "TCNS_Ky_hop_dong";  // NS_HDLDONG and NS_QTLAMVIEC
+            public static String TCNS_Ky_hop_dong = "TCNS_Ky_hop_dong";  // NS_HDLDONG and NS_QTLAMVIEC
             public static String TCNS_ky_kham_suc_khoe = "TCNS_ky_kham_suc_khoe";  // SK_HOSOKHAM
         }
 

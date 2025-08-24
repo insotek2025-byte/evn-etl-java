@@ -1,31 +1,31 @@
 package com.evn.lake.app;
 
-import com.evn.lake.raw2gold.SimpleRaw2Gold;
+import com.evn.lake.etl.SimpleETL;
 import com.evn.lake.utils.ConfigUtils;
 
 import java.io.IOException;
 
-import static com.evn.lake.utils.ConfigUtils.EtlTCNS.martPath;
-import static com.evn.lake.utils.MartDimFact.createTableOracle;
-import static com.evn.lake.utils.RawIceberg.createTableIceberg;
-import static com.evn.lake.utils.RawIceberg.genAllDataRaw;
+import static com.evn.lake.utils.RawIceberg.*;
 
 public class Tcns {
     public static void main(String[] args) throws IOException {
 
-//        SimpleRaw2Gold simpleRaw2Gold = new SimpleRaw2Gold(ConfigUtils.EtlTCNS.etlPath);
+        SimpleETL simpleRaw2Gold = new SimpleETL(ConfigUtils.EtlTCNS.etlPath);
 
-        // run all
+       //  run all
 //        genAllDataRaw(ConfigUtils.EtlTCNS.rawPath);
 //        createTableIceberg(ConfigUtils.EtlTCNS.goldPath);
 //        simpleRaw2Gold.etlAllRaw2GoldByLimitConfig();
 
-        // run once
+         // run once
 //        genDataRawByName(ConfigUtils.EtlTCNS.RawTable.S_ORGANIZATION, ConfigUtils.EtlTCNS.rawPath);
 //        recreateTableIceberg(ConfigUtils.EtlTCNS.goldPath, ConfigUtils.EtlTCNS.GoldTable.TCNS_cay_don_vi);
-//        simpleRaw2Gold.etlRaw2Gold(ConfigUtils.EtlTCNS.GoldTable.TCNS_cay_don_vi);
+//        simpleRaw2Gold.simpleEtlRaw2Gold(ConfigUtils.EtlTCNS.GoldTable.TCNS_cay_don_vi);
 
-        createTableOracle(martPath, false);
+//        recreateTableIceberg(ConfigUtils.EtlTCNS.goldPath, ConfigUtils.EtlTCNS.GoldTable.TCNS_Ky_hop_dong);
+        simpleRaw2Gold.simpleEtlRaw2Gold(ConfigUtils.EtlTCNS.GoldTable.TCNS_Ky_hop_dong);
+
+//        createTableOracle(martPath, false);
 
     }
 }

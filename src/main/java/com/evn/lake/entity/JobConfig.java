@@ -14,6 +14,7 @@ public class JobConfig {
     public String tar_schema;
     public String tar_table;
     public List<ColumnMapping> mapping;
+    public String sql;
 
     public String data;
     public String schema;

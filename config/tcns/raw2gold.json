@@ -330,43 +330,14 @@
     ]
   },
   {
-    "job_id": "TCNS_ky_hop_dong",
+    "job_id": "TCNS_Ky_hop_dong",
     "src_system": "local",
     "src_schema": "raw_zone",
     "src_table": "NS_HDLDONG",
     "tar_system": "local",
     "tar_schema": "gold_zone",
     "tar_table": "TCNS_Ky_hop_dong",
-    "mapping": [
-      {
-        "src_column": "HDLDONG_ID",
-        "tar_column": "ID_hop_dong"
-      },
-      {
-        "src_column": "NS_ID",
-        "tar_column": "ID_nhan_su"
-      },
-      {
-        "src_column": "DONVI_ID",
-        "tar_column": "ID_don_vi"
-      },
-      {
-        "src_column": "LOAIHD",
-        "tar_column": "Loai_hop_dong"
-      },
-      {
-        "src_column": "NGAY_HIEULUC",
-        "tar_column": "Ngay_hieu_luc"
-      },
-      {
-        "src_column": "NGAYKT",
-        "tar_column": "Ngay_ket_thuc"
-      },
-      {
-        "src_column": "HD_HIENTAI",
-        "tar_column": "HD_hien_tai"
-      }
-    ]
+    "sql": "config/tcns/sql/gold_TCNS_Ky_hop_dong.sql"
   },
   {
     "job_id": "TCNS_ky_kham_suc_khoe",
