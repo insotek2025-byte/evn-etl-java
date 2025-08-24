@@ -5,12 +5,10 @@ import com.evn.lake.utils.ConfigUtils;
 
 import java.io.IOException;
 
-import static com.evn.lake.utils.RawIceberg.*;
-
 public class Tcns {
     public static void main(String[] args) throws IOException {
 
-        SimpleETL simpleRaw2Gold = new SimpleETL(ConfigUtils.EtlTCNS.etlPath);
+        SimpleETL simpleRaw2Gold = new SimpleETL(ConfigUtils.EtlTCNS.etlRaw2GoldPath);
 
        //  run all
 //        genAllDataRaw(ConfigUtils.EtlTCNS.rawPath);
@@ -23,9 +21,12 @@ public class Tcns {
 //        simpleRaw2Gold.simpleEtlRaw2Gold(ConfigUtils.EtlTCNS.GoldTable.TCNS_cay_don_vi);
 
 //        recreateTableIceberg(ConfigUtils.EtlTCNS.goldPath, ConfigUtils.EtlTCNS.GoldTable.TCNS_Ky_hop_dong);
-        simpleRaw2Gold.simpleEtlRaw2Gold(ConfigUtils.EtlTCNS.GoldTable.TCNS_Ky_hop_dong);
+//        simpleRaw2Gold.simpleEtlRaw2Gold(ConfigUtils.EtlTCNS.GoldTable.TCNS_Ky_hop_dong);
 
-//        createTableOracle(martPath, false);
+//        createTableOracle(martDDLPath, false);
+
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlTCNS.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlTCNS.FactTable.F_TCNS_tong_so_hop_dong_ky_moi);
 
     }
 }

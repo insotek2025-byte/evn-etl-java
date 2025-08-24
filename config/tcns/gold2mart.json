@@ -1,0 +1,12 @@
+[
+  {
+    "job_id": "F_TCNS_tong_so_hop_dong_ky_moi",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "evnnpc_tochucnhansu2",
+    "tar_table": "F_TCNS_tong_so_hop_dong_ky_moi",
+    "sql": "config/tcns/sql/F_TCNS_tong_so_hop_dong_ky_moi.sql"
+  }
+]

@@ -17,8 +17,9 @@ public class ConfigUtils {
     public static class EtlTCNS {
         public static String rawPath =  "config/tcns/gen_data_raw.json";
         public static String goldPath =  "config/tcns/gold_ddl.json";
-        public static String etlPath =  "config/tcns/raw2gold.json";
-        public static String martPath =  "config/tcns/dim_ddl.json";
+        public static String etlRaw2GoldPath =  "config/tcns/raw2gold.json";
+        public static String martDDLPath =  "config/tcns/dim_ddl.json";
+        public static String etlGold2MartPath =  "config/tcns/gold2mart.json";
 
         public static String url = "jdbc:oracle:thin:@//118.70.49.45:1521/orcl";
         public static String user = "evnnpc_tochucnhansu2";
