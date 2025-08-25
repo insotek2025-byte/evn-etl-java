@@ -1,0 +1,15 @@
+SELECT
+    ID_don_vi,
+    Co_Cau_tuyen_dung_dai_hoc_nganh_dien,
+    Co_Cau_tuyen_dung_dai_hoc_nganh_CNTT,
+    Co_Cau_tuyen_dung_dai_hoc_nganh_TCKT_Kinh_Te,
+    Co_Cau_tuyen_dung_dai_hoc_nganh_khac,
+    Co_Cau_tuyen_dung_cao_dang_nganh_dien,
+    Co_Cau_tuyen_dung_cao_dang_nganh_CNTT,
+    Co_Cau_tuyen_dung_cao_dang_nganh_TCKT_Kinh_Te,
+    Co_Cau_tuyen_dung_cao_dang_nganh_khac,
+    Khoi_luong_tuyen_dung_dung_co_cau_co_ke_hoach,
+    Khoi_luong_tuyen_dung_dung_khong_dung_co_cau_ke_hoach,
+    Ty_le_tuyen_dung_dung_co_cau_co_ke_hoach
+FROM
+    local.gold_zone.TCNS_Co_cau_tuyen_dung

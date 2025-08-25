@@ -1,8 +1,8 @@
-insert OVERWRITE TABLE  local.gold_zone.TCNS_Ky_hop_dong (ID, ID_don_vi, Thoi_gian_bc, ID_hop_dong, Ky_moi)
+insert OVERWRITE TABLE  local.gold_zone.TCNS_Ky_hop_dong (ID, ID_don_vi, ID_Thoigian, ID_hop_dong, Ky_moi)
 select
     hd.HDLDONG_ID        as ID,
     hd.DONVI_ID          as ID_don_vi,
-    current_timestamp()  as Thoi_gian_bc,
+    CAST(date_format(current_timestamp(), 'yyyyMMdd') AS BIGINT)  as ID_Thoigian,
     hd.HDLDONG_ID        as ID_hop_dong,
     case
         when qtl.QTLAMVIEC_ID is null then 1   -- không có quá trình làm việc => ký mới

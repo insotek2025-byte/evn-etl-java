@@ -18,7 +18,7 @@ public class ConfigUtils {
         public static String rawPath =  "config/tcns/gen_data_raw.json";
         public static String goldPath =  "config/tcns/gold_ddl.json";
         public static String etlRaw2GoldPath =  "config/tcns/raw2gold.json";
-        public static String martDDLPath =  "config/tcns/dim_ddl.json";
+        public static String martDDLPath =  "config/tcns/mart_ddl.json";
         public static String etlGold2MartPath =  "config/tcns/gold2mart.json";
 
         public static String url = "jdbc:oracle:thin:@//118.70.49.45:1521/orcl";
@@ -55,9 +55,9 @@ public class ConfigUtils {
         }
 
         public static class FactTable{
-            public static String F_TCNS_tong_so_hop_dong_ky_moi ="F_TCNS_tong_so_hop_dong_ky_moi";
-            public static String F_TCNS_tong_co_cau_tuyen_dung ="F_TCNS_tong_co_cau_tuyen_dung";
-            public static String F_TCNS_tong_Lao_dong_dien ="F_TCNS_tong_Lao_dong_dien";
+            public static String F_TCNS_tong_so_hop_dong_ky_moi ="F_TCNS_tong_so_hop_dong_ky_moi";   // done
+            public static String F_TCNS_tong_co_cau_tuyen_dung ="F_TCNS_tong_co_cau_tuyen_dung";   // du lieu khong co gi can xem lai
+            public static String F_TCNS_tong_Lao_dong_dien ="F_TCNS_tong_Lao_dong_dien";   //
             public static String F_TCNS_Lao_dong_phong_ban ="F_TCNS_Lao_dong_phong_ban";
             public static String F_TCNS_BC_Chi_Tieu_EVN01 ="F_TCNS_BC_Chi_Tieu_EVN01";
             public static String F_TCNS_suc_khoe ="F_TCNS_suc_khoe";
@@ -76,6 +76,7 @@ public class ConfigUtils {
             public static String D_TCNS_phong_ban = "D_TCNS_phong_ban";
             public static String D_TCNS_Danh_Muc_Cong_Viec = "D_TCNS_Danh_Muc_Cong_Viec";
             public static String D_TCNS_Danh_Muc_Vung_Mien = "D_TCNS_Danh_Muc_Vung_Mien";
+            public static String D_TCNS_Ngaythang ="D_TCNS_Ngaythang";
         }
 
 

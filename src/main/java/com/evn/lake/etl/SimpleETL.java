@@ -3,6 +3,7 @@ package com.evn.lake.etl;
 import com.evn.lake.entity.JobConfig;
 import com.evn.lake.utils.ConfigUtils;
 import com.evn.lake.utils.SparkUtils;
+import com.evn.lake.utils.SqlUtils;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -14,6 +15,7 @@ import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,6 +35,7 @@ public class SimpleETL {
         }
     }
 
+
     public String etlZone2Zone(JobConfig targetJob) {
 
         System.out.println("Start process ETL from src table " + targetJob.src_table + " to table " + targetJob.tar_table);
@@ -49,37 +52,19 @@ public class SimpleETL {
         Dataset<Row> targetDf;
 
         if (targetJob.mapping != null && !targetJob.mapping.isEmpty()) {
-            List<String> selectExprs = targetJob.mapping.stream()
-                    .map(row -> {
-                        if (row.src_column == null || row.src_column.isEmpty()) {
-                            return row.default_value + " AS " + row.tar_column;
-                        } else if (row.cast_to != null && !row.cast_to.isEmpty()) {
-                            return "CAST(" + row.src_column + " AS " + row.cast_to + ") AS " + row.tar_column;
-                        } else {
-                            return row.src_column + " AS " + row.tar_column;
-                        }
-                    })
-                    .collect(Collectors.toList());
-            System.out.println("Mapping rule" + selectExprs.toString());
 
-            targetDf = sourceDf.selectExpr(selectExprs.toArray(new String[0]));
-
+            String[] select = SqlUtils.genSelectExps(targetJob);
+            System.out.println("Mapping rule" + Arrays.toString(select));
+            targetDf = sourceDf.selectExpr(select);
             System.out.println("Start write to " + targetJob.tar_system + "."  +targetJob.tar_schema+"."+ targetJob.tar_table);
             targetDf.write()
                     .format("iceberg")
                     .mode("overwrite").save(targetJob.tar_system + "." + targetJob.tar_schema + "." + targetJob.tar_table);
 
         } else if (targetJob.sql != null && !targetJob.sql.isEmpty()) {
-            String sqlQuery = null;
-            try {
-                sqlQuery = new String(Files.readAllBytes(Paths.get(targetJob.sql)), StandardCharsets.UTF_8);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            String sqlQuery = SqlUtils.getSqlSelect(targetJob.sql);
             targetDf = spark.sql(sqlQuery);
             System.out.println("Execute sql " + sqlQuery);
-            targetDf.show(3);
-
         } else {
             throw new RuntimeException("No mapping or SQL provided for targetJob: " + targetJob.job_id);
         }
@@ -94,24 +79,37 @@ public class SimpleETL {
 
 
     public void etlZone2Mart(JobConfig targetJob) {
-        String sqlQuery = null;
-        try {
-            sqlQuery = new String(Files.readAllBytes(Paths.get(targetJob.sql)), StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
+        // TODO: jinja support to replate pattern in sql
         SparkSession spark = SparkUtils.getSession();
 
-        System.out.println("Execute sql " + sqlQuery);
+        Dataset<Row> targetDf;
 
-        Dataset<Row> targetDf = spark.sql(sqlQuery);
+        if (targetJob.mapping != null && !targetJob.mapping.isEmpty()) {
+
+            String[] select = SqlUtils.genSelectExps(targetJob);
+            Dataset<Row> sourceDf = spark.table(targetJob.src_system + "." + targetJob.src_schema + "." + targetJob.src_table);
+            System.out.println("Source data " + targetJob.src_system + "." + targetJob.src_schema + "." + targetJob.src_table);
+            sourceDf.show(5);
+            System.out.println("Mapping rule" + Arrays.toString(select));
+            targetDf = sourceDf.selectExpr(select);
+
+        } else if (targetJob.sql != null && !targetJob.sql.isEmpty()) {
+            String sqlQuery = SqlUtils.getSqlSelect(targetJob.sql);
+            System.out.println("Execute sql " + sqlQuery);
+            targetDf = spark.sql(sqlQuery);
+            targetDf.show(3);
+
+        } else {
+            throw new RuntimeException("No mapping or SQL provided for targetJob: " + targetJob.job_id);
+        }
+
         targetDf.show(3);
 
-        System.out.println("write to" + targetJob.tar_table + targetJob.tar_schema);
+        System.out.println("write to " + targetJob.tar_schema + "."+ targetJob.tar_table );
         writeDf2Oracle(targetDf, targetJob.tar_schema, targetJob.tar_table);
 
-        System.out.println("data after write");
+        System.out.println("data in oracle after write " + targetJob.tar_schema +"." + targetJob.tar_table);
         headTable( targetJob.tar_schema, targetJob.tar_table);
 
     }

@@ -338,8 +338,8 @@
         "type": "bigint"
       },
       {
-        "name": "Thoi_gian_bc",
-        "type": "date"
+        "name": "ID_Thoigian",
+        "type": "bigint"
       },
       {
         "name": "ID_hop_dong",

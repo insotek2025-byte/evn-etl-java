@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 import static com.evn.lake.utils.ConfigUtils.EtlTCNS.url;
 import static com.evn.lake.utils.ConfigUtils.EtlTCNS.user;
@@ -34,6 +36,7 @@ public class MartDimFact {
     public static void headTable(String schema, String table) {
         int headCount = 5;
         String sql = "SELECT * FROM " + schema + "." + table + " WHERE ROWNUM <=  " +headCount;
+
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
             try (Statement stmt = conn.createStatement();
                  ResultSet rs = stmt.executeQuery(sql)) {
@@ -67,40 +70,53 @@ public class MartDimFact {
             String table = job.get("table").asText();
             boolean isTableExist = tableExists(conn, schema, table );
 
-            // Drop nếu tồn tại
+            // nếu tồn tại + drop -> xóa bảng
             if (dropIfExists && isTableExist) {
                 String dropSql = "DROP TABLE " + schema + "." + table;
                 System.out.println("Dropping existing table: " + dropSql);
                 stmt.execute(dropSql);
-            } else if (!isTableExist) {
-
-                // Build câu lệnh CREATE TABLE
-                StringBuilder sql = new StringBuilder();
-                sql.append("CREATE TABLE ").append(schema).append(".").append(table).append(" (");
-
-                Iterator<JsonNode> it = job.get("columns").elements();
-                while (it.hasNext()) {
-                    JsonNode col = it.next();
-                    String colName = col.get("name").asText();
-                    String colType = col.get("type").asText();
-
-                    sql.append(colName).append(" ").append(colType);
-                    if (it.hasNext()) {
-                        sql.append(", ");
-                    }
-                }
-                sql.append(")");
-
-                System.out.println("Executing: " + sql);
-                stmt.execute(sql.toString());
-                System.out.println("Table " + schema + "." + table + " created successfully.");
-            }else {
-                System.out.println("Table " + schema + "." + table + " has Existed");
             }
+
+            // nếu tồn tại + khong drop -> ignore
+            if (isTableExist && !dropIfExists) {
+                System.out.println("Table has exited " + table );
+                return;
+            }
+
+
+            // Tao bang
+            StringBuilder sql = new StringBuilder();
+            sql.append("CREATE TABLE ").append(schema).append(".").append(table).append(" (");
+
+            Iterator<JsonNode> it = job.get("columns").elements();
+            while (it.hasNext()) {
+                JsonNode col = it.next();
+                String colName = col.get("name").asText();
+                String colType = col.get("type").asText();
+                String optional = col.has("optional") ? col.get("optional").asText() : "";
+
+                sql.append(colName).append(" ").append(colType).append(" ").append(optional);
+                if (it.hasNext()) {
+                    sql.append(", ");
+                }
+            }
+            sql.append(")");
+
+            System.out.println("Executing DDL: " + sql);
+            stmt.execute(sql.toString());
+            System.out.println("Table " + schema + "." + table + " created successfully.");
+
+            String init = job.has("init") ? job.get("init").asText() : "";
+            if(!Objects.equals(init, "")){
+                String initSql = SqlUtils.getSqlSelect(init);
+                System.out.println("Executing Init data: " + initSql);
+                stmt.execute(initSql);
+            }
+
         }
     }
 
-    public static void createTableOracle(String pathConfig, boolean dropIfExists) {
+    public static void createTableOracle(String pathConfig, String tableName, boolean dropIfExists) {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         try {
@@ -112,7 +128,12 @@ public class MartDimFact {
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
 
             for (JsonNode job : root) {
-                createTable(conn, job, dropIfExists);
+                if(tableName == null) {
+                    createTable(conn, job, dropIfExists);
+                } else if (tableName.equals(job.get("table").asText())) {
+                    createTable(conn, job, dropIfExists);
+                    return;
+                }
             }
 
         } catch (Exception e) {
@@ -142,6 +163,7 @@ public class MartDimFact {
     public static String writeDf2Oracle(Dataset<Row> sourceDf , String schema,  String tableNameInOracle) {
         sourceDf.write()
                 .mode("overwrite")
+                .option("truncate", "true")  // k biet tac dung jh
                 .format("jdbc")
                 .option("url", "jdbc:oracle:thin:@//118.70.49.45:1521/orcl")
                 .option("dbtable", tableNameInOracle)
