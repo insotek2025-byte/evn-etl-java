@@ -103,7 +103,7 @@
       "table": "F_TCNS_tong_so_hop_dong_ky_moi",
       "columns": [
         { "name": "ID_don_vi", "type": "NUMBER" },
-        { "name": "ID_thang", "type": "NUMBER" },
+        { "name": "ID_Thoigian", "type": "NUMBER" },
         { "name": "SL_HD_luan_chuyen", "type": "NUMBER" },
         { "name": "SL_HD_tuyen_moi", "type": "NUMBER" },
         { "name": "Tong_so_hop_dong_ky_moi", "type": "NUMBER" }
@@ -134,7 +134,7 @@
       "table": "F_TCNS_tong_Lao_dong_dien",
       "columns": [
         { "name": "ID_don_vi", "type": "NUMBER" },
-        { "name": "ID_thang", "type": "NUMBER" },
+        { "name": "ID_Thoigian", "type": "NUMBER" },
         { "name": "ID_ma_chi_tieu_EVN01", "type": "NUMBER" },
         { "name": "Ten_chi_tieu_EVN01", "type": "NVARCHAR2(255)" },
         { "name": "Tong_lao_dong_phat_sinh", "type": "NUMBER" },
@@ -150,7 +150,7 @@
       "columns": [
         { "name": "ID_phong_ban", "type": "NUMBER" },
         { "name": "ID_don_vi", "type": "NUMBER" },
-        { "name": "ID_thang", "type": "NUMBER" },
+        { "name": "ID_Thoigian", "type": "NUMBER" },
         { "name": "SL_LD_lao_dong_thuy_dien", "type": "NUMBER" }
       ]
     },
@@ -160,7 +160,7 @@
       "table": "F_TCNS_BC_Chi_Tieu_EVN01",
       "columns": [
         { "name": "ID_don_vi", "type": "NUMBER" },
-        { "name": "ID_thang", "type": "NUMBER" },
+        { "name": "ID_Thoigian", "type": "NUMBER" },
         { "name": "ID_ma_chi_tieu_EVN01", "type": "NUMBER" },
         { "name": "Ten_chi_tieu_EVN01", "type": "NVARCHAR2(255)" },
         { "name": "Tong_lao_dong_phat_sinh", "type": "NUMBER" },
@@ -175,7 +175,7 @@
       "table": "F_TCNS_suc_khoe",
       "columns": [
         { "name": "ID_don_vi", "type": "NUMBER" },
-        { "name": "ID_thang", "type": "NUMBER" },
+        { "name": "ID_Thoigian", "type": "NUMBER" },
         { "name": "Ket_qua_kham", "type": "NVARCHAR2(255)" },
         { "name": "Tong_so_luong_nhan_su", "type": "NUMBER" }
       ]
@@ -251,7 +251,7 @@
       "table": "F_TCNS_thua_thieu_Ld",
       "columns": [
         { "name": "ID_don_vi", "type": "NUMBER" },
-        { "name": "ID_thang", "type": "NUMBER" },
+        { "name": "ID_Thoigian", "type": "NUMBER" },
         { "name": "SS_voi_DB", "type": "NUMBER" },
         { "name": "Ty_le_LD_thua", "type": "NUMBER" },
         { "name": "TL_lao_dong_thieu", "type": "NUMBER" }

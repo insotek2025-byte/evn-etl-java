@@ -1,6 +1,6 @@
 SELECT
     ID_don_vi,
-    Id_thang,
+    CAST(date_format(current_timestamp(), 'yyyyMMdd') AS BIGINT)  as ID_Thoigian,
     Id_ma_chi_tieu_EVN01,
     Ten_chi_tieu_EVN01,
     Tong_lao_dong_phat_sinh,
