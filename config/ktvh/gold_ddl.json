@@ -1,0 +1,969 @@
+[
+  {
+    "job_id": "KTVH_Phien_lam_viec_PhieuCongTac",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Phien_lam_viec_PhieuCongTac",
+    "columns": [
+      {
+        "name": "ID_Phieu_Cong_Tac",
+        "type": "long"
+      },
+      {
+        "name": "So_Phieu",
+        "type": "string"
+      },
+      {
+        "name": "Ma_Loai_Phien",
+        "type": "long"
+      },
+      {
+        "name": "Ma_Trang_Thai",
+        "type": "long"
+      },
+      {
+        "name": "Ngay_Tao",
+        "type": "date"
+      },
+      {
+        "name": "Ngay_Duyet",
+        "type": "date"
+      },
+      {
+        "name": "ID_Don_Vi",
+        "type": "long"
+      },
+      {
+        "name": "ID_Loai_Cong_Viec",
+        "type": "long"
+      },
+      {
+        "name": "ID_Don_Vi_Thuc_Hien",
+        "type": "long"
+      },
+      {
+        "name": "Ma_Yeu_Cau_CRM",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Loai_Phien",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Loai_Phien",
+    "columns": [
+      {
+        "name": "ID_Loai_Phien",
+        "type": "long"
+      },
+      {
+        "name": "Ten_Phan_Loai",
+        "type": "string"
+      },
+      {
+        "name": "Trang_Thai",
+        "type": "long"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Trang_Thai_Phien",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Trang_Thai_Phien",
+    "columns": [
+      {
+        "name": "ID_Trang_Thai",
+        "type": "long"
+      },
+      {
+        "name": "Ten_Trang_Thai",
+        "type": "string"
+      },
+      {
+        "name": "Trang_Thai",
+        "type": "long"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Danh_Muc_Loai_Cong_Viec",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Danh_Muc_Loai_Cong_Viec",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "long"
+      },
+      {
+        "name": "Ten_Loai_Cong_Viec",
+        "type": "string"
+      },
+      {
+        "name": "Trang_Thai",
+        "type": "long"
+      },
+      {
+        "name": "Ngay_Tao",
+        "type": "date"
+      },
+      {
+        "name": "Nguoi_Tao",
+        "type": "string"
+      },
+      {
+        "name": "Ngay_Sua",
+        "type": "date"
+      },
+      {
+        "name": "Nguoi_Sua",
+        "type": "string"
+      },
+      {
+        "name": "Ma_Loai",
+        "type": "long"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Hlat_vi_pham_CongTrinh",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Hlat_vi_pham_CongTrinh",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "long"
+      },
+      {
+        "name": "ID_Don_Vi",
+        "type": "long"
+      },
+      {
+        "name": "Thang",
+        "type": "long"
+      },
+      {
+        "name": "Nam",
+        "type": "long"
+      },
+      {
+        "name": "ID_Cap_Dien_Ap",
+        "type": "long"
+      },
+      {
+        "name": "Tong_Dau_Nam",
+        "type": "long"
+      },
+      {
+        "name": "Tong_Luy_Ke",
+        "type": "long"
+      },
+      {
+        "name": "TangGiam_PhatSinhMoi",
+        "type": "long"
+      },
+      {
+        "name": "TangGiam_GiamDoCaiTao",
+        "type": "long"
+      },
+      {
+        "name": "TangGiam_GiamDoPhoiHopDiaPhuong",
+        "type": "long"
+      },
+      {
+        "name": "PhanLoai_Khoan1",
+        "type": "long"
+      },
+      {
+        "name": "PhanLoai_Khoan2",
+        "type": "long"
+      },
+      {
+        "name": "PhanLoai_Khoan3",
+        "type": "long"
+      },
+      {
+        "name": "PhanLoai_Khoan5",
+        "type": "long"
+      },
+      {
+        "name": "Cap_Ngam",
+        "type": "long"
+      },
+      {
+        "name": "Danh_Gia_Do_Nguy_Hiem_HRN",
+        "type": "long"
+      },
+      {
+        "name": "Ghi_Chu",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Hlat_vi_pham_PhaDat",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Hlat_vi_pham_PhaDat",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "long"
+      },
+      {
+        "name": "ID_Don_Vi",
+        "type": "long"
+      },
+      {
+        "name": "Thang",
+        "type": "long"
+      },
+      {
+        "name": "Nam",
+        "type": "long"
+      },
+      {
+        "name": "ID_Cap_Dien_Ap",
+        "type": "long"
+      },
+      {
+        "name": "Tong_Dau_Nam",
+        "type": "long"
+      },
+      {
+        "name": "Tong_Luy_Ke",
+        "type": "long"
+      },
+      {
+        "name": "TangGiam_PhatSinhMoi",
+        "type": "long"
+      },
+      {
+        "name": "TangGiam_GiamDoCaiTao",
+        "type": "long"
+      },
+      {
+        "name": "TangGiam_GiamDoPhoiHopDiaPhuong",
+        "type": "long"
+      },
+      {
+        "name": "Danh_Gia_Do_Nguy_Hiem",
+        "type": "string"
+      },
+      {
+        "name": "Ghi_Chu",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Su_co_trung_ap",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Su_co_trung_ap",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "long"
+      },
+      {
+        "name": "ID_Don_Vi",
+        "type": "long"
+      },
+      {
+        "name": "ID_Cap_Dien_Ap",
+        "type": "long"
+      },
+      {
+        "name": "ID_Thiet_Bi_Su_Co",
+        "type": "long"
+      },
+      {
+        "name": "Ten_Thiet_Bi_Su_Co",
+        "type": "string"
+      },
+      {
+        "name": "Dien_bien_Su_Co",
+        "type": "string"
+      },
+      {
+        "name": "Thoi_Gian_Xuat_Hien",
+        "type": "date"
+      },
+      {
+        "name": "Thoi_Gian_Bat_Dau_Khac_Phuc",
+        "type": "date"
+      },
+      {
+        "name": "Thoi_Gian_Khac_Phuc_Xong",
+        "type": "date"
+      },
+      {
+        "name": "Thoi_Gian_Khoi_Phuc",
+        "type": "date"
+      },
+      {
+        "name": "T_XuatHienBatDauKhacPhuc",
+        "type": "long"
+      },
+      {
+        "name": "T_BatDauDenKhacPhucXong",
+        "type": "long"
+      },
+      {
+        "name": "T_KhacPhucXongDenKhoiPhuc",
+        "type": "long"
+      },
+      {
+        "name": "T_TongThoiGianMatDien",
+        "type": "long"
+      },
+      {
+        "name": "ID_Phieu_Cong_Tac",
+        "type": "long"
+      },
+      {
+        "name": "ID_Loai_Su_Co",
+        "type": "long"
+      },
+      {
+        "name": "ID_Nguyen_Nhan",
+        "type": "long"
+      },
+      {
+        "name": "ID_Tinh_Chat",
+        "type": "long"
+      },
+      {
+        "name": "ID_Hanh_Lang",
+        "type": "long"
+      },
+      {
+        "name": "Hanh_Lang",
+        "type": "long"
+      },
+      {
+        "name": "Su_Co_Tai_San",
+        "type": "long"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Su_co_trung_ap_LoaiSuCo",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Su_co_trung_ap_LoaiSuCo",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "bigint"
+      },
+      {
+        "name": "Ten_Loai_Su_Co",
+        "type": "string"
+      },
+      {
+        "name": "Mo_Ta",
+        "type": "string"
+      },
+      {
+        "name": "Ngay_Tao",
+        "type": "timestamp"
+      },
+      {
+        "name": "Nguoi_Tao",
+        "type": "string"
+      },
+      {
+        "name": "Cap_Cha",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Su_co_trung_ap_ChiTieuSuCo",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Su_co_trung_ap_ChiTieuSuCo",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "bigint"
+      },
+      {
+        "name": "Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "Thang",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Don_Vi",
+        "type": "bigint"
+      },
+      {
+        "name": "Chi_Tieu_Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "Chi_Tieu_Thang",
+        "type": "bigint"
+      },
+      {
+        "name": "So_Vu_Sau_MienTru",
+        "type": "bigint"
+      },
+      {
+        "name": "So_Vu_Truoc_MienTru",
+        "type": "bigint"
+      },
+      {
+        "name": "NPC_Chi_Tieu_Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Loai_Su_Co",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Thiet_bi_nghiem_ngat",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Thiet_bi_nghiem_ngat",
+    "columns": [
+      {
+        "name": "ID_Thiet_Bi",
+        "type": "bigint"
+      },
+      {
+        "name": "Ten_Thiet_Bi",
+        "type": "string"
+      },
+      {
+        "name": "ID_Don_Vi_Quan_Ly",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Don_Vi_PC",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_Dua_Vao_Su_Dung",
+        "type": "timestamp"
+      },
+      {
+        "name": "Hang_San_Xuat",
+        "type": "string"
+      },
+      {
+        "name": "Nuoc_San_Xuat",
+        "type": "string"
+      },
+      {
+        "name": "Han_Kiem_Dinh",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_So_theo_doi_TBNN",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_So_theo_doi_TBNN",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_Tao",
+        "type": "timestamp"
+      },
+      {
+        "name": "Ngay_Sua",
+        "type": "timestamp"
+      },
+      {
+        "name": "ID_Thiet_Bi",
+        "type": "bigint"
+      },
+      {
+        "name": "Lan_Kiem_Tra",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_Kiem_Tra",
+        "type": "timestamp"
+      },
+      {
+        "name": "Don_Vi_Kiem_Tra",
+        "type": "string"
+      },
+      {
+        "name": "Ket_Qua",
+        "type": "boolean"
+      },
+      {
+        "name": "Ngay_Kiem_Tra_Tiep_Theo",
+        "type": "timestamp"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Su_co_trung_ap_LoaiSuCo",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Su_co_trung_ap_LoaiSuCo",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "bigint"
+      },
+      {
+        "name": "Ten_Loai_Su_Co",
+        "type": "string"
+      },
+      {
+        "name": "Mo_Ta",
+        "type": "string"
+      },
+      {
+        "name": "Ngay_Tao",
+        "type": "date"
+      },
+      {
+        "name": "Nguoi_Tao",
+        "type": "string"
+      },
+      {
+        "name": "Cap_Cha",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Su_co_trung_ap_ChiTieuSuCo",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Su_co_trung_ap_ChiTieuSuCo",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "bigint"
+      },
+      {
+        "name": "Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "Thang",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Don_Vi",
+        "type": "bigint"
+      },
+      {
+        "name": "Chi_Tieu_Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "Chi_Tieu_Thang",
+        "type": "bigint"
+      },
+      {
+        "name": "So_Vu_Sau_MienTru",
+        "type": "bigint"
+      },
+      {
+        "name": "So_Vu_Truoc_MienTru",
+        "type": "bigint"
+      },
+      {
+        "name": "NPC_Chi_Tieu_Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Loai_Su_Co",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Thiet_bi_nghiem_ngat",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Thiet_bi_nghiem_ngat",
+    "columns": [
+      {
+        "name": "ID_Thiet_Bi",
+        "type": "bigint"
+      },
+      {
+        "name": "Ten_Thiet_Bi",
+        "type": "string"
+      },
+      {
+        "name": "ID_Don_Vi_Quan_Ly",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Don_Vi_PC",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_Dua_Vao_Su_Dung",
+        "type": "date"
+      },
+      {
+        "name": "Hang_San_Xuat",
+        "type": "string"
+      },
+      {
+        "name": "Nuoc_San_Xuat",
+        "type": "string"
+      },
+      {
+        "name": "Han_Kiem_Dinh",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_So_theo_doi_TBNN",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_So_theo_doi_TBNN",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_Tao",
+        "type": "date"
+      },
+      {
+        "name": "Ngay_Sua",
+        "type": "date"
+      },
+      {
+        "name": "ID_Thiet_Bi",
+        "type": "bigint"
+      },
+      {
+        "name": "Lan_Kiem_Tra",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_Kiem_Tra",
+        "type": "date"
+      },
+      {
+        "name": "Don_Vi_Kiem_Tra",
+        "type": "string"
+      },
+      {
+        "name": "Ket_Qua",
+        "type": "boolean"
+      },
+      {
+        "name": "Ngay_Kiem_Tra_Tiep_Theo",
+        "type": "date"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Do_tin_cay_xuat_tuyen",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Do_tin_cay_xuat_tuyen",
+    "columns": [
+      {
+        "name": "ID_Don_Vi_Quan_Ly",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_May_Cat",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_May_Cat",
+        "type": "string"
+      },
+      {
+        "name": "Ten_May_Cat",
+        "type": "string"
+      },
+      {
+        "name": "So_KH",
+        "type": "bigint"
+      },
+      {
+        "name": "Nhom_Ma",
+        "type": "string"
+      },
+      {
+        "name": "Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "Thang",
+        "type": "bigint"
+      },
+      {
+        "name": "Tong_so_lan",
+        "type": "bigint"
+      },
+      {
+        "name": "Keo_dai_tong_so_lan",
+        "type": "bigint"
+      },
+      {
+        "name": "Keo_dai_tong_so_lan_xuat_tuyen",
+        "type": "bigint"
+      },
+      {
+        "name": "Keo_dai_tong_so_lan_DZ",
+        "type": "bigint"
+      },
+      {
+        "name": "Thoang_qua_tong_so_lan",
+        "type": "bigint"
+      },
+      {
+        "name": "Thoang_qua_tong_so_lan_xuat_tuyen",
+        "type": "bigint"
+      },
+      {
+        "name": "Thoang_qua_tong_so_lan_DZ",
+        "type": "bigint"
+      },
+      {
+        "name": "MAIFI",
+        "type": "bigint"
+      },
+      {
+        "name": "SAIDI",
+        "type": "bigint"
+      },
+      {
+        "name": "SAIFI",
+        "type": "bigint"
+      },
+      {
+        "name": "CAIDI",
+        "type": "bigint"
+      },
+      {
+        "name": "CAIFI",
+        "type": "bigint"
+      },
+      {
+        "name": "MAIFI_Cong_Ty",
+        "type": "bigint"
+      },
+      {
+        "name": "SAIDI_Cong_Ty",
+        "type": "bigint"
+      },
+      {
+        "name": "SAIFI_Cong_Ty",
+        "type": "bigint"
+      },
+      {
+        "name": "MAIFI_Tong_Cong_Ty",
+        "type": "bigint"
+      },
+      {
+        "name": "SAIDI_Tong_Cong_Ty",
+        "type": "bigint"
+      },
+      {
+        "name": "SAIFI_Tong_Cong_Ty",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Don_Vi_Quan_ly_Tinh",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Thong_tin_mat_dien_KH",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Thong_tin_mat_dien_KH",
+    "columns": [
+      {
+        "name": "Don_vi_quan_ly",
+        "type": "bigint"
+      },
+      {
+        "name": "Don_vi_quan_ly_DoTinCay",
+        "type": "string"
+      },
+      {
+        "name": "Ma_Lich_Mat_Dien",
+        "type": "string"
+      },
+      {
+        "name": "Ma_Lich_Dong_Dien",
+        "type": "string"
+      },
+      {
+        "name": "ID_Nguyen_Nhan",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_Mat_Dien",
+        "type": "date"
+      },
+      {
+        "name": "Thang",
+        "type": "bigint"
+      },
+      {
+        "name": "Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "Thoi_Gian_Mat_Dien",
+        "type": "bigint"
+      },
+      {
+        "name": "So_Khach_Hang",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Do_tin_cay_nhom_nguyen_nhan",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Do_tin_cay_nhom_nguyen_nhan",
+    "columns": [
+      {
+        "name": "ID_Nguyen_Nhan",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Loai_Mat_Dien",
+        "type": "bigint"
+      },
+      {
+        "name": "Ten_Nguyen_Nhan",
+        "type": "string"
+      },
+      {
+        "name": "Ma_Phan_Loai",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Do_tin_cay_loai_mat_dien",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Do_tin_cay_loai_mat_dien",
+    "columns": [
+      {
+        "name": "ID_Loai_Mat_Dien",
+        "type": "bigint"
+      },
+      {
+        "name": "Ten_Loai_Mat_Dien",
+        "type": "string"
+      },
+      {
+        "name": "Ma_PMIS",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Danh_muc_yeu_to_quan_trac",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Danh_muc_yeu_to_quan_trac",
+    "columns": [
+      {
+        "name": "ID_Yeu_To",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_Yeu_To",
+        "type": "string"
+      },
+      {
+        "name": "Ten_Yeu_To",
+        "type": "string"
+      },
+      {
+        "name": "IS_Cha",
+        "type": "string"
+      },
+      {
+        "name": "ID_Yeu_To_Cha",
+        "type": "bigint"
+      },
+      {
+        "name": "Trang_Thai_Su_Dung",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KTVH_Ket_qua_quan_trac_moi_truong",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Ket_qua_quan_trac_moi_truong",
+    "columns": [
+      {
+        "name": "ID_Quan_Trac",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Don_Vi",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_Quan_Trac",
+        "type": "date"
+      },
+      {
+        "name": "Nam_Quan_Trac",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Yeu_To",
+        "type": "bigint"
+      },
+      {
+        "name": "Tong_So_Mau",
+        "type": "bigint"
+      },
+      {
+        "name": "So_Mau_Khong_Dat",
+        "type": "bigint"
+      },
+      {
+        "name": "Tong_So_Lao_Dong",
+        "type": "bigint"
+      },
+      {
+        "name": "So_Lao_Dong_Nu",
+        "type": "bigint"
+      }
+    ]
+  }
+]
+
+
+

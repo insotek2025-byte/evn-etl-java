@@ -1,0 +1,69 @@
+[
+  {
+    "job_id": "plv_PhieuCongTac",
+    "tar_table": "plv_PhieuCongTac",
+    "data": "data/ECP/ECP_PA01/dbo.plv_PhieuCongTac.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.plv_PhieuCongTac.schema.csv"
+  },
+  {
+    "job_id": "plv_TinhChatPhien",
+    "tar_table": "plv_TinhChatPhien",
+    "data": "data/ECP/ECP_PA01/dbo.plv_TinhChatPhien.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.plv_TinhChatPhien.schema.csv"
+  },
+  {
+    "job_id": "plv_TrangThaiPhien",
+    "tar_table": "plv_TrangThaiPhien",
+    "data": "data/ECP/ECP_PA01/dbo.plv_TrangThaiPhien.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.plv_TrangThaiPhien.schema.csv"
+  },
+  {
+    "job_id": "d_LoaiCongViec",
+    "tar_table": "d_LoaiCongViec",
+    "data": "data/ECP/ECP_PA01/dbo.d_LoaiCongViec.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.d_LoaiCongViec.schema.csv"
+  },
+  {
+    "job_id": "hlat_CongTrinh",
+    "tar_table": "hlat_CongTrinh",
+    "data": "data/ECP/ECP_PA01/dbo.hlat_CongTrinh.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.hlat_CongTrinh.schema.csv"
+  },
+  {
+    "job_id": "hlat_PhaDat",
+    "tar_table": "hlat_PhaDat",
+    "data": "data/ECP/ECP_PA01/dbo.hlat_PhaDat.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.hlat_PhaDat.schema.csv"
+  },
+  {
+    "job_id": "sc_TaiNanSuCo",
+    "tar_table": "sc_TaiNanSuCo",
+    "data": "data/ECP/ECP_PA01/dbo.sc_TaiNanSuCo.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.sc_TaiNanSuCo.schema.csv"
+  },
+  {
+    "job_id": "sc_LoaiSuCo",
+    "tar_table": "sc_LoaiSuCo",
+    "data": "data/ECP/ECP_PA01/dbo.sc_LoaiSuCo.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.sc_LoaiSuCo.schema.csv"
+  },
+  {
+    "job_id": "sc_ChiTieuSoVuSuCo",
+    "tar_table": "sc_ChiTieuSoVuSuCo",
+    "data": "data/ECP/ECP_PA01/dbo.sc_ChiTieuSoVuSuCo.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.sc_ChiTieuSoVuSuCo.schema.csv"
+  },
+  {
+    "job_id": "tbnn_ThietBiNghiemNgat",
+    "tar_table": "tbnn_ThietBiNghiemNgat",
+    "data": "data/ECP/ECP_PA01/dbo.tbnn_ThietBiNghiemNgat.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.tbnn_ThietBiNghiemNgat.schema.csv"
+  },
+  {
+    "job_id": "tbnn_SoTheoDoiTBNN",
+    "tar_table": "tbnn_SoTheoDoiTBNN",
+    "data": "data/ECP/ECP_PA01/dbo.tbnn_SoTheoDoiTBNN.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.tbnn_SoTheoDoiTBNN.schema.csv"
+  }
+]
+

@@ -26,7 +26,7 @@ public class Tcns {
 //        createTableOracle(martDDLPath, false);
 
         SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlTCNS.etlGold2MartPath);
-        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlTCNS.DimTable.D_TCNS_Nhan_su);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlTCNS.DimTable.D_TCNS_Don_vi);
 
     }
 }

@@ -103,10 +103,6 @@
       {
         "src_column": "ID_Don_Vi",
         "tar_column": "ID_Don_Vi"
-      },
-      {
-        "src_column": "Qua_trinh_lam_viec",
-        "tar_column": "Qua_trinh_lam_viec"
       }
     ]
   },

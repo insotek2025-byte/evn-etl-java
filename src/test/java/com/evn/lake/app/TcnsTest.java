@@ -34,6 +34,11 @@ public class TcnsTest {
         simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlTCNS.DimTable.D_TCNS_Danh_Muc_Cong_Viec);
     }
 
+    public static void test_D_TCNS_Nhan_su(){
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlTCNS.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlTCNS.DimTable.D_TCNS_Nhan_su);
+    }
+
     public static void test_D_TCNS_Ngaythang(){
         createTableOracle(ConfigUtils.EtlTCNS.martDDLPath, ConfigUtils.EtlTCNS.DimTable.D_TCNS_Ngaythang, true);
     }
@@ -54,7 +59,7 @@ public class TcnsTest {
 
     public static void main(String[] args) throws IOException {
 
-        test_F_TCNS_tong_so_hop_dong_ky_moi();
+        test_D_TCNS_Nhan_su();
 
     }
 }
