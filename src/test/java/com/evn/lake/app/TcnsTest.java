@@ -2,8 +2,6 @@ package com.evn.lake.app;
 
 import com.evn.lake.etl.SimpleETL;
 import com.evn.lake.utils.ConfigUtils;
-import com.google.common.annotations.VisibleForTesting;
-import org.jetbrains.annotations.TestOnly;
 
 import java.io.IOException;
 
@@ -53,7 +51,7 @@ public class TcnsTest {
         SimpleETL simpleRaw2Gold = new SimpleETL(ConfigUtils.EtlTCNS.etlRaw2GoldPath);
         genDataRawByName(ConfigUtils.EtlTCNS.RawTable.NS_HDLDONG, ConfigUtils.EtlTCNS.rawPath);
         genDataRawByName(ConfigUtils.EtlTCNS.RawTable.NS_QTLAMVIEC, ConfigUtils.EtlTCNS.rawPath);
-        recreateTableIceberg(ConfigUtils.EtlTCNS.goldPath, ConfigUtils.EtlTCNS.GoldTable.TCNS_Ky_hop_dong);
+        recreateTableIceberg(ConfigUtils.EtlTCNS.goldDDLPath, ConfigUtils.EtlTCNS.GoldTable.TCNS_Ky_hop_dong);
         simpleRaw2Gold.simpleZoneEtl(ConfigUtils.EtlTCNS.GoldTable.TCNS_Ky_hop_dong);
     }
 

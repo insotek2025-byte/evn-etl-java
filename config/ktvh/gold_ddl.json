@@ -31,7 +31,7 @@
       },
       {
         "name": "ID_Don_Vi",
-        "type": "long"
+        "type": "string"
       },
       {
         "name": "ID_Loai_Cong_Viec",
@@ -39,7 +39,7 @@
       },
       {
         "name": "ID_Don_Vi_Thuc_Hien",
-        "type": "long"
+        "type": "string"
       },
       {
         "name": "Ma_Yeu_Cau_CRM",
@@ -139,7 +139,7 @@
       },
       {
         "name": "ID_Don_Vi",
-        "type": "long"
+        "type": "string"
       },
       {
         "name": "Thang",
@@ -271,15 +271,15 @@
       },
       {
         "name": "ID_Don_Vi",
-        "type": "long"
+        "type": "string"
       },
       {
         "name": "ID_Cap_Dien_Ap",
-        "type": "long"
+        "type": "string"
       },
       {
         "name": "ID_Thiet_Bi_Su_Co",
-        "type": "long"
+        "type": "string"
       },
       {
         "name": "Ten_Thiet_Bi_Su_Co",

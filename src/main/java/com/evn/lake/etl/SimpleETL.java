@@ -150,20 +150,6 @@ public class SimpleETL {
         jobConfigList.forEach(this::etlZone2Zone);
     }
 
-    public void etlAllRaw2GoldByLimitConfig(){
-        Field[] fields = ConfigUtils.EtlTCNS.GoldTable.class.getDeclaredFields();
-        for (Field field : fields) {
-            if (field.getType().equals(String.class)) {
-                try {
-                    String jobId  = (String) field.get(null); // vì static nên get(null)
-                    simpleZoneEtl(jobId);
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
 
 
 }
