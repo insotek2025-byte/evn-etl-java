@@ -364,6 +364,108 @@
     "tar_schema": "gold_zone",
     "tar_table": "KTVH_Do_tin_cay_xuat_tuyen",
     "sql": "config/ktvh/sql/gold_KTVH_Do_tin_cay_xuat_tuyen.sql"
+  },
+  {
+    "job_id": "KTVH_Tram_Bien_Ap_from_ZAG_0110D00_TBA",
+    "src_system": "local",
+    "src_schema": "raw_zone",
+    "src_table": "ZAG_0110D00_TBA",
+    "tar_system": "local",
+    "tar_schema": "gold_zone",
+    "tar_table": "KTVH_Tram_Bien_Ap",
+    "mapping": [
+      {  "src_column": "ATTRDATAID", "tar_column": "ID_Thuoc_Tinh"},
+      {  "src_column": "OBJTYPEID", "tar_column": "ID_Loai_Doi_Tuong"},
+      {  "src_column": "OBJID", "tar_column": "ID_Doi_Tuong"},
+      {  "src_column": "TEN_TRAM", "tar_column": "Ten_Tram"},
+      {  "src_column": "TINH", "tar_column": "Tinh"},
+      {  "src_column": "QUAN", "tar_column": "Quan"},
+      {  "src_column": "PHUONG", "tar_column": "Phuong"},
+      {  "src_column": "VUNG", "tar_column": "Vung"},
+      {  "src_column": "THON", "tar_column": "Thon"},
+      {  "src_column": "LOAI_TRAM", "tar_column": "Loai_Tram"},
+      {  "src_column": "KIEU_TRAM", "tar_column": "Kieu_Tram"},
+      {  "src_column": "DIEM_DAU", "tar_column": "Diem_Dau"},
+      {  "src_column": "P", "tar_column": "Cong_Suat_Van_Hanh"},
+      {  "src_column": "CDVH", "tar_column": "Don_Vi_Van_Hanh"},
+      {  "src_column": "", "tar_column": "ID_Cap_Dien_Ap", "default_value": "110"}
+
+    ]
+  },
+  {
+    "job_id": "KTVH_Tram_Bien_Ap_from_D_TRAM",
+    "src_system": "local",
+    "src_schema": "raw_zone",
+    "src_table": "D_TRAM",
+    "tar_system": "local",
+    "tar_schema": "gold_zone",
+    "tar_table": "KTVH_Tram_Bien_Ap",
+    "mapping": [
+      {  "src_column": "MA_TRAM", "tar_column": "ID_Thuoc_Tinh"},
+      {  "src_column": "TEN_TRAM", "tar_column": "Ten_Tram"},
+      {  "src_column": "LOAI_TRAM", "tar_column": "Loai_Tram"},
+      {  "src_column": "MA_DVIQLY", "tar_column": "Don_Vi_Van_Hanh"},
+      {  "src_column": "", "tar_column": "ID_Cap_Dien_Ap", "default_value": "110111"}
+
+    ],
+    "align" : "true",
+    "mode" : "append"
+  },
+  {
+    "job_id": "KTVH_Tram_Bien_Ap_from_ZAG_0022D00_TBA",
+    "src_system": "local",
+    "src_schema": "raw_zone",
+    "src_table": "ZAG_0022D00_TBA",
+    "tar_system": "local",
+    "tar_schema": "gold_zone",
+    "tar_table": "KTVH_Tram_Bien_Ap",
+    "mapping": [
+      {  "src_column": "ATTRDATAID", "tar_column": "ID_Thuoc_Tinh"},
+      {  "src_column": "OBJTYPEID", "tar_column": "ID_Loai_Doi_Tuong"},
+      {  "src_column": "OBJID", "tar_column": "ID_Doi_Tuong"},
+      {  "src_column": "TINH", "tar_column": "Tinh"},
+      {  "src_column": "QUAN", "tar_column": "Quan"},
+      {  "src_column": "PHUONG", "tar_column": "Phuong"},
+      {  "src_column": "VUNG", "tar_column": "Vung"},
+      {  "src_column": "THON", "tar_column": "Thon"},
+      {  "src_column": "LOAI_TRAM", "tar_column": "Loai_Tram"},
+      {  "src_column": "KIEU_TRAM", "tar_column": "Kieu_Tram"},
+      {  "src_column": "DIEM_DAU", "tar_column": "Diem_Dau"},
+      {  "src_column": "P", "tar_column": "Cong_Suat_Van_Hanh"},
+      {  "src_column": "DVI_VH", "tar_column": "Don_Vi_Van_Hanh"},
+      {  "src_column": "", "tar_column": "ID_Cap_Dien_Ap", "default_value": "22"}
+
+    ],
+    "align" : "true",
+    "mode" : "append"
+  },
+  {
+    "job_id": "KTVH_Tram_Bien_Ap_from_ZAG_0035D00_TBA",
+    "src_system": "local",
+    "src_schema": "raw_zone",
+    "src_table": "ZAG_0035D00_TBA",
+    "tar_system": "local",
+    "tar_schema": "gold_zone",
+    "tar_table": "KTVH_Tram_Bien_Ap",
+    "mapping": [
+      {  "src_column": "ATTRDATAID", "tar_column": "ID_Thuoc_Tinh"},
+      {  "src_column": "OBJTYPEID", "tar_column": "ID_Loai_Doi_Tuong"},
+      {  "src_column": "OBJID", "tar_column": "ID_Doi_Tuong"},
+      {  "src_column": "TINH", "tar_column": "Tinh"},
+      {  "src_column": "QUAN", "tar_column": "Quan"},
+      {  "src_column": "PHUONG", "tar_column": "Phuong"},
+      {  "src_column": "VUNG", "tar_column": "Vung"},
+      {  "src_column": "THON", "tar_column": "Thon"},
+      {  "src_column": "LOAI_TRAM", "tar_column": "Loai_Tram"},
+      {  "src_column": "KIEU_TRAM", "tar_column": "Kieu_Tram"},
+      {  "src_column": "DIEM_DAU", "tar_column": "Diem_Dau"},
+      {  "src_column": "P", "tar_column": "Cong_Suat_Van_Hanh"},
+      {  "src_column": "DVI_VH", "tar_column": "Don_Vi_Van_Hanh"},
+      {  "src_column": "", "tar_column": "ID_Cap_Dien_Ap", "default_value": "35"}
+
+    ],
+    "align" : "true",
+    "mode" : "append"
   }
 ]
 

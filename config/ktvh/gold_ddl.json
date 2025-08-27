@@ -905,8 +905,75 @@
       { "name": "SAIFI_Tong_Cong_Ty", "type": "bigint" },
       { "name": "ID_Don_Vi_Quan_ly_Tinh", "type": "bigint" }
     ]
+  },
+  {
+    "job_id": "KTVH_Tram_Bien_Ap",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Tram_Bien_Ap",
+    "columns": [
+      {
+        "name": "ID_Thuoc_Tinh",
+        "type": "string"
+      },
+      {
+        "name": "ID_Loai_Doi_Tuong",
+        "type": "string"
+      },
+      {
+        "name": "ID_Doi_Tuong",
+        "type": "string"
+      },
+      {
+        "name": "Ten_Tram",
+        "type": "string"
+      },
+      {
+        "name": "Tinh",
+        "type": "string"
+      },
+      {
+        "name": "Quan",
+        "type": "string"
+      },
+      {
+        "name": "Phuong",
+        "type": "string"
+      },
+      {
+        "name": "Vung",
+        "type": "string"
+      },
+      {
+        "name": "Thon",
+        "type": "string"
+      },
+      {
+        "name": "Loai_Tram",
+        "type": "string"
+      },
+      {
+        "name": "Kieu_Tram",
+        "type": "string"
+      },
+      {
+        "name": "Diem_Dau",
+        "type": "string"
+      },
+      {
+        "name": "Cong_Suat_Van_Hanh",
+        "type": "bigint"
+      },
+      {
+        "name": "Don_Vi_Van_Hanh",
+        "type": "string"
+      },
+      {
+        "name": "ID_Cap_Dien_Ap",
+        "type": "bigint"
+      }
+    ]
   }
-
 
 ]
 

@@ -2,7 +2,6 @@ package com.evn.lake.app;
 
 import com.evn.lake.etl.SimpleETL;
 import com.evn.lake.utils.ConfigUtils;
-import com.evn.lake.utils.MartDimFact;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -21,7 +20,7 @@ public class KtvhTest {
     }
 
     public static void etlAllRaw2GoldByLimitConfig(){
-        Field[] fields = ConfigUtils.EtlKTVH.GoldTable.class.getDeclaredFields();
+        Field[] fields = ConfigUtils.EtlKTVH.GoldTableJobId.class.getDeclaredFields();
         SimpleETL simpleRaw2Gold = new SimpleETL(ConfigUtils.EtlKTVH.etlRaw2GoldPath);
         for (Field field : fields) {
             if (field.getType().equals(String.class)) {
@@ -43,7 +42,7 @@ public class KtvhTest {
 //        genAllDataRaw(ConfigUtils.EtlKTVH.rawPath);
 //        createTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath);
 
-        recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, ConfigUtils.EtlKTVH.GoldTable.KTVH_Tram_Bien_Ap);
+//        recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, "KTVH_Tram_Bien_Ap");
         etlAllRaw2GoldByLimitConfig();
 
 //        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);

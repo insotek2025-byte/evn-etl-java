@@ -102,7 +102,7 @@ public class ConfigUtils {
             public static String tbnn_SoTheoDoiTBNN = "tbnn_SoTheoDoiTBNN";
         }
 
-        public static class GoldTable{
+        public static class GoldTableJobId {
 //            public static String KTVH_Phien_lam_viec_PhieuCongTac = "KTVH_Phien_lam_viec_PhieuCongTac";
 //            public static String KTVH_Loai_Phien = "KTVH_Loai_Phien";
 //            public static String KTVH_Trang_Thai_Phien = "KTVH_Trang_Thai_Phien";
@@ -120,14 +120,21 @@ public class ConfigUtils {
 //            public static String KTVH_Danh_muc_yeu_to_quan_trac = "KTVH_Danh_muc_yeu_to_quan_trac";
 //            public static String KTVH_Ket_qua_quan_trac_moi_truong = "KTVH_Ket_qua_quan_trac_moi_truong";
 
+            // union TBA
+//            public static String KTVH_Tram_Bien_Ap = "KTVH_Tram_Bien_Ap";
+//            public static String KTVH_Tram_Bien_Ap_from_ZAG_0110D00_TBA = "KTVH_Tram_Bien_Ap_from_ZAG_0110D00_TBA";
+//            public static String KTVH_Tram_Bien_Ap_from_D_TRAM = "KTVH_Tram_Bien_Ap_from_D_TRAM";
+//            public static String KTVH_Tram_Bien_Ap_from_ZAG_0035D00_TBA = "KTVH_Tram_Bien_Ap_from_ZAG_0035D00_TBA";
+//            public static String KTVH_Tram_Bien_Ap_from_ZAG_0022D00_TBA = "KTVH_Tram_Bien_Ap_from_ZAG_0022D00_TBA";
+
             // TODO
 //            public static String KTVH_Cap_Dien_Ap = "KTVH_Cap_Dien_Ap";
 //            public static String KTVH_Do_tin_cay_xuat_tuyen = "KTVH_Do_tin_cay_xuat_tuyen";
 
 
-            public static String KTVH_Tram_Bien_Ap = "KTVH_Tram_Bien_Ap";
 //            public static String KTVH_May_Bien_Ap = "KTVH_May_Bien_Ap";
 //            public static String KTVH_Duong_Day = "KTVH_Duong_Day";
+
 //            public static String KTVH_Thiet_bi_tren_luoi = "KTVH_Thiet_bi_tren_luoi";
 //            public static String KTVH_Tu_bu = "KTVH_Tu_bu";
 

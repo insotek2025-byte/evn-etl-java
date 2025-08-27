@@ -6,9 +6,12 @@ import com.evn.lake.utils.MartDimFact;
 import com.evn.lake.utils.SparkUtils;
 import com.evn.lake.utils.SqlUtils;
 import com.fasterxml.jackson.core.type.TypeReference;
+import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.types.StructField;
+import org.apache.spark.sql.types.StructType;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,8 +20,12 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
+import static org.apache.spark.sql.functions.lit;
+import static org.apache.spark.sql.functions.col;
 
 import static com.evn.lake.utils.ConfigUtils.mapper;
 
@@ -39,10 +46,13 @@ public class SimpleETL {
 
     public String etlZone2Zone(JobConfig targetJob) {
 
-        System.out.println("Start process ETL from src table " + targetJob.src_table + " to table " + targetJob.tar_table);
+        String outputTable = targetJob.tar_system + "."  +targetJob.tar_schema+"."+ targetJob.tar_table;
+        String inputTable  = targetJob.src_system + "." + targetJob.src_schema + "." + targetJob.src_table;
+
+        System.out.println("Start process ETL from src table " + outputTable + " to table " + targetJob.tar_table);
 
         SparkSession spark = SparkUtils.getSession();
-        Dataset<Row> destDf = spark.table(targetJob.tar_system + "." + targetJob.tar_schema + "." + targetJob.tar_table);
+        Dataset<Row> destDf = spark.table(outputTable);
         System.out.println("Target schema");
         destDf.printSchema();
 
@@ -50,7 +60,7 @@ public class SimpleETL {
 
         if (targetJob.mapping != null && !targetJob.mapping.isEmpty()) {
 
-            Dataset<Row> sourceDf = spark.table(targetJob.src_system + "." + targetJob.src_schema + "." + targetJob.src_table);
+            Dataset<Row> sourceDf = spark.table(inputTable);
             System.out.println("Source schema");
             sourceDf.printSchema();
             sourceDf.show(3);
@@ -58,10 +68,22 @@ public class SimpleETL {
             String[] select = SqlUtils.genSelectExps(targetJob);
             System.out.println("Mapping rule" + Arrays.toString(select));
             targetDf = sourceDf.selectExpr(select);
-            System.out.println("Start write to " + targetJob.tar_system + "."  +targetJob.tar_schema+"."+ targetJob.tar_table);
+
+            System.out.println("Start write to " + outputTable);
+
+            if (targetJob.align != null && targetJob.align.equals("true")) {
+                targetDf =align( spark, targetDf,  outputTable);
+            }
+
+            String mode = "overwrite";
+            if (targetJob.align != null && !targetJob.mapping.isEmpty()) {
+                mode = targetJob.mode;
+            }
+            System.out.println("Mode run: "+ mode);
+
             targetDf.write()
                     .format("iceberg")
-                    .mode("overwrite").save(targetJob.tar_system + "." + targetJob.tar_schema + "." + targetJob.tar_table);
+                    .mode(mode).save(targetJob.tar_system + "." + targetJob.tar_schema + "." + targetJob.tar_table);
 
         } else if (targetJob.sql != null && !targetJob.sql.isEmpty()) {
             String sqlQuery = SqlUtils.getSqlSelect(targetJob.sql);
@@ -71,27 +93,53 @@ public class SimpleETL {
             throw new RuntimeException("No mapping or SQL provided for targetJob: " + targetJob.job_id);
         }
 
-        System.out.println("Read data after write to " + targetJob.tar_system + "."  +targetJob.tar_schema+"."+ targetJob.tar_table);
-        Dataset<Row> check = spark.sql("SELECT * FROM " + targetJob.tar_system + "."  +targetJob.tar_schema+"."+ targetJob.tar_table + " limit 10" );
+        System.out.println("Read data after write to " + outputTable);
+        Dataset<Row> check = spark.sql("SELECT * FROM " + outputTable + " limit 10" );
         check.show(3);
         spark.stop();
         return targetJob.src_schema;
 
     }
 
+    private Dataset<Row> align(SparkSession spark, Dataset<Row> input, String tableFQTarget){
+        StructType targetSchema = spark.table(tableFQTarget).schema();
+
+        // Các cột hiện có trong df
+        Set<String> dfCols = new HashSet<>(Arrays.asList(input.columns()));
+
+        Dataset<Row> alignedDf = input;
+
+        // Thêm cột còn thiếu với null
+        for (StructField field : targetSchema.fields()) {
+            if (!dfCols.contains(field.name())) {
+                System.out.println("add column " + field.name());
+                alignedDf = alignedDf.withColumn(field.name(), lit(null).cast(field.dataType()));
+            }
+        }
+
+        // Đảm bảo thứ tự cột giống bảng đích
+        Column[] orderedCols = Arrays.stream(targetSchema.fields())
+                .map(f -> col(f.name()))
+                .toArray(Column[]::new);
+
+        alignedDf = alignedDf.select(orderedCols);
+
+        return alignedDf;
+    }
 
     public void etlZone2Mart(JobConfig targetJob) {
 
         // TODO: jinja support to replate pattern in sql
         SparkSession spark = SparkUtils.getSession();
+        String inputTable  = targetJob.src_system + "." + targetJob.src_schema + "." + targetJob.src_table;
 
         Dataset<Row> targetDf;
 
         if (targetJob.mapping != null && !targetJob.mapping.isEmpty()) {
 
             String[] select = SqlUtils.genSelectExps(targetJob);
-            Dataset<Row> sourceDf = spark.table(targetJob.src_system + "." + targetJob.src_schema + "." + targetJob.src_table);
-            System.out.println("Source data " + targetJob.src_system + "." + targetJob.src_schema + "." + targetJob.src_table);
+            Dataset<Row> sourceDf = spark.table(inputTable);
+            System.out.println("Source data " + inputTable);
             sourceDf.show(5);
             System.out.println("Mapping rule" + Arrays.toString(select));
             targetDf = sourceDf.selectExpr(select);

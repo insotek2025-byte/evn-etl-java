@@ -1,4 +1,19 @@
-sc.LoaiSuCo
-sc.ChiTieuSoVuSuCo
-tbnn.ThietBiNghiemNgat
-tbnn.SoTheoDoiTBNN
+{  "src_column": "ATTR_DATAID", "tar_column": "ID_Thuoc_Tinh"},
+{  "src_column": "OBJTYPEID", "tar_column": "ID_Loai_Doi_Tuong"},
+{  "src_column": "OBJID", "tar_column": "ID_Doi_Tuong"},
+{  "src_column": "TEN_TRAM", "tar_column": "Ten_Tram"},
+{  "src_column": "DIA_CHI", "tar_column": "Dia_Chi"},
+{  "src_column": "TINH", "tar_column": "Tinh"},
+{  "src_column": "QUAN", "tar_column": "Quan"},
+{  "src_column": "PHUONG", "tar_column": "Phuong"},
+{  "src_column": "VUNG", "tar_column": "Vung"},
+{  "src_column": "THON", "tar_column": "Thon"},
+{  "src_column": "LOAI_TRAM", "tar_column": "Loai_Tram"},
+{  "src_column": "KIEU_TRAM", "tar_column": "Kieu_Tram"},
+{  "src_column": "DIEM_DAU", "tar_column": "Diem_Dau"},
+{  "src_column": "TONG_SO_MBA", "tar_column": "So_MBA"},
+{  "src_column": "SO_NGAN_LO", "tar_column": "So_Ngan_Lo"},
+{  "src_column": "P", "tar_column": "Cong_Suat_Van_Hanh"},
+{  "src_column": "CDVH", "tar_column": "Don_Vi_Van_Hanh"},
+
+

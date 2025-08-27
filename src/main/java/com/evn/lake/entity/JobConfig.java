@@ -15,6 +15,8 @@ public class JobConfig {
     public String tar_table;
     public List<ColumnMapping> mapping;
     public String sql;
+    public String align;
+    public String mode;
 
     public String data;
     public String schema;
