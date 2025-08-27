@@ -121,7 +121,7 @@ public class ConfigUtils {
 //            public static String KTVH_Ket_qua_quan_trac_moi_truong = "KTVH_Ket_qua_quan_trac_moi_truong";
 
             // TODO
-//            public static String KTVH_Cap_Dien_Ap = "KTVH_Cap_Dien_Ap";
+            public static String KTVH_Cap_Dien_Ap = "KTVH_Cap_Dien_Ap";
 //            public static String KTVH_Do_tin_cay_xuat_tuyen = "KTVH_Do_tin_cay_xuat_tuyen";
 
 

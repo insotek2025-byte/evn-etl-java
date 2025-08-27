@@ -42,10 +42,6 @@ public class SimpleETL {
         System.out.println("Start process ETL from src table " + targetJob.src_table + " to table " + targetJob.tar_table);
 
         SparkSession spark = SparkUtils.getSession();
-        Dataset<Row> sourceDf = spark.table(targetJob.src_system + "." + targetJob.src_schema + "." + targetJob.src_table);
-        System.out.println("Source schema");
-        sourceDf.printSchema();
-        sourceDf.show(3);
         Dataset<Row> destDf = spark.table(targetJob.tar_system + "." + targetJob.tar_schema + "." + targetJob.tar_table);
         System.out.println("Target schema");
         destDf.printSchema();
@@ -53,6 +49,11 @@ public class SimpleETL {
         Dataset<Row> targetDf;
 
         if (targetJob.mapping != null && !targetJob.mapping.isEmpty()) {
+
+            Dataset<Row> sourceDf = spark.table(targetJob.src_system + "." + targetJob.src_schema + "." + targetJob.src_table);
+            System.out.println("Source schema");
+            sourceDf.printSchema();
+            sourceDf.show(3);
 
             String[] select = SqlUtils.genSelectExps(targetJob);
             System.out.println("Mapping rule" + Arrays.toString(select));
