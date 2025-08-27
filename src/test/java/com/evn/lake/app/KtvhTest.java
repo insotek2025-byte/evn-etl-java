@@ -2,11 +2,11 @@ package com.evn.lake.app;
 
 import com.evn.lake.etl.SimpleETL;
 import com.evn.lake.utils.ConfigUtils;
+import com.evn.lake.utils.MartDimFact;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
 
-import static com.evn.lake.utils.RawIceberg.*;
 
 public class KtvhTest {
 
@@ -42,7 +42,11 @@ public class KtvhTest {
 //        createTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath);
 //        recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, ConfigUtils.EtlKTVH.GoldTable.KTVH_Do_tin_cay_loai_mat_dien);
 
-        etlAllRaw2GoldByLimitConfig();
+//        etlAllRaw2GoldByLimitConfig();
+
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, null, true);
+        martDimFact.closeConn();
 
 
     }

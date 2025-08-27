@@ -2,6 +2,7 @@ package com.evn.lake.etl;
 
 import com.evn.lake.entity.JobConfig;
 import com.evn.lake.utils.ConfigUtils;
+import com.evn.lake.utils.MartDimFact;
 import com.evn.lake.utils.SparkUtils;
 import com.evn.lake.utils.SqlUtils;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.evn.lake.utils.ConfigUtils.mapper;
-import static com.evn.lake.utils.MartDimFact.headTable;
+
 import static com.evn.lake.utils.MartDimFact.writeDf2Oracle;
 
 public class SimpleETL {
@@ -110,7 +111,9 @@ public class SimpleETL {
         writeDf2Oracle(targetDf, targetJob.tar_schema, targetJob.tar_table);
 
         System.out.println("data in oracle after write " + targetJob.tar_schema +"." + targetJob.tar_table);
-        headTable( targetJob.tar_schema, targetJob.tar_table);
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.headTable( targetJob.tar_schema, targetJob.tar_table);
+        martDimFact.closeConn();
 
     }
 

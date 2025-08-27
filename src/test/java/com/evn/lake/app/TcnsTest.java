@@ -2,14 +2,15 @@ package com.evn.lake.app;
 
 import com.evn.lake.etl.SimpleETL;
 import com.evn.lake.utils.ConfigUtils;
+import com.evn.lake.utils.MartDimFact;
 
 import java.io.IOException;
 
-import static com.evn.lake.utils.MartDimFact.createTableOracle;
 import static com.evn.lake.utils.RawIceberg.genDataRawByName;
 import static com.evn.lake.utils.RawIceberg.recreateTableIceberg;
 
 public class TcnsTest {
+
 
     public static void test_D_TCNS_hop_dong(){
         SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlTCNS.etlGold2MartPath);
@@ -22,9 +23,12 @@ public class TcnsTest {
     }
 
     public static void test_D_TCNS_phong_ban(){
-        createTableOracle(ConfigUtils.EtlTCNS.martDDLPath, ConfigUtils.EtlTCNS.DimTable.D_TCNS_phong_ban, true);
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlTCNS.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlTCNS.martDDLPath, ConfigUtils.EtlTCNS.DimTable.D_TCNS_phong_ban, true);
         SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlTCNS.etlGold2MartPath);
         simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlTCNS.DimTable.D_TCNS_phong_ban);
+
+        martDimFact.closeConn();
     }
 
     public static void test_D_TCNS_Danh_Muc_Cong_Viec(){
@@ -38,19 +42,25 @@ public class TcnsTest {
     }
 
     public static void test_D_TCNS_Ngaythang(){
-        createTableOracle(ConfigUtils.EtlTCNS.martDDLPath, ConfigUtils.EtlTCNS.DimTable.D_TCNS_Ngaythang, true);
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlTCNS.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlTCNS.martDDLPath, ConfigUtils.EtlTCNS.DimTable.D_TCNS_Ngaythang, true);
+        martDimFact.closeConn();
     }
 
     public static void test_F_TCNS_tong_so_hop_dong_ky_moi(){
-        createTableOracle(ConfigUtils.EtlTCNS.martDDLPath, ConfigUtils.EtlTCNS.FactTable.F_TCNS_tong_so_hop_dong_ky_moi, true);
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlTCNS.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlTCNS.martDDLPath, ConfigUtils.EtlTCNS.FactTable.F_TCNS_tong_so_hop_dong_ky_moi, true);
         SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlTCNS.etlGold2MartPath);
         simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlTCNS.FactTable.F_TCNS_tong_so_hop_dong_ky_moi);
+        martDimFact.closeConn();
     }
 
     public static void test_D_TCNS_Don_vi(){
-        createTableOracle(ConfigUtils.EtlTCNS.martDDLPath, ConfigUtils.EtlTCNS.DimTable.D_TCNS_Don_vi, true);
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlTCNS.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlTCNS.martDDLPath, ConfigUtils.EtlTCNS.DimTable.D_TCNS_Don_vi, true);
         SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlTCNS.etlGold2MartPath);
         simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlTCNS.DimTable.D_TCNS_Don_vi);
+        martDimFact.closeConn();
     }
 
     public static void test_TCNS_Ky_hop_dong() throws IOException {

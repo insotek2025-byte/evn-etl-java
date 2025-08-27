@@ -8,22 +8,53 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
-import static com.evn.lake.utils.ConfigUtils.EtlTCNS.url;
-import static com.evn.lake.utils.ConfigUtils.EtlTCNS.user;
-import static com.evn.lake.utils.ConfigUtils.EtlTCNS.password;
 import static com.evn.lake.utils.ConfigUtils.catalog;
 import static com.evn.lake.utils.ConfigUtils.schemaGold;
 
 public class MartDimFact {
 
-    public static boolean tableExists(Connection conn, String schema, String table) throws Exception {
+    Connection conn;
+
+    public MartDimFact(String configPath){
+        Properties props = new Properties();
+        try (FileInputStream fis = new FileInputStream(configPath)) {
+            // Load file .properties
+            props.load(fis);
+
+            String url = props.getProperty("url");
+            String user = props.getProperty("user");
+            String password = props.getProperty("password");
+
+            System.out.println("Kết nối tới: " + url +" user: " +  user);
+            // Load driver Oracle (nếu dùng JDBC 4 trở lên thì không bắt buộc)
+//            Class.forName("oracle.jdbc.OracleDriver");
+
+            // Kết nối DB
+            conn = DriverManager.getConnection(url, user, password) ;
+            System.out.println("Kết nối Oracle thành công!");
+
+        } catch (IOException e) {
+            System.err.println("Lỗi đọc file config: " + e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void closeConn(){
+        try {
+            conn.close();
+            System.out.println("Close Oracle thành công!");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean tableExists( String schema, String table) throws Exception {
         String sql = "SELECT COUNT(*) FROM all_tables WHERE owner = '" + schema.toUpperCase() +
                 "' AND table_name = '" + table.toUpperCase() + "'";
         try (Statement stmt = conn.createStatement();
@@ -33,28 +64,26 @@ public class MartDimFact {
         }
     }
 
-    public static void headTable(String schema, String table) {
+    public void headTable(String schema, String table) {
         int headCount = 5;
         String sql = "SELECT * FROM " + schema + "." + table + " WHERE ROWNUM <=  " +headCount;
 
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
-            try (Statement stmt = conn.createStatement();
-                 ResultSet rs = stmt.executeQuery(sql)) {
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
 
-                ResultSetMetaData meta = rs.getMetaData();
-                int columnCount = meta.getColumnCount();
+            ResultSetMetaData meta = rs.getMetaData();
+            int columnCount = meta.getColumnCount();
 
-                int rowNum = 0;
-                while (rs.next() && rowNum < headCount) {
-                    for (int i = 1; i <= columnCount; i++) {
-                        System.out.print(meta.getColumnName(i) + "=" + rs.getString(i) + " ");
-                    }
-                    System.out.println();
-                    rowNum++;
+            int rowNum = 0;
+            while (rs.next() && rowNum < headCount) {
+                for (int i = 1; i <= columnCount; i++) {
+                    System.out.print(meta.getColumnName(i) + "=" + rs.getString(i) + " ");
                 }
+                System.out.println();
+                rowNum++;
             }
-        }catch (Exception e){
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
 
     }
@@ -62,13 +91,13 @@ public class MartDimFact {
     /**
      * Tạo bảng Oracle từ JobConfig
      */
-    public static void createTable(Connection conn, JsonNode job, boolean dropIfExists) throws Exception {
+    public void createTable(Connection conn, JsonNode job, boolean dropIfExists) throws Exception {
         try (Statement stmt = conn.createStatement()) {
 
             String jobId = job.get("job_id").asText();
             String schema = job.get("schema").asText();
             String table = job.get("table").asText();
-            boolean isTableExist = tableExists(conn, schema, table );
+            boolean isTableExist = tableExists(schema, table );
 
             // nếu tồn tại + drop -> xóa bảng
             if (dropIfExists && isTableExist) {
@@ -116,7 +145,7 @@ public class MartDimFact {
         }
     }
 
-    public static void createTableOracle(String pathConfig, String tableName, boolean dropIfExists) {
+    public  void createTableOracle(String pathConfig, String tableName, boolean dropIfExists) {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         try {
@@ -125,17 +154,16 @@ public class MartDimFact {
             throw new RuntimeException(e);
         }
 
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
-
+        try{
             for (JsonNode job : root) {
-                if(tableName == null) {
+                if (tableName == null) {
                     createTable(conn, job, dropIfExists);
                 } else if (tableName.equals(job.get("table").asText())) {
                     createTable(conn, job, dropIfExists);
                     return;
                 }
-            }
 
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

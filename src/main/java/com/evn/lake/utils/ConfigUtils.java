@@ -20,12 +20,9 @@ public class ConfigUtils {
         public static String etlRaw2GoldPath =  "config/tcns/raw2gold.json";
         public static String martDDLPath =  "config/tcns/mart_ddl.json";
         public static String etlGold2MartPath =  "config/tcns/gold2mart.json";
+        public static String oracleConfig =  "config/oracle/tcns.properties";
 
-        public static String url = "jdbc:oracle:thin:@//118.70.49.45:1521/orcl";
-        public static String user = "evnnpc_tochucnhansu2";
-        public static String password = "root123";
-
-        public static class RawTable{
+        public static class RawTable {
             public static String S_ORGANIZATION = "S_ORGANIZATION";
             public static String NS_LLNS =	"NS_LLNS";
             public static String zNS_VTRI =	"zNS_VTRI";
@@ -89,6 +86,7 @@ public class ConfigUtils {
         public static String etlRaw2GoldPath =  "config/ktvh/raw2gold.json";
         public static String martDDLPath =  "config/ktvh/mart_ddl.json";
         public static String etlGold2MartPath =  "config/ktvh/gold2mart.json";
+        public static String oracleConfig =  "config/oracle/ktvh.properties";
 
         public static class RawTable{
             public static String plv_PhieuCongTac = "plv_PhieuCongTac";
