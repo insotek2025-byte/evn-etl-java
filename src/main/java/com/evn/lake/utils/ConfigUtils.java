@@ -130,6 +130,8 @@ public class ConfigUtils {
 //            public static String KTVH_Duong_Day = "KTVH_Duong_Day";
 //            public static String KTVH_Thiet_bi_tren_luoi = "KTVH_Thiet_bi_tren_luoi";
 //            public static String KTVH_Tu_bu = "KTVH_Tu_bu";
+
+              // không biết dùng không
 //            public static String KTVH_KL_DZ = "KTVH_KL_DZ";
 //            public static String KTVH_KL_THIET_BI_LUOI = "KTVH_KL_THIET_BI_LUOI";
         }

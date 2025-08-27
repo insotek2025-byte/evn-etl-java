@@ -94,6 +94,118 @@
     "tar_table": "SK_QUANTRACMOITRUONG",
     "data": "data/05.HRMS_NPC/HRMS_NPC/dbo.SK_QUANTRACMOITRUONG.data.csv",
     "schema": "data/05.HRMS_NPC/HRMS_NPC/dbo.SK_QUANTRACMOITRUONG.schema.csv"
+  },
+  {
+    "job_id": "hlat_CapDienAP",
+    "tar_table": "hlat_CapDienAP",
+    "data": "data/ECP/ECP_PA01/dbo.hlat_CapDienAp.data.csv",
+    "schema": "data/ECP/ECP_PA01/dbo.hlat_CapDienAp.schema.csv"
+  },
+  {
+    "job_id": "CDS_A_LST_ULEVEL",
+    "tar_table": "CDS_A_LST_ULEVEL",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.CDS_A_LST_ULEVEL.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.CDS_A_LST_ULEVEL.schema.csv"
+  },
+  {
+    "job_id": "D_CAP_DAP",
+    "tar_table": "D_CAP_DAP",
+    "data": "data/10.CMIS/DMUC/DMUC.D_CAP_DAP_sample_data.csv",
+    "schema": "data/10.CMIS/DMUC/DMUC.D_CAP_DAP_schema.csv"
+  },
+  {
+    "job_id": "dotincay_xuattuyen",
+    "tar_table": "dotincay_xuattuyen",
+    "data": "data/3._OMS/OMS/SDDT_NPC/dbo.dotincay_xuattuyen.data.csv",
+    "schema": "data/3._OMS/OMS/SDDT_NPC/dbo.dotincay_xuattuyen.schema.csv"
+  },
+  {
+    "job_id": "dotincay_kehoach_xuattuyen",
+    "tar_table": "dotincay_kehoach_xuattuyen",
+    "data": "data/3._OMS/OMS/SDDT_NPC/dbo.dotincay_kehoach_xuattuyen.data.csv",
+    "schema": "data/3._OMS/OMS/SDDT_NPC/dbo.dotincay_kehoach_xuattuyen.schema.csv"
+  },
+  {
+    "job_id": "CDS_ZAG_0110D00_TBA",
+    "tar_table": "CDS_ZAG_0110D00_TBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.CDS_ZAG_0110D00_TBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.CDS_ZAG_0110D00_TBA.schema.csv"
+  },
+  {
+    "job_id": "ZAG_0022D00_TBA",
+    "tar_table": "ZAG_0022D00_TBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0022D00_TBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0022D00_TBA.schema.csv"
+  },
+  {
+    "job_id": "ZAG_0035D00_TBA",
+    "tar_table": "ZAG_0035D00_TBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_TBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_TBA.schema.csv"
+  },
+  {
+    "job_id": "D_TRAM",
+    "tar_table": "D_TRAM",
+    "data": "data/10.CMIS/DMUC/DMUC.D_TRAM_sample_data.csv",
+    "schema": "data/10.CMIS/DMUC/DMUC.D_TRAM_schema.csv"
+  },
+  {
+    "job_id": "ZAG_0110D00_MBA",
+    "tar_table": "ZAG_0110D00_MBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0110D00_MBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0110D00_MBA.schema.csv"
+  },
+  {
+    "job_id": "ZAG_0022D00_MBA",
+    "tar_table": "ZAG_0022D00_MBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0022D00_MBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0022D00_MBA.schema.csv"
+  },
+  {
+    "job_id": "ZAG_0035D00_MBA",
+    "tar_table": "ZAG_0035D00_MBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+  },
+  {
+    "job_id": "ZAG_0035D00_MBA",
+    "tar_table": "ZAG_0035D00_MBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+  },
+  {
+    "job_id": "ZAG_0035D00_MBA",
+    "tar_table": "ZAG_0035D00_MBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+  },
+  {
+    "job_id": "ZAG_0035D00_MBA",
+    "tar_table": "ZAG_0035D00_MBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+  },
+  {
+    "job_id": "ZAG_0035D00_MBA",
+    "tar_table": "ZAG_0035D00_MBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+  },  {
+  "job_id": "ZAG_0035D00_MBA",
+  "tar_table": "ZAG_0035D00_MBA",
+  "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
+  "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+},  {
+  "job_id": "ZAG_0035D00_MBA",
+  "tar_table": "ZAG_0035D00_MBA",
+  "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
+  "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+},
+  {
+    "job_id": "D_LO",
+    "tar_table": "D_LO",
+    "data": "data/10.CMIS/DMUC/DMUC.D_LO_sample_data.csv",
+    "schema": "data/10.CMIS/DMUC/DMUC.D_LO_schema.csv"
   }
 ]
 

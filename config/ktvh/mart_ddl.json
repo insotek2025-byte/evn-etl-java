@@ -284,6 +284,193 @@
         { "name": "SL_FCO", "type": "number" },
         { "name": "SL_CHONG_SET", "type": "number" }
       ]
+    },
+    {
+      "job_id": "D_KTVH_TBNN",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_TBNN",
+      "columns": [
+        { "name": "ID_Thiet_Bi", "type": "Number", "constraint": "PK" },
+        { "name": "Ten_Thiet_Bi", "type": "NVARCHAR2(255)" },
+        { "name": "ID_Don_Vi_Quan_Ly", "type": "Number", "constraint": "FK" },
+        { "name": "ID_Don_Vi_PC", "type": "Number", "constraint": "FK" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_CapDienAp",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_CapDienAp",
+      "columns": [
+        { "name": "ID_Cap_Dien_Ap", "type": "Number" },
+        { "name": "Cap_Dien_Ap", "type": "NVARCHAR2(255)" },
+        { "name": "Trang_Thai", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_TramBienAp",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_TramBienAp",
+      "columns": [
+        { "name": "ID_Thuoc_Tinh", "type": "Number" },
+        { "name": "ID_Loai_Doi_Tuong", "type": "Number" },
+        { "name": "ID_Doi_Tuong", "type": "Number" },
+        { "name": "Ten_Tram", "type": "NVARCHAR2(255)" },
+        { "name": "Dia_Chi", "type": "NVARCHAR2(255)" },
+        { "name": "Tinh", "type": "NVARCHAR2(255)" },
+        { "name": "Quan", "type": "NVARCHAR2(255)" },
+        { "name": "Phuong", "type": "NVARCHAR2(255)" },
+        { "name": "Vung", "type": "NVARCHAR2(255)" },
+        { "name": "Thon", "type": "NVARCHAR2(255)" },
+        { "name": "Loai_Tram", "type": "NVARCHAR2(255)" },
+        { "name": "Kieu_Tram", "type": "NVARCHAR2(255)" },
+        { "name": "Diem_Dau", "type": "NVARCHAR2(255)" },
+        { "name": "So_MBA", "type": "Number" },
+        { "name": "So_Ngan_Lo", "type": "Number" },
+        { "name": "Cong_Suat_Van_Hanh", "type": "Number" },
+        { "name": "Don_Vi_Van_Hanh", "type": "NVARCHAR2(255)" },
+        { "name": "Cap_Dien_Ap", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_MayBienAp",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_MayBienAp",
+      "columns": [
+        { "name": "ID_Thuoc_Tinh", "type": "Number" },
+        { "name": "ID_Loai_Doi_Tuong", "type": "Number" },
+        { "name": "ID_Doi_Tuong", "type": "Number" },
+        { "name": "Loai_May", "type": "NVARCHAR2(255)" },
+        { "name": "Cong_Suat", "type": "Number" },
+        { "name": "Dien_Ap", "type": "NVARCHAR2(255)" },
+        { "name": "Idm", "type": "Number" },
+        { "name": "Hang_San_Xuat", "type": "NVARCHAR2(255)" },
+        { "name": "Cap_Dien_Ap", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_DuongDay",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_DuongDay",
+      "columns": [
+        { "name": "ID_Thuoc_Tinh", "type": "Number" },
+        { "name": "ID_Loai_Doi_Tuong", "type": "Number" },
+        { "name": "ID_Doi_Tuong", "type": "Number" },
+        { "name": "Dien_Ap_Thiet_Ke", "type": "NVARCHAR2(255)" },
+        { "name": "Tong_Chieu_Dai", "type": "Number" },
+        { "name": "So_Cot", "type": "Number" },
+        { "name": "I_Van_Hanh", "type": "Number" },
+        { "name": "Diem_Dau", "type": "NVARCHAR2(255)" },
+        { "name": "Tram", "type": "NVARCHAR2(255)" },
+        { "name": "Ten_DZ", "type": "NVARCHAR2(255)" },
+        { "name": "Ngan_Lo", "type": "NVARCHAR2(255)" },
+        { "name": "Ma_Lo_DZ", "type": "NVARCHAR2(255)" },
+        { "name": "Cap_Dien_Ap", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_ThietBiTrenLuoi",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_ThietBiTrenLuoi",
+      "columns": [
+        { "name": "ID_Thiet_Bi", "type": "Number" },
+        { "name": "ID_Thiet_Bi_Cha", "type": "Number" },
+        { "name": "ID_Don_Vi_Quan_Ly", "type": "Number" },
+        { "name": "ID_Don_Vi", "type": "Number" },
+        { "name": "Ten_Thiet_Bi", "type": "NVARCHAR2(255)" },
+        { "name": "ID_Phan_Loai_Thiet_Bi", "type": "Number" },
+        { "name": "ID_Loai", "type": "Number" },
+        { "name": "Trang_Thai_Su_Dung", "type": "NVARCHAR2(255)" },
+        { "name": "So_Serial", "type": "NVARCHAR2(255)" },
+        { "name": "Nha_San_Xuat", "type": "NVARCHAR2(255)" },
+        { "name": "Nha_Cung_Cap", "type": "NVARCHAR2(255)" },
+        { "name": "Nguyen_Gia", "type": "Number" },
+        { "name": "Cap_Dien_Ap", "type": "NVARCHAR2(255)" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_LoaiSuCo",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_LoaiSuCo",
+      "columns": [
+        { "name": "ID", "type": "Number" },
+        { "name": "Ten_Loai_Su_Co", "type": "NVARCHAR2(255)" },
+        { "name": "Mo_Ta", "type": "NVARCHAR2(255)" },
+        { "name": "Ngay_Tao", "type": "NVARCHAR2(255)" },
+        { "name": "Nguoi_Tao", "type": "NVARCHAR2(255)" },
+        { "name": "Cap_Cha", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_NguyenNhanMatDien",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_NguyenNhanMatDien",
+      "columns": [
+        { "name": "ID_Nguyen_Nhan", "type": "Number" },
+        { "name": "ID_Loai_Mat_Dien", "type": "Number" },
+        { "name": "Ten_Nguyen_Nhan", "type": "NVARCHAR2(255)" },
+        { "name": "Ma_Phan_Loai", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_LoaiMatDien",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_LoaiMatDien",
+      "columns": [
+        { "name": "ID_Loai_Mat_Dien", "type": "Number" },
+        { "name": "Ten_Loai_Mat_Dien", "type": "NVARCHAR2(255)" },
+        { "name": "Ma_PMIS", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_DM_LoaiCongViec",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_DM_LoaiCongViec",
+      "columns": [
+        { "name": "ID", "type": "Number" },
+        { "name": "Ten_Loai_Cong_Viec", "type": "NVARCHAR2(255)" },
+        { "name": "Trang_Thai", "type": "Number" },
+        { "name": "Ngay_Tao", "type": "Date" },
+        { "name": "Nguoi_Tao", "type": "NVARCHAR2(255)" },
+        { "name": "Ngay_Sua", "type": "Date" },
+        { "name": "Nguoi_Sua", "type": "NVARCHAR2(255)" },
+        { "name": "Ma_Loai", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_LoaiPhien",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_LoaiPhien",
+      "columns": [
+        { "name": "ID_Loai_Phien", "type": "Number" },
+        { "name": "Ten_Phan_Loai", "type": "NVARCHAR2(255)" },
+        { "name": "Trang_Thai", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_TrangThaiPhien",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_TrangThaiPhien",
+      "columns": [
+        { "name": "ID_Trang_Thai", "type": "Number" },
+        { "name": "Ten_Trang_Thai", "type": "NVARCHAR2(255)" },
+        { "name": "Trang_Thai", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_DanhMucYeuToQuanTrac",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_DanhMucYeuToQuanTrac",
+      "columns": [
+        { "name": "ID_Yeu_To", "type": "Number" },
+        { "name": "Ma_Yeu_To", "type": "NVARCHAR2(255)" },
+        { "name": "Ten_Yeu_To", "type": "NVARCHAR2(255)" },
+        { "name": "IS_Cha", "type": "NVARCHAR2(255)" },
+        { "name": "ID_Yeu_To_Cha", "type": "Number" },
+        { "name": "Trang_Thai_Su_Dung", "type": "Number" }
+      ]
     }
   ]
+
+
+
 

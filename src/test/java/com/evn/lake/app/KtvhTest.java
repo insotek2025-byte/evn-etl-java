@@ -7,6 +7,8 @@ import com.evn.lake.utils.MartDimFact;
 import java.io.IOException;
 import java.lang.reflect.Field;
 
+import static com.evn.lake.utils.RawIceberg.genAllDataRaw;
+
 
 public class KtvhTest {
 
@@ -38,15 +40,17 @@ public class KtvhTest {
 
 
         //  run all
-//        genAllDataRaw(ConfigUtils.EtlKTVH.rawPath);
+        genAllDataRaw(ConfigUtils.EtlKTVH.rawPath);
 //        createTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath);
 //        recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, ConfigUtils.EtlKTVH.GoldTable.KTVH_Do_tin_cay_loai_mat_dien);
 
 //        etlAllRaw2GoldByLimitConfig();
 
-        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
-        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, null, true);
-        martDimFact.closeConn();
+//        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+//        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, null, true);
+//        martDimFact.closeConn();
+
+
 
 
     }
