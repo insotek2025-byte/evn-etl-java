@@ -126,10 +126,10 @@
     "schema": "data/3._OMS/OMS/SDDT_NPC/dbo.dotincay_kehoach_xuattuyen.schema.csv"
   },
   {
-    "job_id": "CDS_ZAG_0110D00_TBA",
-    "tar_table": "CDS_ZAG_0110D00_TBA",
-    "data": "data/PMIS/PMIS_EVNNPC/dbo.CDS_ZAG_0110D00_TBA.data.csv",
-    "schema": "data/PMIS/PMIS_EVNNPC/dbo.CDS_ZAG_0110D00_TBA.schema.csv"
+    "job_id": "ZAG_0110D00_TBA",
+    "tar_table": "ZAG_0110D00_TBA",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0110D00_TBA.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0110D00_TBA.schema.csv"
   },
   {
     "job_id": "ZAG_0022D00_TBA",
@@ -208,4 +208,3 @@
     "schema": "data/10.CMIS/DMUC/DMUC.D_LO_schema.csv"
   }
 ]
-

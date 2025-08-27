@@ -121,11 +121,11 @@ public class ConfigUtils {
 //            public static String KTVH_Ket_qua_quan_trac_moi_truong = "KTVH_Ket_qua_quan_trac_moi_truong";
 
             // TODO
-            public static String KTVH_Cap_Dien_Ap = "KTVH_Cap_Dien_Ap";
+//            public static String KTVH_Cap_Dien_Ap = "KTVH_Cap_Dien_Ap";
 //            public static String KTVH_Do_tin_cay_xuat_tuyen = "KTVH_Do_tin_cay_xuat_tuyen";
 
 
-//            public static String KTVH_Tram_Bien_Ap = "KTVH_Tram_Bien_Ap";
+            public static String KTVH_Tram_Bien_Ap = "KTVH_Tram_Bien_Ap";
 //            public static String KTVH_May_Bien_Ap = "KTVH_May_Bien_Ap";
 //            public static String KTVH_Duong_Day = "KTVH_Duong_Day";
 //            public static String KTVH_Thiet_bi_tren_luoi = "KTVH_Thiet_bi_tren_luoi";

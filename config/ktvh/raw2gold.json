@@ -354,6 +354,16 @@
     "tar_schema": "gold_zone",
     "tar_table": "KTVH_Cap_Dien_Ap",
     "sql": "config/ktvh/sql/gold_KTVH_Cap_Dien_Ap.sql"
+  },
+  {
+    "job_id": "KTVH_Do_tin_cay_xuat_tuyen",
+    "src_system": "local",
+    "src_schema": "raw_zone",
+    "src_table": "",
+    "tar_system": "local",
+    "tar_schema": "gold_zone",
+    "tar_table": "KTVH_Do_tin_cay_xuat_tuyen",
+    "sql": "config/ktvh/sql/gold_KTVH_Do_tin_cay_xuat_tuyen.sql"
   }
 ]
 

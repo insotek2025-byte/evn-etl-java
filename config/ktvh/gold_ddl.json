@@ -680,122 +680,6 @@
     ]
   },
   {
-    "job_id": "KTVH_Do_tin_cay_xuat_tuyen",
-    "catalog": "local",
-    "schema": "gold_zone",
-    "table": "KTVH_Do_tin_cay_xuat_tuyen",
-    "columns": [
-      {
-        "name": "ID_Don_Vi_Quan_Ly",
-        "type": "bigint"
-      },
-      {
-        "name": "ID_May_Cat",
-        "type": "bigint"
-      },
-      {
-        "name": "Ma_May_Cat",
-        "type": "string"
-      },
-      {
-        "name": "Ten_May_Cat",
-        "type": "string"
-      },
-      {
-        "name": "So_KH",
-        "type": "bigint"
-      },
-      {
-        "name": "Nhom_Ma",
-        "type": "string"
-      },
-      {
-        "name": "Nam",
-        "type": "bigint"
-      },
-      {
-        "name": "Thang",
-        "type": "bigint"
-      },
-      {
-        "name": "Tong_so_lan",
-        "type": "bigint"
-      },
-      {
-        "name": "Keo_dai_tong_so_lan",
-        "type": "bigint"
-      },
-      {
-        "name": "Keo_dai_tong_so_lan_xuat_tuyen",
-        "type": "bigint"
-      },
-      {
-        "name": "Keo_dai_tong_so_lan_DZ",
-        "type": "bigint"
-      },
-      {
-        "name": "Thoang_qua_tong_so_lan",
-        "type": "bigint"
-      },
-      {
-        "name": "Thoang_qua_tong_so_lan_xuat_tuyen",
-        "type": "bigint"
-      },
-      {
-        "name": "Thoang_qua_tong_so_lan_DZ",
-        "type": "bigint"
-      },
-      {
-        "name": "MAIFI",
-        "type": "bigint"
-      },
-      {
-        "name": "SAIDI",
-        "type": "bigint"
-      },
-      {
-        "name": "SAIFI",
-        "type": "bigint"
-      },
-      {
-        "name": "CAIDI",
-        "type": "bigint"
-      },
-      {
-        "name": "CAIFI",
-        "type": "bigint"
-      },
-      {
-        "name": "MAIFI_Cong_Ty",
-        "type": "bigint"
-      },
-      {
-        "name": "SAIDI_Cong_Ty",
-        "type": "bigint"
-      },
-      {
-        "name": "SAIFI_Cong_Ty",
-        "type": "bigint"
-      },
-      {
-        "name": "MAIFI_Tong_Cong_Ty",
-        "type": "bigint"
-      },
-      {
-        "name": "SAIDI_Tong_Cong_Ty",
-        "type": "bigint"
-      },
-      {
-        "name": "SAIFI_Tong_Cong_Ty",
-        "type": "bigint"
-      },
-      {
-        "name": "ID_Don_Vi_Quan_ly_Tinh",
-        "type": "bigint"
-      }
-    ]
-  },
-  {
     "job_id": "KTVH_Thong_tin_mat_dien_KH",
     "catalog": "local",
     "schema": "gold_zone",
@@ -986,7 +870,43 @@
         "type": "bigint"
       }
     ]
+  },
+  {
+    "job_id": "KTVH_Do_tin_cay_xuat_tuyen",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Do_tin_cay_xuat_tuyen",
+    "columns": [
+      { "name": "ID_Don_Vi_Quan_Ly", "type": "string" },
+      { "name": "ID_May_Cat", "type": "bigint" },
+      { "name": "Ma_May_Cat", "type": "string" },
+      { "name": "Ten_May_Cat", "type": "string" },
+      { "name": "So_KH", "type": "bigint" },
+      { "name": "Nhom_Ma", "type": "string" },
+      { "name": "Nam", "type": "bigint" },
+      { "name": "Thang", "type": "bigint" },
+      { "name": "Tong_so_lan", "type": "bigint" },
+      { "name": "Keo_dai_tong_so_lan", "type": "bigint" },
+      { "name": "Keo_dai_tong_so_lan_xuat_tuyen", "type": "bigint" },
+      { "name": "Keo_dai_tong_so_lan_DZ", "type": "bigint" },
+      { "name": "Thoang_qua_tong_so_lan", "type": "bigint" },
+      { "name": "Thoang_qua_tong_so_lan_xuat_tuyen", "type": "bigint" },
+      { "name": "Thoang_qua_tong_so_lan_DZ", "type": "bigint" },
+      { "name": "MAIFI", "type": "bigint" },
+      { "name": "SAIDI", "type": "bigint" },
+      { "name": "SAIFI", "type": "bigint" },
+      { "name": "CAIDI", "type": "bigint" },
+      { "name": "CAIFI", "type": "bigint" },
+      { "name": "MAIFI_Cong_Ty", "type": "bigint" },
+      { "name": "SAIDI_Cong_Ty", "type": "bigint" },
+      { "name": "SAIFI_Cong_Ty", "type": "bigint" },
+      { "name": "MAIFI_Tong_Cong_Ty", "type": "bigint" },
+      { "name": "SAIDI_Tong_Cong_Ty", "type": "bigint" },
+      { "name": "SAIFI_Tong_Cong_Ty", "type": "bigint" },
+      { "name": "ID_Don_Vi_Quan_ly_Tinh", "type": "bigint" }
+    ]
   }
+
 
 ]
 
