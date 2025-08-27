@@ -179,5 +179,173 @@
         { "src_column": "HanhLang", "tar_column": "Hanh_Lang" },
         { "src_column": "IsTaiSan", "tar_column": "Su_Co_Tai_San" }
       ]
+    },
+    {
+      "job_id": "KTVH_Su_co_trung_ap_LoaiSuCo",
+      "src_system": "local",
+      "src_schema": "raw_zone",
+      "src_table": "sc_LoaiSuCo",
+      "tar_system": "local",
+      "tar_schema": "gold_zone",
+      "tar_table": "KTVH_Su_co_trung_ap_LoaiSuCo",
+      "mapping": [
+        { "src_column": "Id", "tar_column": "ID" },
+        { "src_column": "TenLoaiSuCo", "tar_column": "Ten_Loai_Su_Co" },
+        { "src_column": "MoTa", "tar_column": "Mo_Ta" },
+        { "src_column": "NgayTao", "tar_column": "Ngay_Tao" },
+        { "src_column": "NguoiTao", "tar_column": "Nguoi_Tao" },
+        { "src_column": "CapCha", "tar_column": "Cap_Cha" }
+      ]
+    },
+    {
+      "job_id": "KTVH_Su_co_trung_ap_ChiTieuSuCo",
+      "src_system": "local",
+      "src_schema": "raw_zone",
+      "src_table": "sc_ChiTieuSoVuSuCo",
+      "tar_system": "local",
+      "tar_schema": "gold_zone",
+      "tar_table": "KTVH_Su_co_trung_ap_ChiTieuSuCo",
+      "mapping": [
+        { "src_column": "Id", "tar_column": "ID" },
+        { "src_column": "Nam", "tar_column": "Nam" },
+        { "src_column": "Thang", "tar_column": "Thang" },
+        { "src_column": "DonViId", "tar_column": "ID_Don_Vi" },
+        { "src_column": "ChiTieuNam", "tar_column": "Chi_Tieu_Nam" },
+        { "src_column": "ChiTieuThang", "tar_column": "Chi_Tieu_Thang" },
+        { "src_column": "SoVuSauMT", "tar_column": "So_Vu_Sau_MienTru" },
+        { "src_column": "SoVuTruocMT", "tar_column": "So_Vu_Truoc_MienTru" },
+        { "src_column": "NPCChiTieuNam", "tar_column": "NPC_Chi_Tieu_Nam" },
+        { "src_column": "LoaiSuCoId", "tar_column": "ID_Loai_Su_Co" }
+      ]
+    },
+    {
+      "job_id": "KTVH_Thiet_bi_nghiem_ngat",
+      "src_system": "local",
+      "src_schema": "raw_zone",
+      "src_table": "tbnn_ThietBiNghiemNgat",
+      "tar_system": "local",
+      "tar_schema": "gold_zone",
+      "tar_table": "KTVH_Thiet_bi_nghiem_ngat",
+      "mapping": [
+        { "src_column": "ID", "tar_column": "ID_Thiet_Bi" },
+        { "src_column": "TenThietBi", "tar_column": "Ten_Thiet_Bi" },
+        { "src_column": "DonViQuanLyId", "tar_column": "ID_Don_Vi_Quan_Ly" },
+        { "src_column": "DonViId", "tar_column": "ID_Don_Vi_PC" },
+        { "src_column": "NgayDuaVaoSuDung", "tar_column": "Ngay_Dua_Vao_Su_Dung" },
+        { "src_column": "HangSanXuat", "tar_column": "Hang_San_Xuat" },
+        { "src_column": "NuocSanXuat", "tar_column": "Nuoc_San_Xuat" },
+        { "src_column": "HanKiemDinh", "tar_column": "Han_Kiem_Dinh" }
+      ]
+    },
+    {
+      "job_id": "KTVH_So_theo_doi_TBNN",
+      "src_system": "local",
+      "src_schema": "raw_zone",
+      "src_table": "tbnn_SoTheoDoiTBNN",
+      "tar_system": "local",
+      "tar_schema": "gold_zone",
+      "tar_table": "KTVH_So_theo_doi_TBNN",
+      "mapping": [
+        { "src_column": "ID", "tar_column": "ID" },
+        { "src_column": "NgayTao", "tar_column": "Ngay_Tao" },
+        { "src_column": "NgaySua", "tar_column": "Ngay_Sua" },
+        { "src_column": "MaTB", "tar_column": "ID_Thiet_Bi" },
+        { "src_column": "LanKiemTra", "tar_column": "Lan_Kiem_Tra" },
+        { "src_column": "NgayKiemTra", "tar_column": "Ngay_Kiem_Tra" },
+        { "src_column": "DonViKiemTra", "tar_column": "Don_Vi_Kiem_Tra" },
+        { "src_column": "KetQua", "tar_column": "Ket_Qua" },
+        { "src_column": "NgayKiemTraTiepTheo", "tar_column": "Ngay_Kiem_Tra_Tiep_Theo" }
+      ]
+    },
+
+    {
+      "job_id": "KTVH_Thong_tin_mat_dien_KH",
+      "src_system": "local",
+      "src_schema": "raw_zone",
+      "src_table": "matdien_kh_tonghop",
+      "tar_system": "local",
+      "tar_schema": "gold_zone",
+      "tar_table": "KTVH_Thong_tin_mat_dien_KH",
+      "mapping": [
+        { "src_column": "ma_dviqly", "tar_column": "Don_vi_quan_ly" },
+        { "src_column": "ma_dviqly_dotincay", "tar_column": "Don_vi_quan_ly_DoTinCay" },
+        { "src_column": "lan_matdien", "tar_column": "Ma_Lich_Mat_Dien" },
+        { "src_column": "lan_dongdien", "tar_column": "Ma_Lich_Dong_Dien" },
+        { "src_column": "id_nguyennhan", "tar_column": "ID_Nguyen_Nhan" },
+        { "src_column": "ngay_matdien", "tar_column": "Ngay_Mat_Dien" },
+        { "src_column": "thang", "tar_column": "Thang" },
+        { "src_column": "nam", "tar_column": "Nam" },
+        { "src_column": "thoi_gian", "tar_column": "Thoi_Gian_Mat_Dien" },
+        { "src_column": "so_kh", "tar_column": "So_Khach_Hang" }
+      ]
+    },
+    {
+      "job_id": "KTVH_Do_tin_cay_nhom_nguyen_nhan",
+      "src_system": "local",
+      "src_schema": "raw_zone",
+      "src_table": "matdien_nguyennhan",
+      "tar_system": "local",
+      "tar_schema": "gold_zone",
+      "tar_table": "KTVH_Do_tin_cay_nhom_nguyen_nhan",
+      "mapping": [
+        { "src_column": "id_nguyennhan", "tar_column": "ID_Nguyen_Nhan" },
+        { "src_column": "id_loaimatdien", "tar_column": "ID_Loai_Mat_Dien" },
+        { "src_column": "ten_nguyennhan", "tar_column": "Ten_Nguyen_Nhan" },
+        { "src_column": "ma_phanloai", "tar_column": "Ma_Phan_Loai" }
+      ]
+    },
+    {
+      "job_id": "KTVH_Do_tin_cay_loai_mat_dien",
+      "src_system": "local",
+      "src_schema": "raw_zone",
+      "src_table": "matdien_loai",
+      "tar_system": "local",
+      "tar_schema": "gold_zone",
+      "tar_table": "KTVH_Do_tin_cay_loai_mat_dien",
+      "mapping": [
+        { "src_column": "id_loaimatdien", "tar_column": "ID_Loai_Mat_Dien" },
+        { "src_column": "ten_loaimatdien", "tar_column": "Ten_Loai_Mat_Dien" },
+        { "src_column": "ma_pmis", "tar_column": "Ma_PMIS" }
+      ]
+    },
+    {
+      "job_id": "KTVH_Danh_muc_yeu_to_quan_trac",
+      "src_system": "local",
+      "src_schema": "raw_zone",
+      "src_table": "SK_L_YEUTOMOITRUONG",
+      "tar_system": "local",
+      "tar_schema": "gold_zone",
+      "tar_table": "KTVH_Danh_muc_yeu_to_quan_trac",
+      "mapping": [
+        { "src_column": "YEUTO_ID", "tar_column": "ID_Yeu_To" },
+        { "src_column": "MA_YEUTO", "tar_column": "Ma_Yeu_To" },
+        { "src_column": "TEN_YEUTO", "tar_column": "Ten_Yeu_To" },
+        { "src_column": "IS_CHA", "tar_column": "IS_Cha" },
+        { "src_column": "YEUTOCHA_ID", "tar_column": "ID_Yeu_To_Cha" },
+        { "src_column": "DANG_SD", "tar_column": "Trang_Thai_Su_Dung" }
+      ]
+    },
+    {
+      "job_id": "KTVH_Ket_qua_quan_trac_moi_truong",
+      "src_system": "local",
+      "src_schema": "raw_zone",
+      "src_table": "SK_QUANTRACMOITRUONG",
+      "tar_system": "local",
+      "tar_schema": "gold_zone",
+      "tar_table": "KTVH_Ket_qua_quan_trac_moi_truong",
+      "mapping": [
+        { "src_column": "QUANTRAC_ID", "tar_column": "ID_Quan_Trac" },
+        { "src_column": "DONVI_ID", "tar_column": "ID_Don_Vi" },
+        { "src_column": "NGAY_QUANTRAC", "tar_column": "Ngay_Quan_Trac" },
+        { "src_column": "NAM_QUANTRAC", "tar_column": "Nam_Quan_Trac" },
+        { "src_column": "YEUTO_ID", "tar_column": "ID_Yeu_To" },
+        { "src_column": "TONG_SO_MAU", "tar_column": "Tong_So_Mau" },
+        { "src_column": "SO_MAU_KHONG_DAT", "tar_column": "So_Mau_Khong_Dat" },
+        { "src_column": "TONG_SO_LAO_DONG", "tar_column": "Tong_So_Lao_Dong" },
+        { "src_column": "SO_LAO_DONG_NU", "tar_column": "So_Lao_Dong_Nu" }
+      ]
     }
   ]
+
+
+

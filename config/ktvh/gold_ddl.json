@@ -403,7 +403,7 @@
       },
       {
         "name": "ID_Don_Vi",
-        "type": "bigint"
+        "type": "string"
       },
       {
         "name": "Chi_Tieu_Nam",
@@ -447,11 +447,11 @@
       },
       {
         "name": "ID_Don_Vi_Quan_Ly",
-        "type": "bigint"
+        "type": "string"
       },
       {
         "name": "ID_Don_Vi_PC",
-        "type": "bigint"
+        "type": "string"
       },
       {
         "name": "Ngay_Dua_Vao_Su_Dung",
@@ -507,7 +507,7 @@
       },
       {
         "name": "Ket_Qua",
-        "type": "boolean"
+        "type": "bigint"
       },
       {
         "name": "Ngay_Kiem_Tra_Tiep_Theo",
@@ -803,7 +803,7 @@
     "columns": [
       {
         "name": "Don_vi_quan_ly",
-        "type": "bigint"
+        "type": "string"
       },
       {
         "name": "Don_vi_quan_ly_DoTinCay",
@@ -819,7 +819,7 @@
       },
       {
         "name": "ID_Nguyen_Nhan",
-        "type": "bigint"
+        "type": "string"
       },
       {
         "name": "Ngay_Mat_Dien",
@@ -851,7 +851,7 @@
     "columns": [
       {
         "name": "ID_Nguyen_Nhan",
-        "type": "bigint"
+        "type": "string"
       },
       {
         "name": "ID_Loai_Mat_Dien",
@@ -883,7 +883,7 @@
       },
       {
         "name": "Ma_PMIS",
-        "type": "bigint"
+        "type": "string"
       }
     ]
   },

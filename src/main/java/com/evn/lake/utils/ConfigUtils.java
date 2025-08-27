@@ -109,20 +109,24 @@ public class ConfigUtils {
 //            public static String KTVH_Loai_Phien = "KTVH_Loai_Phien";
 //            public static String KTVH_Trang_Thai_Phien = "KTVH_Trang_Thai_Phien";
 //            public static String KTVH_Danh_Muc_Loai_Cong_Viec = "KTVH_Danh_Muc_Loai_Cong_Viec";
-            public static String KTVH_Hlat_vi_pham_CongTrinh = "KTVH_Hlat_vi_pham_CongTrinh";
-            public static String KTVH_Hlat_vi_pham_PhaDat = "KTVH_Hlat_vi_pham_PhaDat";
-            public static String KTVH_Su_co_trung_ap = "KTVH_Su_co_trung_ap";
-//            public static String KTVH_Cap_Dien_Ap = "KTVH_Cap_Dien_Ap";
+//            public static String KTVH_Hlat_vi_pham_CongTrinh = "KTVH_Hlat_vi_pham_CongTrinh";
+//            public static String KTVH_Hlat_vi_pham_PhaDat = "KTVH_Hlat_vi_pham_PhaDat";
+//            public static String KTVH_Su_co_trung_ap = "KTVH_Su_co_trung_ap";
 //            public static String KTVH_Su_co_trung_ap_LoaiSuCo = "KTVH_Su_co_trung_ap_LoaiSuCo";
 //            public static String KTVH_Su_co_trung_ap_ChiTieuSuCo = "KTVH_Su_co_trung_ap_ChiTieuSuCo";
 //            public static String KTVH_Thiet_bi_nghiem_ngat = "KTVH_Thiet_bi_nghiem_ngat";
 //            public static String KTVH_So_theo_doi_TBNN = "KTVH_So_theo_doi_TBNN";
-//            public static String KTVH_Do_tin_cay_xuat_tuyen = "KTVH_Do_tin_cay_xuat_tuyen";
 //            public static String KTVH_Thong_tin_mat_dien_KH = "KTVH_Thong_tin_mat_dien_KH";
 //            public static String KTVH_Do_tin_cay_nhom_nguyen_nhan = "KTVH_Do_tin_cay_nhom_nguyen_nhan";
 //            public static String KTVH_Do_tin_cay_loai_mat_dien = "KTVH_Do_tin_cay_loai_mat_dien";
 //            public static String KTVH_Danh_muc_yeu_to_quan_trac = "KTVH_Danh_muc_yeu_to_quan_trac";
 //            public static String KTVH_Ket_qua_quan_trac_moi_truong = "KTVH_Ket_qua_quan_trac_moi_truong";
+
+            // TODO
+//            public static String KTVH_Cap_Dien_Ap = "KTVH_Cap_Dien_Ap";
+//            public static String KTVH_Do_tin_cay_xuat_tuyen = "KTVH_Do_tin_cay_xuat_tuyen";
+
+
 //            public static String KTVH_Tram_Bien_Ap = "KTVH_Tram_Bien_Ap";
 //            public static String KTVH_May_Bien_Ap = "KTVH_May_Bien_Ap";
 //            public static String KTVH_Duong_Day = "KTVH_Duong_Day";

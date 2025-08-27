@@ -64,6 +64,36 @@
     "tar_table": "tbnn_SoTheoDoiTBNN",
     "data": "data/ECP/ECP_PA01/dbo.tbnn_SoTheoDoiTBNN.data.csv",
     "schema": "data/ECP/ECP_PA01/dbo.tbnn_SoTheoDoiTBNN.schema.csv"
+  },
+  {
+    "job_id": "matdien_kh_tonghop",
+    "tar_table": "matdien_kh_tonghop",
+    "data": "data/3._OMS/OMS/SDDT_NPC/dbo.matdien_kh_tonghop.data.csv",
+    "schema": "data/3._OMS/OMS/SDDT_NPC/dbo.matdien_kh_tonghop.schema.csv"
+  },
+  {
+    "job_id": "matdien_loai",
+    "tar_table": "matdien_loai",
+    "data": "data/3._OMS/OMS/SDDT_NPC/dbo.matdien_loai.data.csv",
+    "schema": "data/3._OMS/OMS/SDDT_NPC/dbo.matdien_loai.schema.csv"
+  },
+  {
+    "job_id": "matdien_nguyennhan",
+    "tar_table": "matdien_nguyennhan",
+    "data": "data/3._OMS/OMS/SDDT_NPC/dbo.matdien_nguyennhan.data.csv",
+    "schema": "data/3._OMS/OMS/SDDT_NPC/dbo.matdien_nguyennhan.schema.csv"
+  },
+  {
+    "job_id": "SK_L_YEUTOMOITRUONG",
+    "tar_table": "SK_L_YEUTOMOITRUONG",
+    "data": "data/05.HRMS_NPC/HRMS_NPC/dbo.SK_L_YEUTOMOITRUONG.data.csv",
+    "schema": "data/05.HRMS_NPC/HRMS_NPC/dbo.SK_L_YEUTOMOITRUONG.schema.csv"
+  },
+  {
+    "job_id": "SK_QUANTRACMOITRUONG",
+    "tar_table": "SK_QUANTRACMOITRUONG",
+    "data": "data/05.HRMS_NPC/HRMS_NPC/dbo.SK_QUANTRACMOITRUONG.data.csv",
+    "schema": "data/05.HRMS_NPC/HRMS_NPC/dbo.SK_QUANTRACMOITRUONG.schema.csv"
   }
 ]
 

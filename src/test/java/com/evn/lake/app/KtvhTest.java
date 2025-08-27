@@ -40,7 +40,7 @@ public class KtvhTest {
         //  run all
 //        genAllDataRaw(ConfigUtils.EtlKTVH.rawPath);
 //        createTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath);
-        recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, ConfigUtils.EtlKTVH.GoldTable.KTVH_Su_co_trung_ap);
+//        recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, ConfigUtils.EtlKTVH.GoldTable.KTVH_Do_tin_cay_loai_mat_dien);
 
         etlAllRaw2GoldByLimitConfig();
 

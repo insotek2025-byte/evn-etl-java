@@ -18,10 +18,10 @@
     "table": "D_TCNS_Don_vi",
     "columns": [
       { "name": "ID_don_vi", "type": "NUMBER" },
-      { "name": "Ma_don_vi", "type": "NUMBER" },
+      { "name": "Ma_don_vi", "type": "NVARCHAR2(255)" },
       { "name": "Ten_don_vi", "type": "NVARCHAR2(255)" },
       { "name": "Cap_don_vi", "type": "NUMBER" },
-      { "name": "ID_don_vi_cha", "type": "NUMBER" }
+      { "name": "ID_don_vi_cha", "type": "NVARCHAR2(255)" }
     ]
   },
   {
