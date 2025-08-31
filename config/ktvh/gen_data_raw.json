@@ -206,5 +206,11 @@
     "tar_table": "D_LO",
     "data": "data/10.CMIS/DMUC/DMUC.D_LO_sample_data.csv",
     "schema": "data/10.CMIS/DMUC/DMUC.D_LO_schema.csv"
+  },
+  {
+    "job_id": "A_ASSET",
+    "tar_table": "A_ASSET",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.A_ASSET.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.A_ASSET.schema.csv"
   }
 ]

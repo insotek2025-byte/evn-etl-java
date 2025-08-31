@@ -468,66 +468,14 @@
     "mode" : "append"
   },
   {
-    "job_id": "KTVH_May_Bien_Ap_from_ZAG_0110D00_MBA",
+    "job_id": "KTVH_May_Bien_Ap",
     "src_system": "local",
     "src_schema": "raw_zone",
-    "src_table": "ZAG_0110D00_MBA",
+    "src_table": "",
     "tar_system": "local",
     "tar_schema": "gold_zone",
     "tar_table": "KTVH_May_Bien_Ap",
-    "mapping": [
-      { 	"src_column" :"ASSETID",  "tar_column": "ID_Thuoc_Tinh"},
-      { 	"src_column" :"AASSETID_PARENT",  "tar_column": "ID_Loai_Doi_Tuong"},
-      { 	"src_column" :"ASSETID_ORG",  "tar_column": "ID_Doi_Tuong"},
-      { 	"src_column" :"ASSETDESC",  "tar_column": "Loai_May"},
-      { 	"src_column" :"P",  "tar_column": "Cong_Suat"},
-      { 	"src_column" :"DIEN_AP",  "tar_column": "Dien_Ap"},
-      { 	"src_column" :"IDM",  "tar_column": "Idm"},
-      { 	"src_column" :"HSX",  "tar_column": "Hang_San_Xuat"},
-      {   "src_column" :"", "tar_column": "ID_Cap_Dien_Ap",  "default_value": "11"}
-    ],
-    "mode" : "append"
-  },
-  {
-    "job_id": "KTVH_May_Bien_Ap_from_ZAG_0035D00_MBA",
-    "src_system": "local",
-    "src_schema": "raw_zone",
-    "src_table": "ZAG_0035D00_MBA",
-    "tar_system": "local",
-    "tar_schema": "gold_zone",
-    "tar_table": "KTVH_May_Bien_Ap",
-    "mapping": [
-      { 	"src_column" :"ASSETID",  "tar_column": "ID_Thuoc_Tinh"},
-      { 	"src_column" :"AASSETID_PARENT",  "tar_column": "ID_Loai_Doi_Tuong"},
-      { 	"src_column" :"ASSETID_ORG",  "tar_column": "ID_Doi_Tuong"},
-      { 	"src_column" :"ASSETDESC",  "tar_column": "Loai_May"},
-      { 	"src_column" :"P",  "tar_column": "Cong_Suat"},
-      { 	"src_column" :"DIEN_AP",  "tar_column": "Dien_Ap"},
-      { 	"src_column" :"IDM",  "tar_column": "Idm"},
-      { 	"src_column" :"HSX",  "tar_column": "Hang_San_Xuat"},
-      {   "src_column" :"", "tar_column": "ID_Cap_Dien_Ap",  "default_value": "35"}
-    ],
-    "mode" : "append"
-  },
-  {
-    "job_id": "KTVH_May_Bien_Ap_from_ZAG_0022D00_MBA",
-    "src_system": "local",
-    "src_schema": "raw_zone",
-    "src_table": "ZAG_0022D00_MBA",
-    "tar_system": "local",
-    "tar_schema": "gold_zone",
-    "tar_table": "KTVH_May_Bien_Ap",
-    "mapping": [
-      { 	"src_column" :"ASSETID",  "tar_column": "ID_Thuoc_Tinh"},
-      { 	"src_column" :"AASSETID_PARENT",  "tar_column": "ID_Loai_Doi_Tuong"},
-      { 	"src_column" :"ASSETID_ORG",  "tar_column": "ID_Doi_Tuong"},
-      { 	"src_column" :"ASSETDESC",  "tar_column": "Loai_May"},
-      { 	"src_column" :"P",  "tar_column": "Cong_Suat"},
-      { 	"src_column" :"DIEN_AP",  "tar_column": "Dien_Ap"},
-      { 	"src_column" :"IDM",  "tar_column": "Idm"},
-      { 	"src_column" :"HSX",  "tar_column": "Hang_San_Xuat"},
-      {   "src_column" :"", "tar_column": "ID_Cap_Dien_Ap",  "default_value": "22"}
-    ],
+    "sql": "config/ktvh/sql/gold_KTVH_Cap_Dien_Ap.sql",
     "mode" : "append"
   }
 ]
