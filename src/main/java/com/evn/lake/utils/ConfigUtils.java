@@ -146,6 +146,59 @@ public class ConfigUtils {
         }
     }
 
+    public static class EtlKinhDoanh {
+        public static String rawPath = "config/kinhdoanh/gen_data_raw.json";
+        public static String goldDDLPath = "config/kinhdoanh/gold_ddl.json";
+        public static String etlRaw2GoldPath = "config/kinhdoanh/raw2gold.json";
+        public static String martDDLPath = "config/kinhdoanh/mart_ddl.json";
+        public static String etlGold2MartPath = "config/kinhdoanh/gold2mart.json";
+        public static String oracleConfig = "config/oracle/kinhdoanh.properties";
+
+        public static class RawTable {
+            public static String DV_YEU_CAU = "DV_YEU_CAU";
+            public static String DV_TIEN_TRINH = "DV_TIEN_TRINH";
+            public static String HDG_KHACH_HANG = "HDG_KHACH_HANG";
+            public static String DV_HDONG_DTHAO = "DV_HDONG_DTHAO";
+            public static String HDG_HOP_DONG = "HDG_HOP_DONG";
+            public static String hdn_hdon = "hdn_hdon";
+            public static String CN_THEODOI_NO = "CN_THEODOI_NO";
+            public static String CN_HDON_GDICH = "CN_HDON_GDICH";
+            public static String D_DVI_QLY = "D_DVI_QLY";
+            public static String bc_sldgnhan = "bc_sldgnhan";
+            public static String BC_TPTHEOTGDA = "BC_TPTHEOTGDA";
+            public static String TT_DBTT_LDD = "TT_DBTT_LDD";
+            public static String TT_DBTT_T = "TT_DBTT_T";
+            public static String D_CLOAI_CTO = "D_CLOAI_CTO";
+            public static String D_LOAI_YCAU = "D_LOAI_YCAU";
+            public static String D_NHOM_YCAU = "D_NHOM_YCAU";
+            public static String D_NHOM_NN = "D_NHOM_NN";
+            public static String D_MA_NN = "D_MA_NN";
+            public static String D_CONG_VIEC = "D_CONG_VIEC";
+            public static String D_HTHUC_THANH_TOAN = "D_HTHUC_THANH_TOAN";
+            public static String HDG_HDONG_DVK = "HDG_HDONG_DVK";
+        }
+
+        public static class GoldTable {
+            public static String KD_Yeu_cau_dich_vu = "KD_Yeu_cau_dich_vu";
+            public static String KD_Tien_trinh_cung_cap = "KD_Tien_trinh_cung_cap";
+            public static String KD_Khach_hang = "KD_Khach_hang";
+            public static String KD_Hoa_don = "KD_Hoa_don";
+            public static String KD_Thanh_toan = "KD_Thanh_toan";
+            public static String KD_SL_Dien = "KD_SL_Dien";
+            public static String KD_Ton_that_duong_day = "KD_Ton_that_duong_day";
+            public static String KD_Ton_that_tram = "KD_Ton_that_tram";
+            public static String KD_So_luong_cong_to = "KD_So_luong_cong_to";
+            public static String KD_Phieu_yeu_cau = "KD_Phieu_yeu_cau";
+            public static String KD_Loai_yeu_cau = "KD_Loai_yeu_cau";
+            public static String KD_Nhom_nganh = "KD_Nhom_nganh";
+            public static String KD_nganh = "KD_nganh";
+            public static String TCNS_Don_vi = "TCNS_Don_vi";
+            public static String KD_Danh_muc_Cong_viec = "KD_Danh_muc_Cong_viec";
+            public static String KD_Danh_muc_HTTT = "KD_Danh_muc_HTTT";
+            public static String KD_Nhom_khach_hang = "KD_Nhom_khach_hang";
+        }
+    }
+
     public ConfigUtils() throws IOException {
     }
 }

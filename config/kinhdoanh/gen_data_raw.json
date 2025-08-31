@@ -14,13 +14,97 @@
   {
     "job_id": "HDG_KHACH_HANG",
     "tar_table": "HDG_KHACH_HANG",
-    "data": "data/10.CMIS/HOPDONG/HOPDONG.HDG_KHACH_HANG_04012023_sample_data.csv",
-    "schema": "data/10.CMIS/HOPDONG/HOPDONG.HDG_KHACH_HANG_04012023_schema.csv"
+    "data": "data/10.CMIS/HOPDONG/HOPDONG.HDG_KHACH_HANG_sample_data.csv",
+    "schema": "data/10.CMIS/HOPDONG/HOPDONG.HDG_KHACH_HANG_schema.csv"
   },
   {
     "job_id": "DV_HDONG_DTHAO",
     "tar_table": "DV_HDONG_DTHAO",
     "data": "data/10.CMIS/DICHVU/DICHVU.DV_HDONG_DTHAO_sample_data.csv",
     "schema": "data/10.CMIS/DICHVU/DICHVU.DV_HDONG_DTHAO_schema.csv"
+  },
+  {
+    "job_id": "HDG_HOP_DONG",
+    "tar_table": "HDG_HOP_DONG",
+    "data": "data/10.CMIS/HOPDONG/HOPDONG.HDG_HOP_DONG_sample_data.csv",
+    "schema": "data/10.CMIS/HOPDONG/HOPDONG.HDG_HOP_DONG_schema.csv"
+  },
+  {
+    "job_id": "CN_HDON_GDICH",
+    "tar_table": "CN_HDON_GDICH",
+    "data": "data/10.CMIS/TTIENCNO/TTIENCNO.CN_HDON_GDICH_sample_data.csv",
+    "schema": "data/10.CMIS/TTIENCNO/TTIENCNO.CN_HDON_GDICH_schema.csv"
+  },
+  {
+    "job_id": "CN_THEODOINO",
+    "tar_table": "CN_THEODOINO",
+    "data": "data/10.CMIS/TTIENCNO/TTIENCNO.CN_THEODOINO_sample_data.csv",
+    "schema": "data/10.CMIS/TTIENCNO/TTIENCNO.CN_THEODOINO_schema.csv"
+  },
+  {
+    "job_id": "D_DVI_QLY",
+    "tar_table": "D_DVI_QLY",
+    "data": "data/10.CMIS/DMUC/DMUC.D_DVI_QLY_sample_data.csv",
+    "schema": "data/10.CMIS/DMUC/DMUC.D_DVI_QLY_schema.csv"
+  },
+  {
+    "job_id": "BC_TPTHEOTGDA",
+    "tar_table": "BC_TPTHEOTGDA",
+    "data": "data/10.CMIS/BCTHANG/BCTHANG.BC_TPTHEOTGDA_sample_data.csv",
+    "schema": "data/10.CMIS/BCTHANG/BCTHANG.BC_TPTHEOTGDA_schema.csv"
+  },
+  {
+    "job_id": "TT_DBTT_LDD",
+    "tar_table": "TT_DBTT_LDD",
+    "data": "data/10.CMIS/BCTHANG/BCTHANG.TT_DBTT_LDD_sample_data.csv",
+    "schema": "data/10.CMIS/BCTHANG/BCTHANG.TT_DBTT_LDD_schema.csv"
+  },
+  {
+    "job_id": "TT_DBTT_T",
+    "tar_table": "TT_DBTT_T",
+    "data": "data/10.CMIS/BCTHANG/BCTHANG.TT_DBTT_T_sample_data.csv",
+    "schema": "data/10.CMIS/BCTHANG/BCTHANG.TT_DBTT_T_schema.csv"
+  },
+  {
+    "job_id": "D_CLOAI_CTO",
+    "tar_table": "D_CLOAI_CTO",
+    "data": "data/10.CMIS/DMUC/DMUC.D_CLOAI_CTO_sample_data.csv",
+    "schema": "data/10.CMIS/DMUC/DMUC.D_CLOAI_CTO_schema.csv"
+  },
+  {
+    "job_id": "D_LOAI_YCAU",
+    "tar_table": "D_LOAI_YCAU",
+    "data": "data/10.CMIS/DMUC/DMUC.D_LOAI_YCAU_sample_data.csv",
+    "schema": "data/10.CMIS/DMUC/DMUC.D_LOAI_YCAU_schema.csv"
+  },
+  {
+    "job_id": "D_NHOM_YCAU",
+    "tar_table": "D_NHOM_YCAU",
+    "data": "data/10.CMIS/DMUC/DMUC.D_NHOM_YCAU_sample_data.csv",
+    "schema": "data/10.CMIS/DMUC/DMUC.D_NHOM_YCAU_schema.csv"
+  },
+  {
+    "job_id": "D_NHOM_NN",
+    "tar_table": "D_NHOM_NN",
+    "data": "data/10.CMIS/DMUC/DMUC.D_NHOM_NN_sample_data.csv",
+    "schema": "data/10.CMIS/DMUC/DMUC.D_NHOM_NN_schema.csv"
+  },
+  {
+    "job_id": "D_MA_NN",
+    "tar_table": "D_MA_NN",
+    "data": "data/10.CMIS/DMUC/DMUC.D_MA_NN_sample_data.csv",
+    "schema": "data/10.CMIS/DMUC/DMUC.D_MA_NN_schema.csv"
+  },
+  {
+    "job_id": "D_CONG_VIEC",
+    "tar_table": "D_CONG_VIEC",
+    "data": "data/10.CMIS/DMUC/DMUC.D_CONG_VIEC_sample_data.csv",
+    "schema": "data/10.CMIS/DMUC/DMUC.D_CONG_VIEC_schema.csv"
+  },
+  {
+    "job_id": "HDG_HDONG_DVK",
+    "tar_table": "HDG_HDONG_DVK",
+    "data": "data/10.CMIS/HOPDONG/HOPDONG.HDG_HDONG_DVK_sample_data.csv",
+    "schema": "data/10.CMIS/HOPDONG/HOPDONG.HDG_HDONG_DVK_schema.csv"
   }
 ]
