@@ -973,7 +973,26 @@
         "type": "bigint"
       }
     ]
+  },
+
+  {
+    "job_id": "KTVH_May_Bien_Ap",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_May_Bien_Ap",
+    "columns": [
+      {"name": "ID_Thuoc_Tinh", "type": "bigint"},
+      {"name": "ID_Loai_Doi_Tuong", "type": "bigint"},
+      {"name": "ID_Doi_Tuong", "type": "bigint"},
+      {"name": "Loai_May", "type": "string"},
+      {"name": "Cong_Suat", "type": "bigint"},
+      {"name": "Dien_Ap", "type": "string"},
+      {"name": "Idm", "type": "bigint"},
+      {"name": "Hang_San_Xuat", "type": "string"},
+      {"name": "ID_Cap_Dien_Ap", "type": "bigint"}
+    ]
   }
+
 
 ]
 

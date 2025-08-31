@@ -42,7 +42,7 @@ public class KtvhTest {
 //        genAllDataRaw(ConfigUtils.EtlKTVH.rawPath);
 //        createTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath);
 
-//        recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, "KTVH_Tram_Bien_Ap");
+        recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, "KTVH_May_Bien_Ap");
         etlAllRaw2GoldByLimitConfig();
 
 //        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);

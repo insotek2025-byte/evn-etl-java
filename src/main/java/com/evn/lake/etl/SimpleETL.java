@@ -49,7 +49,7 @@ public class SimpleETL {
         String outputTable = targetJob.tar_system + "."  +targetJob.tar_schema+"."+ targetJob.tar_table;
         String inputTable  = targetJob.src_system + "." + targetJob.src_schema + "." + targetJob.src_table;
 
-        System.out.println("Start process ETL from src table " + outputTable + " to table " + targetJob.tar_table);
+        System.out.println("Start process ETL from src table " + inputTable + " to table " + outputTable);
 
         SparkSession spark = SparkUtils.getSession();
         Dataset<Row> destDf = spark.table(outputTable);
