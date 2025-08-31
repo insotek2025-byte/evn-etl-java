@@ -8,5 +8,25 @@
     "tar_schema": "envnpc_antoan",
     "tar_table": "F_KTVH_SL_TBNN_SNAPSHOT",
     "sql": "config/ktvh/sql/F_KTVH_SL_TBNN_SNAPSHOT.sql"
+  },
+  {
+    "job_id": "D_KTVH_Thoigian",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "D_KTVH_Thoigian",
+    "sql": "config/ktvh/sql/D_KTVH_Thoigian.sql"
+  },
+  {
+    "job_id": "F_KTVH_SL_QuanTracMoiTruong",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_SL_QuanTracMoiTruong",
+    "sql": "config/ktvh/sql/F_KTVH_SL_QuanTracMoiTruong.sql"
   }
 ]

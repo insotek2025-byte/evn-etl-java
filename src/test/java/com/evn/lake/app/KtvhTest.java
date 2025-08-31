@@ -56,10 +56,22 @@ public class KtvhTest {
         martDimFact.closeConn();
     }
 
+    public static void test_F_KTVH_SL_QuanTracMoiTruong() {
+        // Create Oracle table for mart layer
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, ConfigUtils.EtlKTVH.FactTable.F_KTVH_SL_QuanTracMoiTruong, true);
+        
+        // Run ETL from Gold to Mart
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlKTVH.FactTable.F_KTVH_SL_QuanTracMoiTruong);
+        
+        martDimFact.closeConn();
+    }
+
     public static void main(String[] args) throws IOException {
 
         // Test F_KTVH_SL_TBNN_SNAPSHOT ETL
-        test_F_KTVH_SL_TBNN_SNAPSHOT();
+        test_F_KTVH_SL_QuanTracMoiTruong();
 
         //  run all
 //        genAllDataRaw(ConfigUtils.EtlKTVH.rawPath);

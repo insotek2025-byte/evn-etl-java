@@ -29,7 +29,7 @@
     "schema": "envnpc_antoan",
     "table": "F_KTVH_SL_QuanTracMoiTruong",
     "columns": [
-      { "name": "ID_thang", "type": "NUMBER" },
+      { "name": "ID_thoigian", "type": "NUMBER" },
       { "name": "ID_Don_Vi", "type": "NUMBER" },
       { "name": "ID_Yeu_To", "type": "NUMBER" },
       { "name": "Tong_So_Mau", "type": "NUMBER" },
