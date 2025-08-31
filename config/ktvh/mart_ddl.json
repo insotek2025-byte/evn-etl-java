@@ -1,11 +1,23 @@
 [
   {
+    "job_id": "D_KTVH_Thoigian",
+    "schema": "envnpc_antoan",
+    "table": "D_KTVH_Thoigian",
+    "columns": [
+      { "name": "ID_Ngaythang", "type": "NUMBER", "optional" : "PRIMARY KEY",  "description": "Khóa chính định danh ngày theo dạng YYYYMMDD" },
+      { "name": "NGAY", "type": "NUMBER", "description": "Ngày đầy đủ (YYYY-MM-DD)" },
+      { "name": "NAM", "type": "NUMBER", "description": "Năm (ví dụ: 2025)" },
+      { "name": "THANG", "type": "NUMBER", "description": "Tháng (1-12)" },
+      { "name": "FULL_DATE", "type": "date", "description": "ngay thang kieu date" }
+    ],
+    "init": "config/ktvh/sql/D_KTVH_Thoigian.sql"
+  },
+  {
     "job_id": "F_KTVH_SL_TBNN_SNAPSHOT",
     "schema": "envnpc_antoan",
     "table": "F_KTVH_SL_TBNN_SNAPSHOT",
     "columns": [
-      { "name": "ID_thang", "type": "NUMBER" },
-      { "name": "ID_nam", "type": "NUMBER" },
+      { "name": "ID_thoigian", "type": "NUMBER" },
       { "name": "ID_Don_Vi", "type": "NUMBER" },
       { "name": "SL_Khai_Bao", "type": "NUMBER" },
       { "name": "SL_Kiem_Duyet", "type": "NUMBER" },
@@ -467,6 +479,18 @@
         { "name": "IS_Cha", "type": "NVARCHAR2(255)" },
         { "name": "ID_Yeu_To_Cha", "type": "Number" },
         { "name": "Trang_Thai_Su_Dung", "type": "Number" }
+      ]
+    },
+    {
+      "job_id": "D_KTVH_Thoigian",
+      "schema": "envnpc_antoan",
+      "table": "D_KTVH_Thoigian",
+      "columns": [
+        { "name": "ID_Ngaythang", "type": "NUMBER", "constraint": "PK" },
+        { "name": "NGAY", "type": "NUMBER" },
+        { "name": "THANG", "type": "NUMBER" },
+        { "name": "NAM", "type": "NUMBER" },
+        { "name": "FULL_DATE", "type": "DATE" }
       ]
     }
   ]

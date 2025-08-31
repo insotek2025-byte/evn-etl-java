@@ -144,6 +144,44 @@ public class ConfigUtils {
 //            public static String KTVH_KL_DZ = "KTVH_KL_DZ";
 //            public static String KTVH_KL_THIET_BI_LUOI = "KTVH_KL_THIET_BI_LUOI";
         }
+
+        public static class FactTable {
+            public static String F_KTVH_SL_TBNN_SNAPSHOT = "F_KTVH_SL_TBNN_SNAPSHOT";
+            public static String F_KTVH_SL_QuanTracMoiTruong = "F_KTVH_SL_QuanTracMoiTruong";
+            public static String F_KTVH_PhienLamViec = "F_KTVH_PhienLamViec";
+            public static String F_KTVH_TH_Phien_VeSinhCachDien_SNAPSHOT = "F_KTVH_TH_Phien_VeSinhCachDien_SNAPSHOT";
+            public static String F_KTVH_TH_Phien_SuaChuaHotline_SNAPSHOT = "F_KTVH_TH_Phien_SuaChuaHotline_SNAPSHOT";
+            public static String F_KTVH_SuCoTrungAp_TRANSACTION = "F_KTVH_SuCoTrungAp_TRANSACTION";
+            public static String F_KTVH_SoVuSuCo_TheoLoai_SNAPSHOT = "F_KTVH_SoVuSuCo_TheoLoai_SNAPSHOT";
+            public static String F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT = "F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT";
+            public static String F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT = "F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT";
+            public static String F_KTVH_ChiTieuSuCo_TRANSACTION = "F_KTVH_ChiTieuSuCo_TRANSACTION";
+            public static String F_KTVH_ViPham_HLATLĐ_SNAPSHOT = "F_KTVH_ViPham_HLATLĐ_SNAPSHOT";
+            public static String F_KTVH_DTCCCD_TRANSACTION = "F_KTVH_DTCCCD_TRANSACTION";
+            public static String F_KTVH_MatDienKhachHang_TRANSACTION = "F_KTVH_MatDienKhachHang_TRANSACTION";
+            public static String F_TuBu_SNAPSHOT = "F_TuBu_SNAPSHOT";
+            public static String F_KTVH_KhoiLuongTBA_SNAPSHOT = "F_KTVH_KhoiLuongTBA_SNAPSHOT";
+            public static String F_KTVH_KhoiLuongMBA_SNAPSHOT = "F_KTVH_KhoiLuongMBA_SNAPSHOT";
+            public static String F_KTVH_KhoiLuongDuongDay = "F_KTVH_KhoiLuongDuongDay";
+            public static String F_KTVH_KhoiLuongThietBi_Luoi = "F_KTVH_KhoiLuongThietBi_Luoi";
+        }
+
+        public static class DimTable {
+            public static String D_KTVH_TBNN = "D_KTVH_TBNN";
+            public static String D_KTVH_CapDienAp = "D_KTVH_CapDienAp";
+            public static String D_KTVH_TramBienAp = "D_KTVH_TramBienAp";
+            public static String D_KTVH_MayBienAp = "D_KTVH_MayBienAp";
+            public static String D_KTVH_DuongDay = "D_KTVH_DuongDay";
+            public static String D_KTVH_ThietBiTrenLuoi = "D_KTVH_ThietBiTrenLuoi";
+            public static String D_KTVH_LoaiSuCo = "D_KTVH_LoaiSuCo";
+            public static String D_KTVH_NguyenNhanMatDien = "D_KTVH_NguyenNhanMatDien";
+            public static String D_KTVH_LoaiMatDien = "D_KTVH_LoaiMatDien";
+            public static String D_KTVH_DM_LoaiCongViec = "D_KTVH_DM_LoaiCongViec";
+            public static String D_KTVH_LoaiPhien = "D_KTVH_LoaiPhien";
+            public static String D_KTVH_TrangThaiPhien = "D_KTVH_TrangThaiPhien";
+            public static String D_KTVH_DanhMucYeuToQuanTrac = "D_KTVH_DanhMucYeuToQuanTrac";
+            public static String D_KTVH_Thoigian = "D_KTVH_Thoigian";
+        }
     }
 
     public static class EtlKinhDoanh {
