@@ -1,0 +1,522 @@
+[
+  {
+    "job_id": "KD_Yeu_cau_dich_vu",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Yeu_cau_dich_vu",
+    "columns": [
+      {
+        "name": "ID_yeu_cau",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_don_vi",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Khach_hang",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_yeu_cau",
+        "type": "string"
+      },
+      {
+        "name": "ID_loai_yeu_cau",
+        "type": "bigint"
+      },
+      {
+        "name": "Cap_ngam",
+        "type": "bigint"
+      },
+      {
+        "name": "Loai_cong_trinh",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_tiep_nhan",
+        "type": "date"
+      },
+      {
+        "name": "Ngay_hoan_thanh",
+        "type": "date"
+      },
+      {
+        "name": "Tong_so_ngay",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Tien_trinh_cung_cap",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Tien_trinh_cung_cap",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_don_vi",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_yeu_cau",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_cong_viec",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_bat_dau",
+        "type": "date"
+      },
+      {
+        "name": "Ngay_ket_thuc",
+        "type": "date"
+      },
+      {
+        "name": "So_ngay_lam_viec",
+        "type": "bigint"
+      },
+      {
+        "name": "Ly_do",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Khach_hang",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Khach_hang",
+    "columns": [
+      {
+        "name": "ID_Khach_Hang",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_Khach_hang",
+        "type": "string"
+      },
+      {
+        "name": "Ten_khach_hang",
+        "type": "string"
+      },
+      {
+        "name": "ID_nhom_khach_hang",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_nganh",
+        "type": "bigint"
+      },
+      {
+        "name": "Dia_chi",
+        "type": "string"
+      },
+      {
+        "name": "ID_don_vi",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Hoa_don",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Hoa_don",
+    "columns": [
+      {
+        "name": "ID_hoa_don",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_don_vi",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Khach_hang",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_HTTT",
+        "type": "bigint"
+      },
+      {
+        "name": "Ky_GCS",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_hoa_don",
+        "type": "date"
+      },
+      {
+        "name": "San_luong",
+        "type": "bigint"
+      },
+      {
+        "name": "Tong_tien",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Thanh_toan",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Thanh_toan",
+    "columns": [
+      {
+        "name": "ID_giao_dich",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_hoa_don",
+        "type": "bigint"
+      },
+      {
+        "name": "So_tien_thanh_toan",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_thanh_toan",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_SL_Dien",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_SL_Dien",
+    "columns": [
+      {
+        "name": "Id",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_don_vi",
+        "type": "bigint"
+      },
+      {
+        "name": "Thang",
+        "type": "bigint"
+      },
+      {
+        "name": "Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "Dien_nhan",
+        "type": "bigint"
+      },
+      {
+        "name": "Dien_giao",
+        "type": "bigint"
+      },
+      {
+        "name": "Thuong_pham",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Ton_that_duong_day",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Ton_that_duong_day",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Dz",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Don_vi",
+        "type": "bigint"
+      },
+      {
+        "name": "Thang",
+        "type": "bigint"
+      },
+      {
+        "name": "Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "San_luong_nhan",
+        "type": "bigint"
+      },
+      {
+        "name": "San_luong_giao",
+        "type": "bigint"
+      },
+      {
+        "name": "Ty_le_ton_that",
+        "type": "bigint"
+      },
+      {
+        "name": "Dien_nang_ton_that",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Ton_that_tram",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Ton_that_tram",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Tram",
+        "type": "bigint"
+      },
+      {
+        "name": "Thang",
+        "type": "bigint"
+      },
+      {
+        "name": "Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "Dien_giao",
+        "type": "bigint"
+      },
+      {
+        "name": "Ty_le_ton_that",
+        "type": "bigint"
+      },
+      {
+        "name": "Dien_nang_ton_that",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_So_luong_cong_to",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_So_luong_cong_to",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Don_vi",
+        "type": "bigint"
+      },
+      {
+        "name": "Thang",
+        "type": "bigint"
+      },
+      {
+        "name": "Nam",
+        "type": "bigint"
+      },
+      {
+        "name": "Loai_cong_to",
+        "type": "bigint"
+      },
+      {
+        "name": "So_pha",
+        "type": "bigint"
+      },
+      {
+        "name": "So_luong",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Phieu_yeu_cau",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Phieu_yeu_cau",
+    "columns": [
+      {
+        "name": "Ma_phieu",
+        "type": "bigint"
+      },
+      {
+        "name": "ID_Don_vi",
+        "type": "bigint"
+      },
+      {
+        "name": "Ngay_tao",
+        "type": "date"
+      },
+      {
+        "name": "Loai_dich_vu",
+        "type": "string"
+      },
+      {
+        "name": "Noi_dung",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Loai_yeu_cau",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Loai_yeu_cau",
+    "columns": [
+      {
+        "name": "Id",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_loai",
+        "type": "string"
+      },
+      {
+        "name": "Ten_loai",
+        "type": "string"
+      },
+      {
+        "name": "Ma_nhom",
+        "type": "string"
+      },
+      {
+        "name": "Ten_nhom",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Nhom_nganh",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Nhom_nganh",
+    "columns": [
+      {
+        "name": "Id",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_nhom",
+        "type": "string"
+      },
+      {
+        "name": "ten_nhom",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_nganh",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_nganh",
+    "columns": [
+      {
+        "name": "Id",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_nganh",
+        "type": "string"
+      },
+      {
+        "name": "Ten_nganh",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "job_id": "TCNS_Don_vi",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "TCNS_Don_vi",
+    "columns": [
+      {
+        "name": "ID_don_vi",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_don_vi",
+        "type": "string"
+      },
+      {
+        "name": "Ten_don_vi",
+        "type": "string"
+      },
+      {
+        "name": "ID_cap_cha",
+        "type": "bigint"
+      },
+      {
+        "name": "Cap_don_vi",
+        "type": "bigint"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Danh_muc_Cong_viec",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Danh_muc_Cong_viec",
+    "columns": [
+      {
+        "name": "ID_Cong_viec",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_cong_viec",
+        "type": "string"
+      },
+      {
+        "name": "Ten_cong_viec",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Danh_muc_HTTT",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Danh_muc_HTTT",
+    "columns": [
+      {
+        "name": "ID_HTTT",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_HTTT",
+        "type": "string"
+      },
+      {
+        "name": "Ten_HTTT",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "job_id": "KD_Nhom_khach_hang",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KD_Nhom_khach_hang",
+    "columns": [
+      {
+        "name": "ID_Nhom",
+        "type": "bigint"
+      },
+      {
+        "name": "Ma_Nhom",
+        "type": "string"
+      }
+    ]
+  }
+]

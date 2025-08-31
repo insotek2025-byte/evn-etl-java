@@ -1,0 +1,26 @@
+[
+  {
+    "job_id": "DV_YEU_CAU",
+    "tar_table": "DV_YEU_CAU",
+    "data": "data/10.CMIS/DICHVU/DICHVU.DV_YEU_CAU_sample_data.csv",
+    "schema": "data/10.CMIS/DICHVU/DICHVU.DV_YEU_CAU_schema.csv"
+  },
+  {
+    "job_id": "DV_TIEN_TRINH",
+    "tar_table": "DV_TIEN_TRINH",
+    "data": "data/10.CMIS/DICHVU/DICHVU.DV_TIEN_TRINH_sample_data.csv",
+    "schema": "data/10.CMIS/DICHVU/DICHVU.DV_TIEN_TRINH_schema.csv"
+  },
+  {
+    "job_id": "HDG_KHACH_HANG",
+    "tar_table": "HDG_KHACH_HANG",
+    "data": "data/10.CMIS/HOPDONG/HOPDONG.HDG_KHACH_HANG_04012023_sample_data.csv",
+    "schema": "data/10.CMIS/HOPDONG/HOPDONG.HDG_KHACH_HANG_04012023_schema.csv"
+  },
+  {
+    "job_id": "DV_HDONG_DTHAO",
+    "tar_table": "DV_HDONG_DTHAO",
+    "data": "data/10.CMIS/DICHVU/DICHVU.DV_HDONG_DTHAO_sample_data.csv",
+    "schema": "data/10.CMIS/DICHVU/DICHVU.DV_HDONG_DTHAO_schema.csv"
+  }
+]
