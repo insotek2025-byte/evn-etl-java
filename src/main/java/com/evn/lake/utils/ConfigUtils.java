@@ -156,7 +156,7 @@ public class ConfigUtils {
             public static String F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT = "F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT";
             public static String F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT = "F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT";
             public static String F_KTVH_ChiTieuSuCo_TRANSACTION = "F_KTVH_ChiTieuSuCo_TRANSACTION";
-            public static String F_KTVH_ViPham_HLATLĐ_SNAPSHOT = "F_KTVH_ViPham_HLATLĐ_SNAPSHOT";
+            public static String F_KTVH_ViPham_HLATLD_SNAPSHOT = "F_KTVH_ViPham_HLATLD_SNAPSHOT";
             public static String F_KTVH_DTCCCD_TRANSACTION = "F_KTVH_DTCCCD_TRANSACTION";
             public static String F_KTVH_MatDienKhachHang_TRANSACTION = "F_KTVH_MatDienKhachHang_TRANSACTION";
             public static String F_TuBu_SNAPSHOT = "F_TuBu_SNAPSHOT";

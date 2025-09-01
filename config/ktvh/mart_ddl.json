@@ -155,12 +155,11 @@
       ]
     },
     {
-      "job_id": "F_KTVH_ViPham_HLATLĐ_SNAPSHOT",
+      "job_id": "F_KTVH_ViPham_HLATLD_SNAPSHOT",
       "schema": "envnpc_antoan",
-      "table": "F_KTVH_ViPham_HLATLĐ_SNAPSHOT",
+      "table": "F_KTVH_ViPham_HLATLD_SNAPSHOT",
       "columns": [
         { "name": "ID_ThoiGian", "type": "NUMBER" },
-        { "name": "ID_Nam", "type": "NUMBER" },
         { "name": "ID_Don_Vi", "type": "NUMBER" },
         { "name": "ID_Cap_Dien_Ap", "type": "NUMBER" },
         { "name": "Tong_Dau_Nam", "type": "NUMBER" },

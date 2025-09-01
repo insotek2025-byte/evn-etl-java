@@ -108,5 +108,35 @@
     "tar_schema": "envnpc_antoan",
     "tar_table": "F_KTVH_ChiTieuSuCo_TRANSACTION",
     "sql": "config/ktvh/sql/F_KTVH_ChiTieuSuCo_TRANSACTION.sql"
+  },
+  {
+    "job_id": "F_KTVH_ViPham_HLATLD_SNAPSHOT",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_ViPham_HLATLD_SNAPSHOT",
+    "sql": "config/ktvh/sql/F_KTVH_ViPham_HLATLD_SNAPSHOT.sql"
+  },
+  {
+    "job_id": "F_KTVH_DTCCCD_TRANSACTION",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_DTCCCD_TRANSACTION",
+    "sql": "config/ktvh/sql/F_KTVH_DTCCCD_TRANSACTION.sql"
+  },
+  {
+    "job_id": "F_KTVH_MatDienKhachHang_TRANSACTION",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_MatDienKhachHang_TRANSACTION",
+    "sql": "config/ktvh/sql/F_KTVH_MatDienKhachHang_TRANSACTION.sql"
   }
 ]
