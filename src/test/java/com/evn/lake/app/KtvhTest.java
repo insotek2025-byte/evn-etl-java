@@ -14,10 +14,10 @@ public class KtvhTest {
 
 
     public static void test_KTVH_Phien_lam_viec_PhieuCongTac() throws IOException {
-//        genDataRawByName(ConfigUtils.EtlKTVH.RawTable.plv_PhieuCongTac, ConfigUtils.EtlKTVH.rawPath);
-//        SimpleETL simpleRaw2Gold = new SimpleETL(ConfigUtils.EtlKTVH.etlRaw2GoldPath);
-//        recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, ConfigUtils.EtlKTVH.GoldTable.KTVH_Phien_lam_viec_PhieuCongTac);
-//        simpleRaw2Gold.simpleZoneEtl(ConfigUtils.EtlKTVH.GoldTable.KTVH_Phien_lam_viec_PhieuCongTac);
+        genDataRawByName(ConfigUtils.EtlKTVH.RawTable.plv_PhieuCongTac, ConfigUtils.EtlKTVH.rawPath);
+        SimpleETL simpleRaw2Gold = new SimpleETL(ConfigUtils.EtlKTVH.etlRaw2GoldPath);
+        recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, ConfigUtils.EtlKTVH.GoldTableJobId.KTVH_Phien_lam_viec_PhieuCongTac);
+        simpleRaw2Gold.simpleZoneEtl(ConfigUtils.EtlKTVH.GoldTableJobId.KTVH_Phien_lam_viec_PhieuCongTac);
     }
 
     public static void etlAllRaw2GoldByLimitConfig(){
@@ -187,6 +187,30 @@ public class KtvhTest {
         simpleRaw2Gold.simpleZoneEtl(ConfigUtils.EtlKTVH.GoldTableJobId.KTVH_KL_THIET_BI_LUOI);
     }
 
+    public static void test_D(){
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+
+        Field[] fields = ConfigUtils.EtlKTVH.DimTable.class.getDeclaredFields();
+        for (Field field : fields) {
+            if (field.getType().equals(String.class)) {
+                try {
+                    String jobId  = (String) field.get(null); // vì static nên get(null)
+                    System.out.println("run etl gold" + jobId);
+                    martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, jobId, true);
+                    simpleGold2Mart.simpleMartEtl(jobId);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+
+
+        martDimFact.closeConn();
+    }
+
     public static void main(String[] args) throws IOException {
 
         // Test F_KTVH_SL_TBNN_SNAPSHOT ETL
@@ -207,7 +231,9 @@ public class KtvhTest {
 //        test_KTVH_Duong_Day_from_ZAG_0000D40_DZ();
 //        test_KTVH_KL_THIET_BI_LUOI();
 
-        test_F_KTVH_KhoiLuongTBA_SNAPSHOT();
+//        test_F_KTVH_KhoiLuongTBA_SNAPSHOT();
+
+        test_D();
         //  run all
 //        genAllDataRaw(ConfigUtils.EtlKTVH.rawPath);
 //        createTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath);

@@ -303,8 +303,8 @@
       "columns": [
         { "name": "ID_Thiet_Bi", "type": "Number", "constraint": "PK" },
         { "name": "Ten_Thiet_Bi", "type": "NVARCHAR2(255)" },
-        { "name": "ID_Don_Vi_Quan_Ly", "type": "Number", "constraint": "FK" },
-        { "name": "ID_Don_Vi_PC", "type": "Number", "constraint": "FK" }
+        { "name": "ID_Don_Vi_Quan_Ly", "type": "NVARCHAR2(255)", "constraint": "FK" },
+        { "name": "ID_Don_Vi_PC", "type": "NVARCHAR2(255)", "constraint": "FK" }
       ]
     },
     {
@@ -322,11 +322,10 @@
       "schema": "envnpc_antoan",
       "table": "D_KTVH_TramBienAp",
       "columns": [
-        { "name": "ID_Thuoc_Tinh", "type": "Number" },
-        { "name": "ID_Loai_Doi_Tuong", "type": "Number" },
-        { "name": "ID_Doi_Tuong", "type": "Number" },
+        { "name": "ID_Thuoc_Tinh", "type": "NVARCHAR2(255)" },
+        { "name": "ID_Loai_Doi_Tuong", "type": "NVARCHAR2(255)" },
+        { "name": "ID_Doi_Tuong", "type": "NVARCHAR2(255)" },
         { "name": "Ten_Tram", "type": "NVARCHAR2(255)" },
-        { "name": "Dia_Chi", "type": "NVARCHAR2(255)" },
         { "name": "Tinh", "type": "NVARCHAR2(255)" },
         { "name": "Quan", "type": "NVARCHAR2(255)" },
         { "name": "Phuong", "type": "NVARCHAR2(255)" },
@@ -335,8 +334,6 @@
         { "name": "Loai_Tram", "type": "NVARCHAR2(255)" },
         { "name": "Kieu_Tram", "type": "NVARCHAR2(255)" },
         { "name": "Diem_Dau", "type": "NVARCHAR2(255)" },
-        { "name": "So_MBA", "type": "Number" },
-        { "name": "So_Ngan_Lo", "type": "Number" },
         { "name": "Cong_Suat_Van_Hanh", "type": "Number" },
         { "name": "Don_Vi_Van_Hanh", "type": "NVARCHAR2(255)" },
         { "name": "Cap_Dien_Ap", "type": "Number" }
@@ -416,7 +413,7 @@
       "schema": "envnpc_antoan",
       "table": "D_KTVH_NguyenNhanMatDien",
       "columns": [
-        { "name": "ID_Nguyen_Nhan", "type": "Number" },
+        { "name": "ID_Nguyen_Nhan", "type": "NVARCHAR2(255)" },
         { "name": "ID_Loai_Mat_Dien", "type": "Number" },
         { "name": "Ten_Nguyen_Nhan", "type": "NVARCHAR2(255)" },
         { "name": "Ma_Phan_Loai", "type": "Number" }
@@ -429,7 +426,7 @@
       "columns": [
         { "name": "ID_Loai_Mat_Dien", "type": "Number" },
         { "name": "Ten_Loai_Mat_Dien", "type": "NVARCHAR2(255)" },
-        { "name": "Ma_PMIS", "type": "Number" }
+        { "name": "Ma_PMIS", "type": "NVARCHAR2(255)" }
       ]
     },
     {

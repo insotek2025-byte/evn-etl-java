@@ -126,7 +126,7 @@ public class ConfigUtils {
         }
 
         public static class GoldTableJobId {
-//            public static String KTVH_Phien_lam_viec_PhieuCongTac = "KTVH_Phien_lam_viec_PhieuCongTac";
+            public static String KTVH_Phien_lam_viec_PhieuCongTac = "KTVH_Phien_lam_viec_PhieuCongTac";
 //            public static String KTVH_Loai_Phien = "KTVH_Loai_Phien";
 //            public static String KTVH_Trang_Thai_Phien = "KTVH_Trang_Thai_Phien";
 //            public static String KTVH_Danh_Muc_Loai_Cong_Viec = "KTVH_Danh_Muc_Loai_Cong_Viec";
@@ -191,14 +191,14 @@ public class ConfigUtils {
         }
 
         public static class DimTable {
-            public static String D_KTVH_TBNN = "D_KTVH_TBNN";
-            public static String D_KTVH_CapDienAp = "D_KTVH_CapDienAp";
-            public static String D_KTVH_TramBienAp = "D_KTVH_TramBienAp";
-            public static String D_KTVH_MayBienAp = "D_KTVH_MayBienAp";
-            public static String D_KTVH_DuongDay = "D_KTVH_DuongDay";
-            public static String D_KTVH_ThietBiTrenLuoi = "D_KTVH_ThietBiTrenLuoi";
-            public static String D_KTVH_LoaiSuCo = "D_KTVH_LoaiSuCo";
-            public static String D_KTVH_NguyenNhanMatDien = "D_KTVH_NguyenNhanMatDien";
+//            public static String D_KTVH_TBNN = "D_KTVH_TBNN";
+//            public static String D_KTVH_CapDienAp = "D_KTVH_CapDienAp";
+//            public static String D_KTVH_TramBienAp = "D_KTVH_TramBienAp";
+//            public static String D_KTVH_MayBienAp = "D_KTVH_MayBienAp";  // lôi
+//            public static String D_KTVH_DuongDay = "D_KTVH_DuongDay";  // lỗi
+//            public static String D_KTVH_ThietBiTrenLuoi = "D_KTVH_ThietBiTrenLuoi"; // lỗi
+//            public static String D_KTVH_LoaiSuCo = "D_KTVH_LoaiSuCo";
+//            public static String D_KTVH_NguyenNhanMatDien = "D_KTVH_NguyenNhanMatDien";
             public static String D_KTVH_LoaiMatDien = "D_KTVH_LoaiMatDien";
             public static String D_KTVH_DM_LoaiCongViec = "D_KTVH_DM_LoaiCongViec";
             public static String D_KTVH_LoaiPhien = "D_KTVH_LoaiPhien";
