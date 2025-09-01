@@ -157,6 +157,14 @@ public class KtvhTest {
         martDimFact.closeConn();
     }
 
+    public static void test_F_KTVH_KhoiLuongTBA_SNAPSHOT() {
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, ConfigUtils.EtlKTVH.FactTable.F_KTVH_KhoiLuongTBA_SNAPSHOT, true);
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlKTVH.FactTable.F_KTVH_KhoiLuongTBA_SNAPSHOT);
+        martDimFact.closeConn();
+    }
+
     public static void test_KTVH_Duong_Day_from_ZAG_0000D40_DZ() {
 
         recreateTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath, "KTVH_Duong_Day");
@@ -197,7 +205,9 @@ public class KtvhTest {
 //        test_F_KTVH_MatDienKhachHang_TRANSACTION();
 
 //        test_KTVH_Duong_Day_from_ZAG_0000D40_DZ();
-        test_KTVH_KL_THIET_BI_LUOI();
+//        test_KTVH_KL_THIET_BI_LUOI();
+
+        test_F_KTVH_KhoiLuongTBA_SNAPSHOT();
         //  run all
 //        genAllDataRaw(ConfigUtils.EtlKTVH.rawPath);
 //        createTableIceberg(ConfigUtils.EtlKTVH.goldDDLPath);
