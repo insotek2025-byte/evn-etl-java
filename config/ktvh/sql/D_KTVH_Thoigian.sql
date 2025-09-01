@@ -6,7 +6,7 @@ BEGIN
     v_date := v_start_date;
     WHILE v_date <= v_end_date LOOP
         INSERT INTO D_KTVH_Thoigian (
-            ID_Ngaythang, NGAY, THANG, NAM, FULL_DATE
+            ID_ThoiGian, NGAY, THANG, NAM, FULL_DATE
         )
         VALUES (
             TO_NUMBER(TO_CHAR(v_date, 'YYYYMMDD')), -- ID = 20250824

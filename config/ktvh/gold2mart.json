@@ -28,5 +28,85 @@
     "tar_schema": "envnpc_antoan",
     "tar_table": "F_KTVH_SL_QuanTracMoiTruong",
     "sql": "config/ktvh/sql/F_KTVH_SL_QuanTracMoiTruong.sql"
+  },
+  {
+    "job_id": "F_KTVH_PhienLamViec",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_PhienLamViec",
+    "sql": "config/ktvh/sql/F_KTVH_PhienLamViec.sql"
+  },
+  {
+    "job_id": "F_KTVH_TH_Phien_VeSinhCachDien_SNAPSHOT",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_TH_Phien_VeSinhCachDien_SNAPSHOT",
+    "sql": "config/ktvh/sql/F_KTVH_TH_Phien_VeSinhCachDien_SNAPSHOT.sql"
+  },
+  {
+    "job_id": "F_KTVH_TH_Phien_SuaChuaHotline_SNAPSHOT",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_TH_Phien_SuaChuaHotline_SNAPSHOT",
+    "sql": "config/ktvh/sql/F_KTVH_TH_Phien_SuaChuaHotline_SNAPSHOT.sql"
+  },
+  {
+    "job_id": "F_KTVH_SuCoTrungAp_TRANSACTION",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_SuCoTrungAp_TRANSACTION",
+    "sql": "config/ktvh/sql/F_KTVH_SuCoTrungAp_TRANSACTION.sql"
+  },
+  {
+    "job_id": "F_KTVH_SoVuSuCo_TheoLoai_SNAPSHOT",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_SoVuSuCo_TheoLoai_SNAPSHOT",
+    "sql": "config/ktvh/sql/F_KTVH_SoVuSuCo_TheoLoai_SNAPSHOT.sql"
+  },
+  {
+    "job_id": "F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT",
+    "sql": "config/ktvh/sql/F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT.sql"
+  },
+  {
+    "job_id": "F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT",
+    "sql": "config/ktvh/sql/F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT.sql"
+  },
+  {
+    "job_id": "F_KTVH_ChiTieuSuCo_TRANSACTION",
+    "src_system": "local",
+    "src_schema": "gold_zone",
+    "src_table": "",
+    "tar_system": "oracle",
+    "tar_schema": "envnpc_antoan",
+    "tar_table": "F_KTVH_ChiTieuSuCo_TRANSACTION",
+    "sql": "config/ktvh/sql/F_KTVH_ChiTieuSuCo_TRANSACTION.sql"
   }
 ]

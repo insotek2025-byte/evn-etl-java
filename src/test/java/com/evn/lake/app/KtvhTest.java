@@ -68,10 +68,83 @@ public class KtvhTest {
         martDimFact.closeConn();
     }
 
+    public static void test_F_KTVH_PhienLamViec() {
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, ConfigUtils.EtlKTVH.FactTable.F_KTVH_PhienLamViec, true);
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlKTVH.FactTable.F_KTVH_PhienLamViec);
+        martDimFact.closeConn();
+    }
+
+    public static void test_F_KTVH_TH_Phien_VeSinhCachDien_SNAPSHOT() {
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, ConfigUtils.EtlKTVH.FactTable.F_KTVH_TH_Phien_VeSinhCachDien_SNAPSHOT, true);
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlKTVH.FactTable.F_KTVH_TH_Phien_VeSinhCachDien_SNAPSHOT);
+        martDimFact.closeConn();
+    }
+
+    public static void test_F_KTVH_TH_Phien_SuaChuaHotline_SNAPSHOT() {
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, ConfigUtils.EtlKTVH.FactTable.F_KTVH_TH_Phien_SuaChuaHotline_SNAPSHOT, true);
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlKTVH.FactTable.F_KTVH_TH_Phien_SuaChuaHotline_SNAPSHOT);
+        martDimFact.closeConn();
+    }
+
+    public static void test_F_KTVH_SuCoTrungAp_TRANSACTION() {
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, ConfigUtils.EtlKTVH.FactTable.F_KTVH_SuCoTrungAp_TRANSACTION, true);
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlKTVH.FactTable.F_KTVH_SuCoTrungAp_TRANSACTION);
+        martDimFact.closeConn();
+    }
+
+    public static void test_F_KTVH_SoVuSuCo_TheoLoai_SNAPSHOT() {
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, ConfigUtils.EtlKTVH.FactTable.F_KTVH_SoVuSuCo_TheoLoai_SNAPSHOT, true);
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlKTVH.FactTable.F_KTVH_SoVuSuCo_TheoLoai_SNAPSHOT);
+        martDimFact.closeConn();
+    }
+
+    public static void test_F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT() {
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, ConfigUtils.EtlKTVH.FactTable.F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT, true);
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlKTVH.FactTable.F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT);
+        martDimFact.closeConn();
+    }
+
+    public static void test_F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT() {
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, ConfigUtils.EtlKTVH.FactTable.F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT, true);
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlKTVH.FactTable.F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT);
+        martDimFact.closeConn();
+    }
+
+    public static void test_F_KTVH_ChiTieuSuCo_TRANSACTION() {
+        MartDimFact martDimFact = new MartDimFact(ConfigUtils.EtlKTVH.oracleConfig);
+        martDimFact.createTableOracle(ConfigUtils.EtlKTVH.martDDLPath, ConfigUtils.EtlKTVH.FactTable.F_KTVH_ChiTieuSuCo_TRANSACTION, true);
+        SimpleETL simpleGold2Mart = new SimpleETL(ConfigUtils.EtlKTVH.etlGold2MartPath);
+        simpleGold2Mart.simpleMartEtl(ConfigUtils.EtlKTVH.FactTable.F_KTVH_ChiTieuSuCo_TRANSACTION);
+        martDimFact.closeConn();
+    }
+
     public static void main(String[] args) throws IOException {
 
         // Test F_KTVH_SL_TBNN_SNAPSHOT ETL
-        test_F_KTVH_SL_QuanTracMoiTruong();
+//        test_D_KTVH_Thoigian();
+//        test_F_KTVH_SL_QuanTracMoiTruong();
+//        test_F_KTVH_PhienLamViec();
+//        test_F_KTVH_TH_Phien_VeSinhCachDien_SNAPSHOT();
+//        test_F_KTVH_TH_Phien_SuaChuaHotline_SNAPSHOT();
+//        test_F_KTVH_SuCoTrungAp_TRANSACTION();
+//        test_F_KTVH_SoVuSuCo_TheoLoai_SNAPSHOT();
+//        test_F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT();
+//        test_F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT();
+        test_F_KTVH_ChiTieuSuCo_TRANSACTION();
 
         //  run all
 //        genAllDataRaw(ConfigUtils.EtlKTVH.rawPath);

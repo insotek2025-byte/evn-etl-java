@@ -4,7 +4,7 @@
     "schema": "envnpc_antoan",
     "table": "D_KTVH_Thoigian",
     "columns": [
-      { "name": "ID_Ngaythang", "type": "NUMBER", "optional" : "PRIMARY KEY",  "description": "Khóa chính định danh ngày theo dạng YYYYMMDD" },
+      { "name": "ID_ThoiGian", "type": "NUMBER", "optional" : "PRIMARY KEY",  "description": "Khóa chính định danh ngày theo dạng YYYYMMDD" },
       { "name": "NGAY", "type": "NUMBER", "description": "Ngày đầy đủ (YYYY-MM-DD)" },
       { "name": "NAM", "type": "NUMBER", "description": "Năm (ví dụ: 2025)" },
       { "name": "THANG", "type": "NUMBER", "description": "Tháng (1-12)" },
@@ -17,7 +17,7 @@
     "schema": "envnpc_antoan",
     "table": "F_KTVH_SL_TBNN_SNAPSHOT",
     "columns": [
-      { "name": "ID_thoigian", "type": "NUMBER" },
+      { "name": "ID_ThoiGian", "type": "NUMBER" },
       { "name": "ID_Don_Vi", "type": "NUMBER" },
       { "name": "SL_Khai_Bao", "type": "NUMBER" },
       { "name": "SL_Kiem_Duyet", "type": "NUMBER" },
@@ -29,7 +29,7 @@
     "schema": "envnpc_antoan",
     "table": "F_KTVH_SL_QuanTracMoiTruong",
     "columns": [
-      { "name": "ID_thoigian", "type": "NUMBER" },
+      { "name": "ID_ThoiGian", "type": "NUMBER" },
       { "name": "ID_Don_Vi", "type": "NUMBER" },
       { "name": "ID_Yeu_To", "type": "NUMBER" },
       { "name": "Tong_So_Mau", "type": "NUMBER" },
@@ -57,7 +57,7 @@
     "schema": "envnpc_antoan",
     "table": "F_KTVH_TH_Phien_VeSinhCachDien_SNAPSHOT",
     "columns": [
-      { "name": "ID_Thang", "type": "NUMBER" },
+      { "name": "ID_ThoiGian", "type": "NUMBER" },
       { "name": "ID_Don_Vi", "type": "NUMBER" },
       { "name": "So_Phien_VSCĐ", "type": "NUMBER" }
     ]
@@ -67,7 +67,7 @@
     "schema": "envnpc_antoan",
     "table": "F_KTVH_TH_Phien_SuaChuaHotline_SNAPSHOT",
     "columns": [
-      { "name": "ID_Thang", "type": "NUMBER" },
+      { "name": "ID_ThoiGian", "type": "NUMBER" },
       { "name": "ID_Don_Vi", "type": "NUMBER" },
       { "name": "Cap_Dien_Ap", "type": "NUMBER" },
       { "name": "So_Phien_Hotline", "type": "NUMBER" }
@@ -83,7 +83,7 @@
         { "name": "ID_Cap_Dien_Ap", "type": "NUMBER" },
         { "name": "ID_Thiet_Bi_Su_Co", "type": "NUMBER" },
         { "name": "Ten_Thiet_Bi_Su_Co", "type": "NVARCHAR2(255)" },
-        { "name": "Dien_bien_Su_Co", "type": "NVARCHAR2(255)" },
+        { "name": "Dien_bien_Su_Co", "type": "NVARCHAR2(2000)" },
         { "name": "Thoi_Gian_Xuat_Hien", "type": "DATE" },
         { "name": "Thoi_Gian_Bat_Dau_Khac_Phuc", "type": "DATE" },
         { "name": "Thoi_Gian_Khac_Phuc_Xong", "type": "DATE" },
@@ -106,7 +106,7 @@
       "schema": "envnpc_antoan",
       "table": "F_KTVH_SoVuSuCo_TheoLoai_SNAPSHOT",
       "columns": [
-        { "name": "ID_Thang", "type": "NUMBER" },
+        { "name": "ID_ThoiGian", "type": "NUMBER" },
         { "name": "ID_Don_Vi", "type": "NUMBER" },
         { "name": "ID_Thiet_Bi_Su_Co", "type": "NUMBER" },
         { "name": "ID_Loai_Su_Co", "type": "NUMBER" },
@@ -118,7 +118,7 @@
       "schema": "envnpc_antoan",
       "table": "F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT",
       "columns": [
-        { "name": "ID_Thang", "type": "NUMBER" },
+        { "name": "ID_ThoiGian", "type": "NUMBER" },
         { "name": "ID_Don_Vi", "type": "NUMBER" },
         { "name": "ID_Thiet_Bi_Su_Co", "type": "NUMBER" },
         { "name": "Thuoc_Tai_San", "type": "NVARCHAR2(255)" },
@@ -130,7 +130,7 @@
       "schema": "envnpc_antoan",
       "table": "F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT",
       "columns": [
-        { "name": "ID_Thang", "type": "NUMBER" },
+        { "name": "ID_ThoiGian", "type": "NUMBER" },
         { "name": "ID_Don_Vi", "type": "NUMBER" },
         { "name": "ID_Thiet_Bi_Su_Co", "type": "NUMBER" },
         { "name": "ID_Hanh_Lang", "type": "NUMBER" },
@@ -159,7 +159,7 @@
       "schema": "envnpc_antoan",
       "table": "F_KTVH_ViPham_HLATLĐ_SNAPSHOT",
       "columns": [
-        { "name": "ID_Thang", "type": "NUMBER" },
+        { "name": "ID_ThoiGian", "type": "NUMBER" },
         { "name": "ID_Nam", "type": "NUMBER" },
         { "name": "ID_Don_Vi", "type": "NUMBER" },
         { "name": "ID_Cap_Dien_Ap", "type": "NUMBER" },
@@ -233,7 +233,7 @@
       "schema": "envnpc_antoan",
       "table": "F_TuBu_SNAPSHOT",
       "columns": [
-        { "name": "ID_Thang", "type": "Number" },
+        { "name": "ID_ThoiGian", "type": "Number" },
         { "name": "ID_Don_Vi_Quan_Ly", "type": "Number" },
         { "name": "So_Vi_Tri", "type": "number" },
         { "name": "Dung_Luong", "type": "number" },
@@ -246,7 +246,7 @@
       "schema": "envnpc_antoan",
       "table": "F_KTVH_KhoiLuongTBA_SNAPSHOT",
       "columns": [
-        { "name": "ID_Thang", "type": "Number" },
+        { "name": "ID_ThoiGian", "type": "Number" },
         { "name": "ID_Don_Vi", "type": "Number" },
         { "name": "Loai_Tram", "type": "number" },
         { "name": "So_Luong", "type": "number" },
@@ -258,7 +258,7 @@
       "schema": "envnpc_antoan",
       "table": "F_KTVH_KhoiLuongMBA_SNAPSHOT",
       "columns": [
-        { "name": "ID_Thang", "type": "Number" },
+        { "name": "ID_ThoiGian", "type": "Number" },
         { "name": "ID_Don_Vi", "type": "Number" },
         { "name": "Cong_Suat", "type": "Number(10,10)" },
         { "name": "So_Luong", "type": "number" },
@@ -272,7 +272,7 @@
       "columns": [
         { "name": "ID_Don_Vi_Quan_Ly", "type": "Number" },
         { "name": "ID_Cap_dien_ap", "type": "Number" },
-        { "name": "ID_Thang", "type": "Number" },
+        { "name": "ID_ThoiGian", "type": "Number" },
         { "name": "So_huu", "type": "number" },
         { "name": "KL_Mach_don", "type": "number" },
         { "name": "KL_Mach_Kep", "type": "number" },
@@ -285,7 +285,7 @@
       "table": "F_KTVH_KhoiLuongThietBi_Luoi",
       "columns": [
         { "name": "ID_don_vi", "type": "Number" },
-        { "name": "ID_Thang", "type": "Number" },
+        { "name": "ID_ThoiGian", "type": "Number" },
         { "name": "SL_Tu_bu_TTG", "type": "number" },
         { "name": "SL_Tu_bu_TT", "type": "number" },
         { "name": "SL_Tu_bu_HT", "type": "number" },
