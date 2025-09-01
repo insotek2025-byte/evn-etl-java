@@ -156,61 +156,51 @@
     "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0110D00_MBA.schema.csv"
   },
   {
-    "job_id": "ZAG_0022D00_MBA",
-    "tar_table": "ZAG_0022D00_MBA",
-    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0022D00_MBA.data.csv",
-    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0022D00_MBA.schema.csv"
+    "job_id": "ZAG_0000D40_DZ",
+    "tar_table": "ZAG_0000D40_DZ",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0000D40_DZ.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0000D40_DZ.schema.csv"
   },
   {
-    "job_id": "ZAG_0035D00_MBA",
-    "tar_table": "ZAG_0035D00_MBA",
-    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
-    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+    "job_id": "ZAG_0110D00_DZ",
+    "tar_table": "ZAG_0110D00_DZ",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0110D00_DZ.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0110D00_DZ.schema.csv"
   },
   {
-    "job_id": "ZAG_0035D00_MBA",
-    "tar_table": "ZAG_0035D00_MBA",
-    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
-    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+    "job_id": "ZAG_0006D00_DZ",
+    "tar_table": "ZAG_0006D00_DZ",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0006D00_DZ.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0006D00_DZ.schema.csv"
   },
   {
-    "job_id": "ZAG_0035D00_MBA",
-    "tar_table": "ZAG_0035D00_MBA",
-    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
-    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+    "job_id": "ZAG_0010D00_DZ",
+    "tar_table": "ZAG_0010D00_DZ",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0010D00_DZ.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0010D00_DZ.schema.csv"
   },
   {
-    "job_id": "ZAG_0035D00_MBA",
-    "tar_table": "ZAG_0035D00_MBA",
-    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
-    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
+    "job_id": "ZAG_0022D00_DZ",
+    "tar_table": "ZAG_0022D00_DZ",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0022D00_DZ.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0022D00_DZ.schema.csv"
   },
   {
-    "job_id": "ZAG_0035D00_MBA",
-    "tar_table": "ZAG_0035D00_MBA",
-    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
-    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
-  },  {
-  "job_id": "ZAG_0035D00_MBA",
-  "tar_table": "ZAG_0035D00_MBA",
-  "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
-  "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
-},  {
-  "job_id": "ZAG_0035D00_MBA",
-  "tar_table": "ZAG_0035D00_MBA",
-  "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.data.csv",
-  "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_MBA.schema.csv"
-},
-  {
-    "job_id": "D_LO",
-    "tar_table": "D_LO",
-    "data": "data/10.CMIS/DMUC/DMUC.D_LO_sample_data.csv",
-    "schema": "data/10.CMIS/DMUC/DMUC.D_LO_schema.csv"
+    "job_id": "ZAG_0035D00_DZ",
+    "tar_table": "ZAG_0035D00_DZ",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_DZ.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.ZAG_0035D00_DZ.schema.csv"
   },
   {
-    "job_id": "A_ASSET",
-    "tar_table": "A_ASSET",
-    "data": "data/PMIS/PMIS_EVNNPC/dbo.A_ASSET.data.csv",
-    "schema": "data/PMIS/PMIS_EVNNPC/dbo.A_ASSET.schema.csv"
+    "job_id": "RPT_CAPACITOR_OPERATION",
+    "tar_table": "RPT_CAPACITOR_OPERATION",
+    "data": "data/shqt/EVN_NPC_TECH_DEPT/EVN_NPC_TECH_DEPT.RPT_CAPACITOR_OPERATION_sample.csv",
+    "schema": "data/shqt/EVN_NPC_TECH_DEPT/EVN_NPC_TECH_DEPT.RPT_CAPACITOR_OPERATION_schema.csv"
+  },
+  {
+    "job_id": "RPT_TBL_THONG_KE_THIET_BI_TREN_LUOI_BIEU_10_B4",
+    "tar_table": "RPT_TBL_THONG_KE_THIET_BI_TREN_LUOI_BIEU_10_B4",
+    "data": "data/PMIS/PMIS_EVNNPC/dbo.RPT_TBL_THONG_KE_THIET_BI_TREN_LUOI_BIEU_10_B4.data.csv",
+    "schema": "data/PMIS/PMIS_EVNNPC/dbo.RPT_TBL_THONG_KE_THIET_BI_TREN_LUOI_BIEU_10_B4.schema.csv"
   }
 ]

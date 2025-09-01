@@ -100,6 +100,29 @@ public class ConfigUtils {
             public static String sc_ChiTieuSoVuSuCo = "sc_ChiTieuSoVuSuCo";
             public static String tbnn_ThietBiNghiemNgat = "tbnn_ThietBiNghiemNgat";
             public static String tbnn_SoTheoDoiTBNN = "tbnn_SoTheoDoiTBNN";
+            public static String matdien_kh_tonghop = "matdien_kh_tonghop";
+            public static String matdien_loai = "matdien_loai";
+            public static String matdien_nguyennhan = "matdien_nguyennhan";
+            public static String SK_L_YEUTOMOITRUONG = "SK_L_YEUTOMOITRUONG";
+            public static String SK_QUANTRACMOITRUONG = "SK_QUANTRACMOITRUONG";
+            public static String hlat_CapDienAP = "hlat_CapDienAP";
+            public static String CDS_A_LST_ULEVEL = "CDS_A_LST_ULEVEL";
+            public static String D_CAP_DAP = "D_CAP_DAP";
+            public static String dotincay_xuattuyen = "dotincay_xuattuyen";
+            public static String dotincay_kehoach_xuattuyen = "dotincay_kehoach_xuattuyen";
+            public static String ZAG_0110D00_TBA = "ZAG_0110D00_TBA";
+            public static String ZAG_0022D00_TBA = "ZAG_0022D00_TBA";
+            public static String ZAG_0035D00_TBA = "ZAG_0035D00_TBA";
+            public static String D_TRAM = "D_TRAM";
+            public static String ZAG_0110D00_MBA = "ZAG_0110D00_MBA";
+            public static String ZAG_0000D40_DZ = "ZAG_0000D40_DZ";
+            public static String ZAG_0110D00_DZ = "ZAG_0110D00_DZ";
+            public static String ZAG_0006D00_DZ = "ZAG_0006D00_DZ";
+            public static String ZAG_0010D00_DZ = "ZAG_0010D00_DZ";
+            public static String ZAG_0022D00_DZ = "ZAG_0022D00_DZ";
+            public static String ZAG_0035D00_DZ = "ZAG_0035D00_DZ";
+            public static String RPT_CAPACITOR_OPERATION = "RPT_CAPACITOR_OPERATION";
+            public static String RPT_TBL_THONG_KE_THIET_BI_TREN_LUOI_BIEU_10_B4 = "RPT_TBL_THONG_KE_THIET_BI_TREN_LUOI_BIEU_10_B4";
         }
 
         public static class GoldTableJobId {
@@ -128,21 +151,22 @@ public class ConfigUtils {
 //            public static String KTVH_Tram_Bien_Ap_from_ZAG_0022D00_TBA = "KTVH_Tram_Bien_Ap_from_ZAG_0022D00_TBA";
 
             // TODO
-            public static String KTVH_May_Bien_Ap = "KTVH_May_Bien_Ap";
+//            public static String KTVH_May_Bien_Ap = "KTVH_May_Bien_Ap";
 //            public static String KTVH_May_Bien_Ap_from_ZAG_0110D00_MBA = "KTVH_May_Bien_Ap_from_ZAG_0110D00_MBA";
 //            public static String KTVH_May_Bien_Ap_from_ZAG_0022D00_MBA = "KTVH_May_Bien_Ap_from_ZAG_0022D00_MBA";
 //            public static String KTVH_May_Bien_Ap_from_ZAG_0035D00_MBA = "KTVH_May_Bien_Ap_from_ZAG_0035D00_MBA";
 
 //            public static String KTVH_Do_tin_cay_xuat_tuyen = "KTVH_Do_tin_cay_xuat_tuyen";
 //            public static String KTVH_Cap_Dien_Ap = "KTVH_Cap_Dien_Ap";
-//            public static String KTVH_Duong_Day = "KTVH_Duong_Day";
+                public static String KTVH_Duong_Day = "KTVH_Duong_Day";
+            public static String KTVH_Duong_Day_from_ZAG_0000D40_DZ ="KTVH_Duong_Day_from_ZAG_0000D40_DZ";
 
 //            public static String KTVH_Thiet_bi_tren_luoi = "KTVH_Thiet_bi_tren_luoi";
-//            public static String KTVH_Tu_bu = "KTVH_Tu_bu";
+            public static String KTVH_Tu_bu = "KTVH_Tu_bu";
 
               // không biết dùng không
 //            public static String KTVH_KL_DZ = "KTVH_KL_DZ";
-//            public static String KTVH_KL_THIET_BI_LUOI = "KTVH_KL_THIET_BI_LUOI";
+            public static String KTVH_KL_THIET_BI_LUOI = "KTVH_KL_THIET_BI_LUOI";
         }
 
         public static class FactTable {
@@ -156,7 +180,7 @@ public class ConfigUtils {
             public static String F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT = "F_KTVH_SoVuSuCo_TheoTaiSan_SNAPSHOT";
             public static String F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT = "F_KTVH_SoVuSuCo_NguyenNhanHanhLang_SNAPSHOT";
             public static String F_KTVH_ChiTieuSuCo_TRANSACTION = "F_KTVH_ChiTieuSuCo_TRANSACTION";
-            public static String F_KTVH_ViPham_HLATLD_SNAPSHOT = "F_KTVH_ViPham_HLATLD_SNAPSHOT";
+            public static String F_KTVH_ViPham_HLATLD_SNAPSHOT = "F_KTVH_ViPham_HLATL_SNAPSHOT";
             public static String F_KTVH_DTCCCD_TRANSACTION = "F_KTVH_DTCCCD_TRANSACTION";
             public static String F_KTVH_MatDienKhachHang_TRANSACTION = "F_KTVH_MatDienKhachHang_TRANSACTION";
             public static String F_TuBu_SNAPSHOT = "F_TuBu_SNAPSHOT";

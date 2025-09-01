@@ -988,9 +988,62 @@
       {"name": "Hang_San_Suat", "type": "string"},
       {"name": "Cap_dien_ap", "type": "bigint"}
     ]
+  },
+  {
+    "job_id": "KTVH_Duong_Day",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Duong_Day",
+    "columns": [
+      {"name": "ID_Thuoc_Tinh", "type": "bigint"},
+      {"name": "ID_Loai_Doi_Tuong", "type": "bigint"},
+      {"name": "ID_Doi_Tuong", "type": "bigint"},
+      {"name": "Dien_Ap_Thiet_Ke", "type": "string"},
+      {"name": "Tong_Chieu_Dai", "type": "double"},
+      {"name": "So_Cot", "type": "bigint"},
+      {"name": "I_Van_Hanh", "type": "double"},
+      {"name": "Diem_Dau", "type": "string"},
+      {"name": "Tram", "type": "string"},
+      {"name": "Ten_DZ", "type": "string"},
+      {"name": "Ngan_Lo", "type": "string"},
+      {"name": "Ma_Lo_DZ", "type": "string"},
+      {"name": "ID_Cap_Dien_Ap", "type": "double"}
+    ]
+  },
+  {
+    "job_id": "KTVH_Tu_bu",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_Tu_bu",
+    "columns": [
+      {"name": "ID_Don_Vi_Quan_Ly", "type": "bigint"},
+      {"name": "So_Vi_Tri", "type": "bigint"},
+      {"name": "Dung_Luong", "type": "double"},
+      {"name": "Phan_loai_tu", "type": "bigint"},
+      {"name": "Loai_luoi", "type": "bigint"}
+    ]
+  },
+  {
+    "job_id": "KTVH_KL_THIET_BI_LUOI",
+    "catalog": "local",
+    "schema": "gold_zone",
+    "table": "KTVH_KL_THIET_BI_LUOI",
+    "columns": [
+      {"name": "ID_don_vi", "type": "string"},
+      {"name": "Thang", "type": "bigint"},
+      {"name": "Nam", "type": "bigint"},
+      {"name": "Thoi_gian", "type": "date"},
+      {"name": "SL_Tu_bu_TTG", "type": "bigint"},
+      {"name": "SL_Tu_bu_TT", "type": "bigint"},
+      {"name": "SL_Tu_bu_HT", "type": "bigint"},
+      {"name": "SL_Recloser", "type": "bigint"},
+      {"name": "SL_LBS_DS", "type": "bigint"},
+      {"name": "SL_RMU", "type": "bigint"},
+      {"name": "SL_AVR", "type": "bigint"},
+      {"name": "SL_FCO", "type": "bigint"},
+      {"name": "SL_CHONG_SET", "type": "bigint"}
+    ]
   }
-
-
 ]
 
 

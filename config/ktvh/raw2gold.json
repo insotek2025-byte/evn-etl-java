@@ -475,8 +475,72 @@
     "tar_system": "local",
     "tar_schema": "gold_zone",
     "tar_table": "KTVH_May_Bien_Ap",
-    "sql": "config/ktvh/sql/gold_KTVH_Cap_Dien_Ap.sql",
+    "sql": "config/ktvh/sql/gold_KTVH_May_Bien_Ap.sql",
     "mode" : "append"
+  },
+  {
+    "job_id": "KTVH_Duong_Day_from_ZAG_0000D40_DZ",
+    "src_system": "local",
+    "src_schema": "raw_zone",
+    "src_table": "ZAG_0000D40_DZ",
+    "tar_system": "local",
+    "tar_schema": "gold_zone",
+    "tar_table": "KTVH_Duong_Day",
+    "mapping": [
+      { "src_column": "ATTRDATAID", "tar_column": "ID_Thuoc_Tinh" },
+      { "src_column": "OBJTYPEID", "tar_column": "ID_Loai_Doi_Tuong" },
+      { "src_column": "OBJID", "tar_column": "ID_Doi_Tuong" },
+      { "src_column": "DA_TKE", "tar_column": "Dien_Ap_Thiet_Ke" },
+      { "src_column": "TONG_CD", "tar_column": "Tong_Chieu_Dai" },
+      { "src_column": "SO_COT", "tar_column": "So_Cot" },
+      { "src_column": "I_VH", "tar_column": "I_Van_Hanh" },
+      { "src_column": "DIEM_DAU", "tar_column": "Diem_Dau" },
+      { "src_column": "TRAM", "tar_column": "Tram" },
+      { "src_column": "DUONG_DAY", "tar_column": "Ten_DZ" },
+      { "src_column": "NGAN_LO", "tar_column": "Ngan_Lo" },
+      { "src_column": "MA_LO_DZ", "tar_column": "Ma_Lo_DZ" },
+      { "src_column": "", "tar_column": "ID_Cap_Dien_Ap", "default_value": "0.4" }
+    ]
+  },
+  {
+    "job_id": "KTVH_Tu_bu",
+    "src_system": "local",
+    "src_schema": "raw_zone",
+    "src_table": "rpt_capacitor_operation",
+    "tar_system": "local",
+    "tar_schema": "gold_zone",
+    "tar_table": "KTVH_Tu_bu",
+    "mapping": [
+      { "src_column": "orgid", "tar_column": "ID_Don_Vi_Quan_Ly" },
+      { "src_column": "NUM_POSITION_NORMAL", "tar_column": "So_Vi_Tri" },
+      { "src_column": "CAPACITY_NORMAL", "tar_column": "Dung_Luong" },
+      { "src_column": "TYPE", "tar_column": "Phan_loai_tu" },
+      { "src_column": "SUB_TYPE", "tar_column": "Loai_luoi" }
+    ]
+  },
+  {
+    "job_id": "KTVH_KL_THIET_BI_LUOI",
+    "src_system": "local",
+    "src_schema": "raw_zone",
+    "src_table": "RPT_TBL_THONG_KE_THIET_BI_TREN_LUOI_BIEU_10_B4",
+    "tar_system": "local",
+    "tar_schema": "gold_zone",
+    "tar_table": "KTVH_KL_THIET_BI_LUOI",
+    "mapping": [
+      { "src_column": "ORGID", "tar_column": "ID_don_vi" },
+      { "src_column": "THANG", "tar_column": "Thang" },
+      { "src_column": "NAM", "tar_column": "Nam" },
+      { "src_column": "NGAY_TH", "tar_column": "Thoi_gian" },
+      { "src_column": "SL_TBTG_CO_TB", "tar_column": "SL_Tu_bu_TTG" },
+      { "src_column": "SL_VTTT_CO_TB_TT", "tar_column": "SL_Tu_bu_TT" },
+      { "src_column": "SL_VTTT_CO_TB_HT", "tar_column": "SL_Tu_bu_HT" },
+      { "src_column": "SL_RECLOSER", "tar_column": "SL_Recloser" },
+      { "src_column": "SL_LBS", "tar_column": "SL_LBS_DS" },
+      { "src_column": "SL_DS", "tar_column": "SL_RMU" },
+      { "src_column": "SL_RMU", "tar_column": "SL_AVR" },
+      { "src_column": "SL_AVR", "tar_column": "SL_FCO" },
+      { "src_column": "SL_FCO", "tar_column": "SL_CHONG_SET" }
+    ]
   }
 ]
 
